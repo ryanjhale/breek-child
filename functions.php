@@ -302,4 +302,33 @@ function cfm_get_aside_format($post_id){
 <?php
 }
 
+
+
+$url = get_bloginfo('url');
+define('CFM_URL', $url);
+
+$path = strtok($_SERVER["REQUEST_URI"],'?');
+define('CFM_PATH', $path);
+
+add_filter('template_redirect', 'cfm_redirect');
+
+function cfm_redirect() {
+
+    global $wp_query;
+    
+    if (in_array(CFM_PATH, array('/contact'))) {
+        
+        if ($wp_query->is_404) {
+	        $wp_query->is_404 = false;
+	        header("HTTP/1.1 200 OK");
+	    }
+        
+        include( get_stylesheet_directory().'/contact-en.php' );
+        exit;
+    }
+    
+
+
+}
+
 ?>
