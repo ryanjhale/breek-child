@@ -236,5 +236,5 @@ set_query_var('epcl_share_bottom', false);
 	      </div>
 		<?php
 	}
-
+?>
 <?php get_footer(); ?>
