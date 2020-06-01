@@ -323,7 +323,7 @@ function cfm_redirect() {
 	        header("HTTP/1.1 200 OK");
 	    }
         
-        include( get_stylesheet_directory().'/contact-en.php' );
+        include( get_stylesheet_directory().'/contact.php' );
         exit;
     }
     
