@@ -67,7 +67,9 @@ set_query_var('epcl_share_bottom', false);
                                 <h1 class="title ularge bordered bold"><?php the_title(); ?></h1>
                             <?php endif; ?>
                             <div class="text">
-                                <?php the_content(); ?>
+                                <?php the_content(); 
+	                                echo 'URL:  ' . CFM_URL;
+                                ?>
                             </div>
                             <div class="clear"></div>
                             <?php if( !empty($epcl_theme) && isset( $epcl_theme['enable_share_buttons_page'] ) && $epcl_theme['enable_share_buttons_page'] == '1' ): ?>
