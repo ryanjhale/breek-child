@@ -27,6 +27,7 @@ if( !empty($epcl_module) && isset($epcl_module['sidebar']) &&  $epcl_module['sid
     <aside id="sidebar" class="grid-30 np-mobile <?php echo esc_attr($sidebar_class); ?>">
         <div class="default-sidebar">
 	        <?php
+		    if(!is_home() || !in_array(CFM_PATH, array('/contact', '/contact/'))) {
 		    $same_category = epcl_get_option('siblings_posts_category'); 
 		    $prev_post = get_previous_post( $same_category );
             if( !empty($prev_post) ){
@@ -91,6 +92,7 @@ if( !empty($epcl_module) && isset($epcl_module['sidebar']) &&  $epcl_module['sid
 				<div class="clear"></div>
 			</section>
 			<?php endif; ?>
+			}
 	        <?php dynamic_sidebar($sidebar_name); ?>
 	    </div>
         <?php if( epcl_get_option('enable_mobile_sidebar') == true && epcl_get_option('mobile_sidebar') ): ?>
