@@ -316,7 +316,7 @@ function cfm_redirect() {
 
     global $wp_query;
     
-    if (in_array(CFM_PATH, array('/contact'))) {
+    if (in_array(CFM_PATH, array('/contact', '/contact/'))) {
         
         if ($wp_query->is_404) {
 	        $wp_query->is_404 = false;
@@ -330,5 +330,8 @@ function cfm_redirect() {
 
 
 }
+
+
+
 
 ?>
