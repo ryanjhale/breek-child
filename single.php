@@ -73,7 +73,7 @@ while(have_posts()): the_post();  ?>
 	<main id="single" class="main grid-container <?php echo esc_attr($post_style.$single_class); ?>" data-aos="fade">
 
 		<!-- start: .center -->
-	    <div class="center content">
+	    <div class="content"> <?php // Because of clash with Atomic Blocks styling, the center class is removed ?>
 
 			<!-- Fullcover Style -->
             <?php if( has_post_thumbnail() && $post_style == 'fullcover' && $post_format == '' ): ?>
