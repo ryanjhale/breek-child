@@ -30,7 +30,7 @@ set_query_var('epcl_share_bottom', false);
 <main id="page" class="main grid-container">
 	<?php if( have_posts() ): the_post(); ?>
 		<!-- start: .center -->
-	    <div id="single" class="center content fullcover <?php echo esc_attr($page_class); ?>" data-aos="fade">
+	    <div id="single" class="content fullcover <?php echo esc_attr($page_class); ?>" data-aos="fade">
             
             <?php if( has_post_thumbnail() ): ?>
                 <div class="featured-image cover" style="background: url('<?php the_post_thumbnail_url('epcl_page_header'); ?>');">
