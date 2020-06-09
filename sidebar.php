@@ -58,7 +58,6 @@ if( !empty($epcl_module) && isset($epcl_module['sidebar']) &&  $epcl_module['sid
 		                    <h4 class="title white no-margin"><?php echo get_the_title($next_post->ID); ?></h4>                                
 		                </div>
 		                <span class="epcl-button red" style="left: auto; right: 20px; width: 80px; height: 40px; line-height: 40px; padding: 0; position: absolute; bottom: 20px; z-index: 5; text-align: center; vertical-align: middle;">
-		                	Next
 		                	<img src="<?php echo EPCL_THEMEPATH; ?>/assets/images/right-arrow.svg" width="15" style="vertical-align: middle;" alt="<?php esc_attr_e('Right Arrow', 'breek'); ?>">
 		                </span>
 					</a>
@@ -85,7 +84,6 @@ if( !empty($epcl_module) && isset($epcl_module['sidebar']) &&  $epcl_module['sid
 		                </div>
 		                <span class="epcl-button red" style="left: 20px; right: auto; width: 110px; height: 40px; line-height: 40px; padding: 0; position: absolute; bottom: 20px; z-index: 5; text-align: center; vertical-align: middle;">
 		                	<img src="<?php echo EPCL_THEMEPATH; ?>/assets/images/left-arrow.svg" width="15" style="vertical-align: middle;" alt="<?php esc_attr_e('Left Arrow', 'breek'); ?>">
-		                	Previous
 		                </span>
 					</a>
 	                <div class="overlay"></div>
