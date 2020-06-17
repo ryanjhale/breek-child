@@ -182,7 +182,7 @@ while(have_posts()): the_post();  ?>
 
                     <?php get_template_part('partials/author-box'); ?>
                     
-                    <?php if($epcl_theme['siblings_posts'] != false): ?>
+                    <?php if($epcl_theme['siblings_posts'] != false && $post_format != 'aside'): ?>
 
                         <section class="related section">
                             <?php
