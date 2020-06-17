@@ -392,8 +392,8 @@ acf_add_local_field_group( array(
 			'ui' => true,
         ),
         array (
-			'key' => $prefix_key.'aside_video_lightbox',
-			'name' => 'aside_video_lightbox',
+			'key' => $prefix_key.'video_lightbox',
+			'name' => 'video_lightbox',
 			'label' => esc_html__('Use Lightbox on Post Lists', 'epcl_framework'),
 			'instructions' => esc_html__('If enabled, on click Youtube/Vimeo iframes will open a lightbox instead.', 'epcl_framework'),
 			'type' => 'true_false',
