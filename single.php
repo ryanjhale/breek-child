@@ -278,9 +278,13 @@ while(have_posts()): the_post();  ?>
                 <!-- end: .content -->
 
                 <?php
-                if( $enable_sidebar !== false ){
-                    get_sidebar();
-                }
+                if($post_format == 'aside') {
+					get_sidebar('aside');
+				} else {
+					if( $enable_sidebar !== false ){
+	                    get_sidebar();
+	                }
+				}
                 ?>
 
             </div>

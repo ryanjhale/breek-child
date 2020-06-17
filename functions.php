@@ -180,7 +180,11 @@ function cfm_display_post_format($format = '', $post_id){
         break;
         
         case 'aside':
-			return cfm_get_aside_format($post_id);
+			$video_type = get_field('aside_video_type', $post_id);
+            $video_url = get_field('aside_video_url', $post_id);
+            
+			if($video_type)
+				return epcl_get_video_format($post_id, $video_type, $video_url, 250);
         break;
         
 	}
@@ -369,5 +373,92 @@ function wpse_mime_types_webp( $mimes ) {
 
   return $mimes;
 }
+
+
+$prefix_key = 'epcl_post_';
+
+// Aside as Video Format
+acf_add_local_field_group( array(
+	'key' => 'epcl_post_aside',
+	'title' => esc_html__('Video Information', 'epcl_framework'),
+	'fields' => array (
+        array (
+			'key' => $prefix_key.'show_featured_image_video_aside',
+			'name' => 'show_featured_image_aside',
+			'label' => esc_html__('Show Featured Image', 'epcl_framework'),
+			'instructions' => esc_html__('By default it will be displayed the video on home pages, archives, etc. Enabling this option will show the featured image instead.', 'epcl_framework'),
+			'type' => 'true_false',
+			'default_value' => false,
+			'ui' => true,
+        ),
+        array (
+			'key' => $prefix_key.'aside_video_lightbox',
+			'name' => 'aside_video_lightbox',
+			'label' => esc_html__('Use Lightbox on Post Lists', 'epcl_framework'),
+			'instructions' => esc_html__('If enabled, on click Youtube/Vimeo iframes will open a lightbox instead.', 'epcl_framework'),
+			'type' => 'true_false',
+			'default_value' => false,
+			'ui' => true,
+        ),
+		array (
+			'key' => $prefix_key.'aside_video_type',
+			'name' => 'aside_video_type',
+			'label' => esc_html__('Video Type', 'epcl_framework'),
+			'instructions' => esc_html__('Select platform.', 'epcl_framework'),
+			'type' => 'button_group',
+			'choices' => array(
+				'youtube' => esc_html__('Youtube', 'epcl_framework'),
+                'vimeo' => esc_html__('Vimeo', 'epcl_framework'),
+                'custom' => esc_html__('Custom Embed', 'epcl_framework'),
+			),
+			'layout' => 'horizontal',
+			'default_value' => 'youtube',
+		),
+		array (
+			'key' => $prefix_key.'aside_video_url',
+			'name' => 'aside_video_url',
+			'label' => esc_html__('Video URL', 'epcl_framework'),
+			'instructions' => esc_html__('eg. https://www.youtube.com/watch?v=v9nBysHSzhE', 'epcl_framework'),
+            'type' => 'url',
+            'conditional_logic' => array (
+                array (
+                    array (
+                        'field' => $prefix_key.'video_type',
+                        'operator' => '!=',
+                        'value' => 'custom',
+                    ),
+                ),
+            )
+        ),
+        array (
+			'key' => $prefix_key.'aside_custom_embed',
+			'name' => 'aside_custom_embed',
+			'label' => esc_html__('Custom Embed Code', 'epcl_framework'),
+			'instructions' => esc_html__('eg. <iframe>....</iframe>', 'epcl_framework'),
+            'type' => 'textarea',
+            'conditional_logic' => array (
+                array (
+                    array (
+                        'field' => $prefix_key.'video_type',
+                        'operator' => '==',
+                        'value' => 'custom',
+                    ),
+                ),
+            )
+		),
+	),
+	'menu_order' => 0,
+	'label_placement' => 'left',
+	'instruction_placement' => 'label',
+	'location' => array (
+		array (
+			array (
+				'param' => 'post_format',
+				'operator' => '==',
+				'value' => 'aside',
+			),
+		),
+	)
+));
 
 ?>

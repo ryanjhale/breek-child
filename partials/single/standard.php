@@ -58,13 +58,9 @@ $author_name = get_the_author();
         <?php endif; ?>
 
         <div class="clear"></div>
-    
-    	<?php if($post_format != 'aside') {
-			?>
-			<h1 class="title no-thumb large bold"><?php the_title(); ?></h1>
-			<?php
-		}
-        ?>
+
+		<h1 class="title no-thumb large bold"><?php the_title(); ?></h1>
+
     </div>
     <!-- end: .meta -->
 
