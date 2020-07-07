@@ -3,7 +3,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 	    <?php
-	if(SEARCHPARTY_URL == 'https://comefollowme.it') {
+	if(CFM_URL == 'https://comefollowme.it') {
 		?>
 		
 		<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -17,7 +17,7 @@
 		</script>
 	
 		<?php
-	} elseif(SEARCHPARTY_URL == 'https://vienieseguimi.it') {
+	} elseif(CFM_URL == 'https://vienieseguimi.it') {
 		?>
 		
 		<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -31,7 +31,7 @@
 		</script>
 
 		<?php
-	} elseif(SEARCHPARTY_URL == 'https://viensetsuismoi.it') {
+	} elseif(CFM_URL == 'https://viensetsuismoi.it') {
 		?>
 		
 		<!-- Global site tag (gtag.js) - Google Analytics -->
