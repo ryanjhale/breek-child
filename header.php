@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <?php
+	    <?php
 	if(SEARCHPARTY_URL == 'https://comefollowme.it') {
 		?>
 		
@@ -58,4 +58,4 @@
     <?php get_template_part('partials/svg-icons'); ?>
     <!-- start: #wrapper -->
     <div id="wrapper">
-		<?php // get_template_part('partials/header'); ?>
+		<?php get_template_part('partials/header'); ?>
