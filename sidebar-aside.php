@@ -23,14 +23,23 @@ if( !empty($epcl_module) && isset($epcl_module['sidebar']) &&  $epcl_module['sid
 }
 
 if(CFM_URL == 'https://vienieseguimi.it') {
+	$learn_text = 'Conoscere Gesù';
 	$learn_url = 'https://vienieseguimi.it/post/8';
-	$contact_url = 'https://m.me/vienieseguimi.eu';
+	$contact_text = 'Hai una domanda?';
+	$contact_button_text = 'Contattaci su Facebook';
+	$contact_url = 'https://m.me/vienieseguimi.it';
 } elseif(CFM_URL == 'https://viensetsuismoi.it') {
+	$learn_text = 'En savoir plus sur Jésus';
 	$learn_url = 'https://viensetsuismoi.it/post/6';
-	$contact_url = 'https://m.me/viensetsuismoi.eu';
+	$contact_text = 'Vous avez une question ?';
+	$contact_button_text = 'Contactez-nous sur Facebook';
+	$contact_url = 'https://m.me/viensetsuismoi.it';
 } else {
+	$learn_text = 'Learn about Jesus';
 	$learn_url = 'https://comefollowme.it/post/438';
-	$contact_url = 'https://m.me/comefollowme.eu';
+	$contact_text = 'Have a Question?';
+	$contact_button_text = 'Contact us on Facebook';
+	$contact_url = 'https://m.me/comefollowme.it';
 }
 
 ?>
@@ -47,7 +56,7 @@ if(CFM_URL == 'https://vienieseguimi.it') {
                 <?php endif; ?>
                 <a href="<?php echo esc_url($learn_url); ?>" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%!important;">                        
 	                <div style="position: absolute; left: 0; top: 30%; right: 0; text-align: center; padding: 30px; color: #fff; z-index: 3; text-shadow: 0px 2px 0px rgba(0,0,0,0.3);">
-	                    <h4 class="title white no-margin"><?php echo 'Learn about Jesus'; ?></h4>                                
+	                    <h4 class="title white no-margin"><?php echo $learn_text; ?></h4>                                
 	                </div>
 				</a>
                 <div class="overlay"></div>
@@ -63,10 +72,10 @@ if(CFM_URL == 'https://vienieseguimi.it') {
                     <?php endif; ?>
                 <a href="<?php echo esc_url($contact_url); ?>" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%!important;">                        
 	                <div style="position: absolute; left: 0; top: 25%; right: 0; text-align: center; padding: 30px; color: #fff; z-index: 3; text-shadow: 0px 2px 0px rgba(0,0,0,0.3);">
-	                    <h2 class="title white no-margin">Have a Question?</h2>                               
+	                    <h2 class="title white no-margin"><?php echo $contact_text; ?></h2>                               
 	                </div>
 	                <span class="epcl-button" style="background-color: #3373dc; position: absolute; left: 15%; right: 15%; width: 70%; height: 40px; line-height: 40px;  bottom: 20px; z-index: 5; text-align: center; vertical-align: middle; padding: 0;">
-	                	Contact us on Facebook
+	                	<?php echo $contact_button_text; ?>
 	                </span>
 				</a>
                 <div class="overlay"></div>
