@@ -29,12 +29,12 @@ if( !empty($epcl_module) && isset($epcl_module['sidebar']) &&  $epcl_module['sid
 	        <?php
 		    if(!in_array(CFM_PATH, array('/', '/contact', '/contact/'))) :
 			    $same_category = epcl_get_option('siblings_posts_category'); 
-			    $prev_post = get_previous_post(true, array(), 'category');
+			    $prev_post = get_adjacent_post(true, array(), true, 'category');
 	            if( !empty($prev_post) ){
 	                $prev_url = get_the_permalink($prev_post->ID);
 	                $prev_thumb = get_the_post_thumbnail_url($prev_post->ID, 'epcl_single_content');
 	            }
-			    $next_post = get_next_post(true, array(), 'category');
+			    $next_post = get_adjacent_post(true, array(), false, 'category');
 	            if( !empty($next_post) ){
 	                $next_url = get_the_permalink($next_post->ID);
 	                $next_thumb = get_the_post_thumbnail_url($next_post->ID, 'epcl_single_content');
