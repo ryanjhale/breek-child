@@ -247,33 +247,39 @@ while(have_posts()): the_post();  ?>
                     <?php endif; ?>
 
                     <div class="clear"></div>
+                    
+                    <?php
+	                if($post_format != 'aside') {
 
-                    <?php if( $epcl_theme['hosted_comments'] == 1 || empty($epcl_theme) ): // Self Hosted ?>
-                        <?php comments_template(); ?>
-                    <?php endif; ?>
-
-                    <?php if( $epcl_theme['hosted_comments'] == 2 && $epcl_theme['disqus_id'] ): // Disqus ?>
-                        <!-- start: disqus integration -->
-                        <div id="comments" class="section bg-white">
-                            <h3 class="title bordered no-margin"><?php esc_html_e('Comments', 'breek'); ?></h3>
-                            <div id="disqus_thread"></div>
-                        </div>
-                        <noscript><?php esc_html_e('Please enable JavaScript to view the', 'breek'); ?> <a href="https://disqus.com/?ref_noscript" rel="nofollow"><?php esc_html_e('comments powered by Disqus.', 'breek'); ?></a></noscript>
-                        <!-- end: disqus integration -->
-                    <?php endif; ?>
-
-                    <?php if( $epcl_theme['hosted_comments'] == 3 ): // Disqus ?>
-                        <!-- start: facebook comments -->
-                        <div id="comments" class="section bg-white">
-                            <h3 class="title bordered no-margin"><?php esc_html_e('Comments', 'breek'); ?></h3>
-                            <div class="clear"></div>
-                            <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
-                        </div>
-                        <!-- end: facebook comments -->
-                        <div id="fb-root"></div>                        
-                    <?php endif; ?>
-
-                    <div class="clear"></div>
+	                    if( $epcl_theme['hosted_comments'] == 1 || empty($epcl_theme) ): // Self Hosted ?>
+	                        <?php comments_template(); ?>
+	                    <?php endif; ?>
+	
+	                    <?php if( $epcl_theme['hosted_comments'] == 2 && $epcl_theme['disqus_id'] ): // Disqus ?>
+	                        <!-- start: disqus integration -->
+	                        <div id="comments" class="section bg-white">
+	                            <h3 class="title bordered no-margin"><?php esc_html_e('Comments', 'breek'); ?></h3>
+	                            <div id="disqus_thread"></div>
+	                        </div>
+	                        <noscript><?php esc_html_e('Please enable JavaScript to view the', 'breek'); ?> <a href="https://disqus.com/?ref_noscript" rel="nofollow"><?php esc_html_e('comments powered by Disqus.', 'breek'); ?></a></noscript>
+	                        <!-- end: disqus integration -->
+	                    <?php endif; ?>
+	
+	                    <?php if( $epcl_theme['hosted_comments'] == 3 ): // Disqus ?>
+	                        <!-- start: facebook comments -->
+	                        <div id="comments" class="section bg-white">
+	                            <h3 class="title bordered no-margin"><?php esc_html_e('Comments', 'breek'); ?></h3>
+	                            <div class="clear"></div>
+	                            <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
+	                        </div>
+	                        <!-- end: facebook comments -->
+	                        <div id="fb-root"></div>                        
+	                    <?php endif; ?>
+	
+	                    <div class="clear"></div>
+                    <?php
+	                }
+	                ?>
                 </div>
                 <!-- end: .content -->
 
