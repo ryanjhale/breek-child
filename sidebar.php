@@ -52,9 +52,11 @@ if( !empty($epcl_module) && isset($epcl_module['sidebar']) &&  $epcl_module['sid
 	                <?php endif; ?>
 	                <a href="<?php echo esc_url($next_url); ?>" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%!important;">                        
 		                <div style="position: absolute; left: 0; top: 20%; right: 0; text-align: center; padding: 30px; color: #fff; z-index: 3; text-shadow: 0px 2px 0px rgba(0,0,0,0.3);">
-		                    <time datetime="<?php echo get_the_time('Y-m-d', $next_post); ?>">
-		                        <?php echo get_the_time( get_option('date_format'), $next_post ); ?>
+		                    <!--
+		                    <time datetime="<?php // echo get_the_time('Y-m-d', $next_post); ?>">
+		                        <?php // echo get_the_time( get_option('date_format'), $next_post ); ?>
 		                    </time>
+		                    -->
 		                    <h4 class="title white no-margin"><?php echo get_the_title($next_post->ID); ?></h4>                                
 		                </div>
 		                <span class="epcl-button red" style="left: auto; right: 20px; width: 80px; height: 40px; line-height: 40px; padding: 0; position: absolute; bottom: 20px; z-index: 5; text-align: center; vertical-align: middle;">
@@ -77,9 +79,11 @@ if( !empty($epcl_module) && isset($epcl_module['sidebar']) &&  $epcl_module['sid
 	                <?php endif; ?>
 	                <a href="<?php echo esc_url($prev_url); ?>" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%!important;">                        
 		                <div style="position: absolute; left: 0; top: 20%; right: 0; text-align: center; padding: 30px; color: #fff; z-index: 3; text-shadow: 0px 2px 0px rgba(0,0,0,0.3);">
-		                    <time datetime="<?php echo get_the_time('Y-m-d', $prev_post); ?>">
-		                        <?php echo get_the_time( get_option('date_format'), $prev_post ); ?>
+		                    <!--
+		                    <time datetime="<?php // echo get_the_time('Y-m-d', $prev_post); ?>">
+		                        <?php // echo get_the_time( get_option('date_format'), $prev_post ); ?>
 		                    </time>
+		                    -->
 		                    <h4 class="title white no-margin"><?php echo get_the_title($prev_post->ID); ?></h4>                                
 		                </div>
 		                <span class="epcl-button red" style="left: 20px; right: auto; width: 80px; height: 40px; line-height: 40px; padding: 0; position: absolute; bottom: 20px; z-index: 5; text-align: center; vertical-align: middle;">
