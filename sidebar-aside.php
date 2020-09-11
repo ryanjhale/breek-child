@@ -68,14 +68,14 @@ if(CFM_URL == 'https://vienieseguimi.it') {
                         <div class="cover lazy" style="position: relative; z-index: 1; min-height: 100%" data-src="https://comefollowme.it/wp-content/uploads/2020/01/Luke-7.webp">
                         </div>
                     <?php else: ?>
-                        <div class="thumb cover" style="background: url('https://comefollowme.it/wp-content/uploads/2020/01/Luke-7.webp');"></div>
+                        <div class="thumb cover" style="background: url('https://comefollowme.it/wp-content/uploads/2020/06/Come-Follow-Me.webp');"></div>
                     <?php endif; ?>
-                <a href="<?php echo esc_url($contact_url); ?>" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%!important;">                        
+                <a href="https://comefollowme.it/post/331" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%!important;">                        
 	                <div style="position: absolute; left: 0; top: 25%; right: 0; text-align: center; padding: 30px; color: #fff; z-index: 3; text-shadow: 0px 2px 0px rgba(0,0,0,0.3);">
-	                    <h2 class="title white no-margin"><?php echo $contact_text; ?></h2>                               
+	                    <h2 class="title white no-margin">Jesus is calling you</h2>                               
 	                </div>
 	                <span class="epcl-button" style="background-color: #3373dc; position: absolute; left: 15%; right: 15%; width: 70%; height: 40px; line-height: 40px;  bottom: 20px; z-index: 5; text-align: center; vertical-align: middle; padding: 0;">
-	                	<?php echo $contact_button_text; ?>
+	                	Start Now
 	                </span>
 				</a>
                 <div class="overlay"></div>
