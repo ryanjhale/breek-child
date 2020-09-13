@@ -28,18 +28,24 @@ if(CFM_URL == 'https://vienieseguimi.it') {
 	$contact_text = 'Hai una domanda?';
 	$contact_button_text = 'Contattaci su Facebook';
 	$contact_url = 'https://m.me/vienieseguimi.it';
+	$calls_text = 'Gesù ti chiama';
+	$calls_button = 'Comincia ora';
 } elseif(CFM_URL == 'https://viensetsuismoi.it') {
 	$learn_text = 'En savoir plus sur Jésus';
 	$learn_url = 'https://viensetsuismoi.it/post/6';
 	$contact_text = 'Vous avez une question ?';
 	$contact_button_text = 'Contactez-nous sur Facebook';
 	$contact_url = 'https://m.me/viensetsuismoi.it';
+	$calls_text = 'Jésus vous appelle';
+	$calls_button = 'Commencer maintenant';
 } else {
 	$learn_text = 'Learn about Jesus';
 	$learn_url = 'https://comefollowme.it/post/438';
 	$contact_text = 'Have a Question?';
 	$contact_button_text = 'Contact us on Facebook';
 	$contact_url = 'https://m.me/comefollowme.it';
+	$calls_text = 'Jesus is calling you';
+	$calls_button = 'Start Now';
 }
 
 ?>
@@ -72,10 +78,10 @@ if(CFM_URL == 'https://vienieseguimi.it') {
                     <?php endif; ?>
                 <a href="https://comefollowme.it/post/331" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%!important;">                        
 	                <div style="position: absolute; left: 0; top: 25%; right: 0; text-align: center; padding: 30px; color: #fff; z-index: 3; text-shadow: 0px 2px 0px rgba(0,0,0,0.3);">
-	                    <h2 class="title white no-margin">Jesus is calling you</h2>                               
+	                    <h2 class="title white no-margin"><?php echo $calls_text; ?></h2>                               
 	                </div>
 	                <span class="epcl-button" style="background-color: #3373dc; position: absolute; left: 15%; right: 15%; width: 70%; height: 40px; line-height: 40px;  bottom: 20px; z-index: 5; text-align: center; vertical-align: middle; padding: 0;">
-	                	Start Now
+	                	<?php echo $calls_button; ?>
 	                </span>
 				</a>
                 <div class="overlay"></div>
