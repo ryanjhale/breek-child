@@ -41,26 +41,26 @@ $author_name = get_the_author();
         <?php if( empty($epcl_theme) || $epcl_theme['single_enable_meta_data'] !== '0' ): ?>                       
             <time class="meta-info" datetime="<?php the_time('Y-m-d'); ?>"><i class="remixicon remixicon-calendar-line"></i> <?php the_time( get_option('date_format') ); ?></time>
 			
-			<?php if( isset($english_url) ): ?>
+			<?php if( !empty($english_url) ): ?>
                 <span class="english meta-info" title="English">
                     <a href="<?php echo esc_url($english_url); ?>">
-                    	<span class="meta-info" style="background-image: url('/wp-content/themes/breek-child/assets/images/uk.png');"></span> English
+                    	<img class="meta-info" src="/wp-content/themes/breek-child/assets/images/uk.png"> English
                     </a>
                 </span>
             <?php endif; ?>
             
-            <?php if( isset($italian_url) ): ?>
+            <?php if( !empty($italian_url) ): ?>
                 <span class="italian meta-info" title="Italiano">
                     <a href="<?php echo esc_url($italian_url); ?>">
-                    	<span class="meta-info" style="background-image: url('/wp-content/themes/breek-child/assets/images/italy.png');"></span> Italiano
+                    	<img class="meta-info" src="/wp-content/themes/breek-child/assets/images/italy.png"> Italiano
                     </a>
                 </span>
             <?php endif; ?>
             
-            <?php if( isset($french_url) ): ?>
+            <?php if( !empty($french_url) ): ?>
                 <span class="french meta-info" title="Français">
                     <a href="<?php echo esc_url($french_url); ?>">
-                    	<span class="meta-info" style="background-image: url('/wp-content/themes/breek-child/assets/images/france.png');"></span> Français
+	                    <img class="meta-info" src="/wp-content/themes/breek-child/assets/images/france.png"> Français
                     </a>
                 </span>
             <?php endif; ?>
