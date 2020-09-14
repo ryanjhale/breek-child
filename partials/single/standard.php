@@ -44,7 +44,7 @@ $author_name = get_the_author();
 			<?php if( !empty($english_url) ): ?>
                 <span class="english meta-info" title="English">
                     <a href="<?php echo esc_url($english_url); ?>">
-                    	<img style="vertical-align: text-bottom;" src="/wp-content/themes/breek-child/assets/images/uk.png">&nbsp;English
+                    	<img style="vertical-align: middle; margin-right: 5px;" src="/wp-content/themes/breek-child/assets/images/uk.png">&nbsp;English
                     </a>
                 </span>
             <?php endif; ?>
@@ -52,7 +52,7 @@ $author_name = get_the_author();
             <?php if( !empty($italian_url) ): ?>
                 <span class="italian meta-info" title="Italiano">
                     <a href="<?php echo esc_url($italian_url); ?>">
-                    	<img style="vertical-align: text-bottom;" src="/wp-content/themes/breek-child/assets/images/italy.png">&nbsp;Italiano
+                    	<img style="vertical-align: middle; margin-right: 5px;" src="/wp-content/themes/breek-child/assets/images/italy.png">&nbsp;Italiano
                     </a>
                 </span>
             <?php endif; ?>
@@ -60,7 +60,7 @@ $author_name = get_the_author();
             <?php if( !empty($french_url) ): ?>
                 <span class="french meta-info" title="Français">
                     <a href="<?php echo esc_url($french_url); ?>">
-	                    <img style="vertical-align: text-bottom;" src="/wp-content/themes/breek-child/assets/images/france.png">&nbsp;Français
+	                    <img style="vertical-align: middle; margin-right: 5px;" src="/wp-content/themes/breek-child/assets/images/france.png">&nbsp;Français
                     </a>
                 </span>
             <?php endif; ?>
