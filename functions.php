@@ -314,6 +314,7 @@ define('CFM_URL', $url);
 $path = strtok($_SERVER["REQUEST_URI"],'?');
 define('CFM_PATH', $path);
 
+/*
 add_filter('template_redirect', 'cfm_redirect');
 
 function cfm_redirect() {
@@ -334,6 +335,7 @@ function cfm_redirect() {
 
 
 }
+*/
 
 
 /**
@@ -456,6 +458,48 @@ acf_add_local_field_group( array(
 				'param' => 'post_format',
 				'operator' => '==',
 				'value' => 'aside',
+			),
+		),
+	)
+));
+
+// Translation for posts
+acf_add_local_field_group( array(
+	'key' => 'translation',
+	'title' => esc_html__('Translation', 'epcl_framework'),
+	'fields' => array (
+		array (
+			'key' => $prefix_key.'english_url',
+			'name' => 'english_url',
+			'label' => esc_html__('English URL', 'epcl_framework'),
+			'instructions' => '',
+            'type' => 'url',
+        ),
+        array (
+			'key' => $prefix_key.'italian_url',
+			'name' => 'italian_url',
+			'label' => esc_html__('Italian URL', 'epcl_framework'),
+			'instructions' => '',
+            'type' => 'url',
+        ),
+        array (
+			'key' => $prefix_key.'french_url',
+			'name' => 'french_url',
+			'label' => esc_html__('French URL', 'epcl_framework'),
+			'instructions' => '',
+            'type' => 'url',
+        ),
+
+	),
+	'menu_order' => 0,
+	'label_placement' => 'left',
+	'instruction_placement' => 'label',
+	'location' => array (
+		array (
+			array (
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'post',
 			),
 		),
 	)

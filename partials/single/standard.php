@@ -9,6 +9,9 @@ if( function_exists('get_field') && function_exists('get_fields') ){
     $fields = get_fields();
     $views = get_field('views_counter');
     $post_style = get_field('style');
+    $english_url = get_field('english_url');
+    $italian_url = get_field('italian_url');
+    $french_url = get_field('french_url');
     if( $post_style === '' ) $post_style = 'standard';
 }
 // Author information
@@ -22,7 +25,7 @@ $author_name = get_the_author();
 ?>
 <header>
 
-    <?php echo cfm_display_post_format( $post_format, $post_id ); ?>
+    <?php echo cfm_display_post_format( $post_format, $post_id ); // Don't remove this function.  Found in functions.php ?>
 
     <!-- start: .meta -->
     <div class="meta">
@@ -37,7 +40,25 @@ $author_name = get_the_author();
 
         <?php if( empty($epcl_theme) || $epcl_theme['single_enable_meta_data'] !== '0' ): ?>                       
             <time class="meta-info" datetime="<?php the_time('Y-m-d'); ?>"><i class="remixicon remixicon-calendar-line"></i> <?php the_time( get_option('date_format') ); ?></time>
-
+			
+			<?php if( isset($english_url) ): ?>
+                <span class="english meta-info" title="English">
+                    <span class="meta-info" style="background-image: url('/wp-content/themes/breek-child/assets/images/uk.png');"></span> English
+                </span>
+            <?php endif; ?>
+            
+            <?php if( isset($italian_url) ): ?>
+                <span class="italian meta-info" title="Italiano">
+                    <span class="meta-info" style="background-image: url('/wp-content/themes/breek-child/assets/images/italy.png');"></span> Italiano
+                </span>
+            <?php endif; ?>
+            
+            <?php if( isset($french_url) ): ?>
+                <span class="french meta-info" title="Français">
+                    <span class="meta-info" style="background-image: url('/wp-content/themes/breek-child/assets/images/france.png');"></span> Français
+                </span>
+            <?php endif; ?>
+            
             <?php if( isset($epcl_theme['enable_global_views']) && $epcl_theme['enable_global_views'] === '1' ): ?>
                 <span class="views-counter meta-info" title="<?php esc_attr_e('Views', 'breek'); ?>">
                     <i class="remixicon remixicon-fire-line"></i> <?php echo absint( $views ); ?>
