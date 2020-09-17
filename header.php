@@ -6,7 +6,9 @@
 	<?php // include 'mailchimp.php'; ?>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-    <?php echo '<link rel="preload" href=“' . CFM_URL . '/wp-content/plugins/atomic-blocks/dist/assets/fontawesome/webfonts/fa-regular-400.woff2" as="style">'; ?>	    
+    <?php echo '<link rel="preload" href=“' . CFM_URL . '/wp-content/plugins/atomic-blocks/dist/assets/fontawesome/webfonts/fa-regular-400.woff2" as="style">'; ?>
+    <?php echo '<link rel="preload" href=“' . CFM_URL . '/wp-content/themes/breek/assets/fonts/remixicon.woff2?t=1556503613854" as="style">'; ?>
+    <?php echo '<link rel="preload" href=“' . CFM_URL . '/wp-content/themes/breek/assets/fonts/fontawesome-webfont.woff2?v=4.7.0" as="style">'; ?>	    
     <?php if ( ! ( function_exists( 'has_site_icon' ) && has_site_icon() ) ): ?>
         <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.png" />
     <?php endif; ?>
