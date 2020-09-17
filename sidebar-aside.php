@@ -79,7 +79,7 @@ if(CFM_URL == 'https://vienieseguimi.it') {
                     <?php else: ?>
                         <div class="thumb cover" style="background: url('https://comefollowme.it/wp-content/uploads/2020/06/Come-Follow-Me.webp');"></div>
                     <?php endif; ?>
-                <a href="<?php esc_url($calls_link); ?>" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%!important;">                        
+                <a href="<?php echo esc_url($calls_link); ?>" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%!important;">                        
 	                <div style="position: absolute; left: 0; top: 25%; right: 0; text-align: center; padding: 30px; color: #fff; z-index: 3; text-shadow: 0px 2px 0px rgba(0,0,0,0.3);">
 	                    <h2 class="title white no-margin"><?php echo $calls_text; ?></h2>                               
 	                </div>
