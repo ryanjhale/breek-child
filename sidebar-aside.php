@@ -30,6 +30,7 @@ if(CFM_URL == 'https://vienieseguimi.it') {
 	$contact_url = 'https://m.me/vienieseguimi.it';
 	$calls_text = 'Gesù ti chiama';
 	$calls_button = 'Comincia ora';
+	$calls_link = 'https://viensetsuismoi.it/post/61';
 } elseif(CFM_URL == 'https://viensetsuismoi.it') {
 	$learn_text = 'En savoir plus sur Jésus';
 	$learn_url = 'https://viensetsuismoi.it/post/6';
@@ -38,6 +39,7 @@ if(CFM_URL == 'https://vienieseguimi.it') {
 	$contact_url = 'https://m.me/viensetsuismoi.it';
 	$calls_text = 'Jésus vous appelle';
 	$calls_button = 'Commencer maintenant';
+	$calls_link = 'https://vienieseguimi.it/post/93';
 } else {
 	$learn_text = 'Learn about Jesus';
 	$learn_url = 'https://comefollowme.it/post/438';
@@ -46,6 +48,7 @@ if(CFM_URL == 'https://vienieseguimi.it') {
 	$contact_url = 'https://m.me/comefollowme.it';
 	$calls_text = 'Jesus is calling you';
 	$calls_button = 'Start Now';
+	$calls_link = 'https://comefollowme.it/post/331';
 }
 
 ?>
@@ -76,7 +79,7 @@ if(CFM_URL == 'https://vienieseguimi.it') {
                     <?php else: ?>
                         <div class="thumb cover" style="background: url('https://comefollowme.it/wp-content/uploads/2020/06/Come-Follow-Me.webp');"></div>
                     <?php endif; ?>
-                <a href="https://comefollowme.it/post/331" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%!important;">                        
+                <a href="<?php esc_url($calls_link); ?>" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%!important;">                        
 	                <div style="position: absolute; left: 0; top: 25%; right: 0; text-align: center; padding: 30px; color: #fff; z-index: 3; text-shadow: 0px 2px 0px rgba(0,0,0,0.3);">
 	                    <h2 class="title white no-margin"><?php echo $calls_text; ?></h2>                               
 	                </div>
