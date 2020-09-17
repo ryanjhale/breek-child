@@ -30,7 +30,7 @@ if(CFM_URL == 'https://vienieseguimi.it') {
 	$contact_url = 'https://m.me/vienieseguimi.it';
 	$calls_text = 'Gesù ti chiama';
 	$calls_button = 'Comincia ora';
-	$calls_link = 'https://viensetsuismoi.it/post/61';
+	$calls_link = 'https://vienieseguimi.it/post/93';
 } elseif(CFM_URL == 'https://viensetsuismoi.it') {
 	$learn_text = 'En savoir plus sur Jésus';
 	$learn_url = 'https://viensetsuismoi.it/post/6';
@@ -39,7 +39,7 @@ if(CFM_URL == 'https://vienieseguimi.it') {
 	$contact_url = 'https://m.me/viensetsuismoi.it';
 	$calls_text = 'Jésus vous appelle';
 	$calls_button = 'Commencer maintenant';
-	$calls_link = 'https://vienieseguimi.it/post/93';
+	$calls_link = 'https://viensetsuismoi.it/post/61';
 } else {
 	$learn_text = 'Learn about Jesus';
 	$learn_url = 'https://comefollowme.it/post/438';
