@@ -134,6 +134,7 @@ if(isset($_REQUEST['source'])) {
 		<!-- End Facebook Pixel Code -->
 		<?php
 	}
+}
 /*
 if(CFM_URL == 'https://comefollowme.it') {
 	?>
