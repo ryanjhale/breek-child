@@ -39,6 +39,7 @@ $author_name = get_the_author();
         <?php endif; ?>    
 
         <?php if( empty($epcl_theme) || $epcl_theme['single_enable_meta_data'] !== '0' ): ?>                       
+            
             <time class="meta-info" datetime="<?php the_time('Y-m-d'); ?>"><i class="remixicon remixicon-calendar-line"></i> <?php the_time( get_option('date_format') ); ?></time>
 			
 			<?php if( !empty($english_url) ): ?>

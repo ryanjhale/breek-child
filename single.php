@@ -207,9 +207,11 @@ while(have_posts()): the_post();  ?>
                                     <?php endif; ?>
                                     <a href="<?php echo esc_url($prev_url); ?>" class="full-link"></a>                              
                                     <div class="info">
+                                        <!--
                                         <time datetime="<?php echo get_the_time('Y-m-d', $prev_post); ?>">
-                                            <?php echo get_the_time( get_option('date_format'), $prev_post ); ?>
+                                            <?php // echo get_the_time( get_option('date_format'), $prev_post ); ?>
                                         </time>
+                                        -->
                                         <h4 class="title white no-margin"><?php echo get_the_title($prev_post->ID); ?></h4>
                                     </div>                                
                                     <span class="epcl-button red"><img src="<?php echo EPCL_THEMEPATH; ?>/assets/images/left-arrow.svg" width="15" alt="<?php esc_attr_e('Left Arrow', 'breek'); ?>"></span>
@@ -235,9 +237,11 @@ while(have_posts()): the_post();  ?>
                                     <?php endif; ?>
                                     <a href="<?php echo esc_url($next_url); ?>" class="full-link"></a>                            
                                     <div class="info">
+                                        <!--
                                         <time datetime="<?php echo get_the_time('Y-m-d', $next_post); ?>">
-                                            <?php echo get_the_time( get_option('date_format'), $next_post ); ?>
+                                            <?php // echo get_the_time( get_option('date_format'), $next_post ); ?>
                                         </time>
+										-->
                                         <h4 class="title white no-margin"><?php echo get_the_title($next_post->ID); ?></h4>                                
                                     </div>
                                     <span class="epcl-button red"><img src="<?php echo EPCL_THEMEPATH; ?>/assets/images/right-arrow.svg" width="15" alt="<?php esc_attr_e('Right Arrow', 'breek'); ?>"></span>
