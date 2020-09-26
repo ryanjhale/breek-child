@@ -1,7 +1,7 @@
 <?php
-if(isset($_REQUEST['source'])) {
+if(isset($_REQUEST['utm_source'])) {
 	
-	if($_REQUEST['source'] == 'comefollowme') {
+	if($_REQUEST['utm_source'] == 'comefollowme') {
 		?>
 		<!-- Facebook Pixel Code -->
 		<script>
@@ -23,7 +23,7 @@ if(isset($_REQUEST['source'])) {
 		<?php
 	}
 	
-	if($_REQUEST['source'] == 'vienieseguimi') {
+	if($_REQUEST['utm_source'] == 'vienieseguimi') {
 		?>
 		<!-- Facebook Pixel Code -->
 		<script>
@@ -45,7 +45,7 @@ if(isset($_REQUEST['source'])) {
 		<?php
 	}
 	
-	if($_REQUEST['source'] == 'viensetsuismoi') {
+	if($_REQUEST['utm_source'] == 'viensetsuismoi') {
 		?>
 		<!-- Facebook Pixel Code -->
 		<script>
