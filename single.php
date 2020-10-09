@@ -290,6 +290,18 @@ while(have_posts()): the_post();  ?>
                 </div>
                 <!-- end: .content -->
 
+                <?php get_sidebar(); ?>
+<?php /*
+                if($post_format == 'aside') {
+					get_sidebar('aside');
+				} else {
+					if( $enable_sidebar !== false ){
+	                    
+	                }
+				}
+				*/
+                ?>
+
             </div>
             <!-- end: .epcl-page-wrapper -->            
         
