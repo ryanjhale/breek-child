@@ -12,7 +12,7 @@ $sidebar_name = 'epcl_sidebar_default';
 
 $sidebar_class = '';
 if( epcl_get_option('enable_mobile_sidebar') == false || epcl_get_option('mobile_sidebar') ){
-	$sidebar_class = 'no-sidebar';
+	// $sidebar_class = 'no-sidebar';
 }
 if( function_exists('get_field') ){
     if( get_field('sidebar') != '' ) $sidebar_name = get_field('sidebar');
