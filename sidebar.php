@@ -27,7 +27,7 @@ if( !empty($epcl_module) && isset($epcl_module['sidebar']) &&  $epcl_module['sid
     $sidebar_name = $epcl_module['sidebar'];
 }
 ?>
-<?php if( is_active_sidebar( $sidebar_name ) ): ?>
+<?php // if( is_active_sidebar( $sidebar_name ) ): ?>
     <!-- start: #sidebar -->
     <aside id="sidebar" class="grid-30 np-mobile <?php echo esc_attr($sidebar_class); ?>">
         <div class="default-sidebar">
@@ -177,4 +177,4 @@ if( !empty($epcl_module) && isset($epcl_module['sidebar']) &&  $epcl_module['sid
         <?php endif; ?>
     </aside>
     <!-- end: #sidebar -->
-<?php endif; ?>
+<?php // endif; ?>
