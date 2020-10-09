@@ -4,8 +4,6 @@ global $post;
 $post_id = $post->ID;
 $post_format = get_post_format($post_id);	
 
-echo 'Post format is ' . $post_format;
-
 $epcl_theme = epcl_get_theme_options();
 $epcl_module = epcl_get_module_options();
 
