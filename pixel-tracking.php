@@ -21,6 +21,17 @@ if(!is_user_logged_in()) {
 			src="https://www.facebook.com/tr?id=1369917960065599&ev=PageView&noscript=1"
 			/></noscript>
 			<!-- End Facebook Pixel Code -->
+			
+			<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165691891-4"></script>
+			<script>
+			  window.dataLayer = window.dataLayer || [];
+			  function gtag(){dataLayer.push(arguments);}
+			  gtag('js', new Date());
+			
+			  gtag('config', 'UA-165691891-4');
+			</script>
+			<!-- End Google Analytics -->
 			<?php
 		}
 		
@@ -43,6 +54,17 @@ if(!is_user_logged_in()) {
 			src="https://www.facebook.com/tr?id=271742514245706&ev=PageView&noscript=1"
 			/></noscript>
 			<!-- End Facebook Pixel Code -->
+			
+			<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165691891-5"></script>
+			<script>
+			  window.dataLayer = window.dataLayer || [];
+			  function gtag(){dataLayer.push(arguments);}
+			  gtag('js', new Date());
+			
+			  gtag('config', 'UA-165691891-5');
+			</script>
+			<!-- End Google Analytics -->
 			<?php
 		}
 		
@@ -65,6 +87,17 @@ if(!is_user_logged_in()) {
 			src="https://www.facebook.com/tr?id=721935858565898&ev=PageView&noscript=1"
 			/></noscript>
 			<!-- End Facebook Pixel Code -->
+			
+			<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165691891-6"></script>
+			<script>
+			  window.dataLayer = window.dataLayer || [];
+			  function gtag(){dataLayer.push(arguments);}
+			  gtag('js', new Date());
+			
+			  gtag('config', 'UA-165691891-6');
+			</script>
+			<!-- End Google Analytics -->
 			<?php
 		}
 		
@@ -89,6 +122,17 @@ if(!is_user_logged_in()) {
 			src="https://www.facebook.com/tr?id=1369917960065599&ev=PageView&noscript=1"
 			/></noscript>
 			<!-- End Facebook Pixel Code -->
+			
+			<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165691891-4"></script>
+			<script>
+			  window.dataLayer = window.dataLayer || [];
+			  function gtag(){dataLayer.push(arguments);}
+			  gtag('js', new Date());
+			
+			  gtag('config', 'UA-165691891-4');
+			</script>
+			<!-- End Google Analytics -->
 			<?php
 		} 
 	
@@ -111,6 +155,17 @@ if(!is_user_logged_in()) {
 			src="https://www.facebook.com/tr?id=271742514245706&ev=PageView&noscript=1"
 			/></noscript>
 			<!-- End Facebook Pixel Code -->
+			
+			<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165691891-5"></script>
+			<script>
+			  window.dataLayer = window.dataLayer || [];
+			  function gtag(){dataLayer.push(arguments);}
+			  gtag('js', new Date());
+			
+			  gtag('config', 'UA-165691891-5');
+			</script>
+			<!-- End Google Analytics -->
 			<?php
 		}
 	
@@ -133,6 +188,17 @@ if(!is_user_logged_in()) {
 			src="https://www.facebook.com/tr?id=721935858565898&ev=PageView&noscript=1"
 			/></noscript>
 			<!-- End Facebook Pixel Code -->
+			
+			<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165691891-6"></script>
+			<script>
+			  window.dataLayer = window.dataLayer || [];
+			  function gtag(){dataLayer.push(arguments);}
+			  gtag('js', new Date());
+			
+			  gtag('config', 'UA-165691891-6');
+			</script>
+	<!-- End Google Analytics -->
 			<?php
 		}
 	}
