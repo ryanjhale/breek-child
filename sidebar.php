@@ -42,6 +42,8 @@ if( !empty($epcl_module) && isset($epcl_module['sidebar']) &&  $epcl_module['sid
 					$calls_text = 'Gesù ti chiama';
 					$calls_button = 'Comincia ora';
 					$calls_link = 'https://vienieseguimi.it/post/93';
+					$next_button_text = 'Next';
+					$previous_button_text = 'Previous';
 				} elseif(CFM_URL == 'https://viensetsuismoi.it') {
 					$learn_text = 'En savoir plus sur Jésus';
 					$learn_url = 'https://viensetsuismoi.it/post/6';
@@ -51,6 +53,8 @@ if( !empty($epcl_module) && isset($epcl_module['sidebar']) &&  $epcl_module['sid
 					$calls_text = 'Jésus vous appelle';
 					$calls_button = 'Commencer maintenant';
 					$calls_link = 'https://viensetsuismoi.it/post/61';
+					$next_button_text = 'Suivant';
+					$previous_button_text = 'Précédent';
 				} else {
 					$learn_text = 'Learn about Jesus';
 					$learn_url = 'https://comefollowme.it/post/438';
@@ -60,6 +64,8 @@ if( !empty($epcl_module) && isset($epcl_module['sidebar']) &&  $epcl_module['sid
 					$calls_text = 'Jesus is calling you';
 					$calls_button = 'Start Now';
 					$calls_link = 'https://comefollowme.it/post/331';
+					$next_button_text = 'Avanti';
+					$previous_button_text = 'Precedente';
 				}
 				?>
 				
@@ -133,7 +139,8 @@ if( !empty($epcl_module) && isset($epcl_module['sidebar']) &&  $epcl_module['sid
 		                    -->
 		                    <h4 class="title white no-margin"><?php echo get_the_title($next_post->ID); ?></h4>                                
 		                </div>
-		                <span class="epcl-button red" style="left: auto; right: 20px; width: 80px; height: 40px; line-height: 40px; padding: 0; position: absolute; bottom: 20px; z-index: 5; text-align: center; vertical-align: middle;">
+		                <span class="epcl-button red" style="left: auto; right: 20px; width: 150px; height: 40px; line-height: 40px; padding: 0; position: absolute; bottom: 20px; z-index: 5; text-align: center; vertical-align: middle;">
+		                	<?php echo $next_button_text; ?>
 		                	<img src="<?php echo EPCL_THEMEPATH; ?>/assets/images/right-arrow.svg" width="15" style="vertical-align: middle;" alt="<?php esc_attr_e('Right Arrow', 'breek'); ?>">
 		                </span>
 					</a>
@@ -162,6 +169,7 @@ if( !empty($epcl_module) && isset($epcl_module['sidebar']) &&  $epcl_module['sid
 		                </div>
 		                <span class="epcl-button red" style="left: 20px; right: auto; width: 80px; height: 40px; line-height: 40px; padding: 0; position: absolute; bottom: 20px; z-index: 5; text-align: center; vertical-align: middle;">
 		                	<img src="<?php echo EPCL_THEMEPATH; ?>/assets/images/left-arrow.svg" width="15" style="vertical-align: middle;" alt="<?php esc_attr_e('Left Arrow', 'breek'); ?>">
+		                	<?php echo $previous_button_text; ?>
 		                </span>
 					</a>
 	                <div class="overlay"></div>
