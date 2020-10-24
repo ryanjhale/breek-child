@@ -44,17 +44,17 @@ $author_name = get_the_author();
             	<i class="remixicon remixicon-calendar-line"></i> 
 	            <?php 
 				if(CFM_URL == 'https://comefollowme.it') {
-					setlocale(LC_TIME, 'en_US');
+					setlocale(LC_TIME, 'en_US.utf8');
 					the_time('F j, Y');
 				} 
 			
 				if(CFM_URL == 'https://vienieseguimi.it') {
-					setlocale(LC_TIME, 'it_IT.UTF8');
+					setlocale(LC_TIME, 'it_IT.utf8');
 					the_time('j F Y');
 				}
 			
 				if(CFM_URL == 'https://viensetsuismoi.it') {
-					setlocale(LC_TIME, 'fr_FR.UTF8');
+					setlocale(LC_TIME, 'fr_FR.utf8');
 					the_time('j F Y');
 				}
 				?>
