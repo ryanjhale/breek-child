@@ -4,13 +4,6 @@ $post_id = $post->ID;
 $post_format = get_post_format($post_id);
 
 get_header();
-/*
-if($post_format == 'aside') {
-	get_header('landing');
-} else {
-	get_header();
-}
-*/
 
 while(have_posts()): the_post();  ?>
     <?php
