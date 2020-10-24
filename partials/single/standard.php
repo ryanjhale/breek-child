@@ -89,18 +89,6 @@ $author_name = get_the_author();
                     <i class="remixicon remixicon-fire-line"></i> <?php echo absint( $views ); ?>
                 </span>
             <?php endif; ?>
-            
-            <a href="#comments" class="comments tooltip" title="<?php esc_attr_e('Go to comments', 'breek'); ?>">
-                <i class="remixicon remixicon-chat-1-line fa-flip-horizontal"></i>
-                <?php if($epcl_theme['hosted_comments'] == 1 || empty($epcl_theme) ): ?>
-                    <span class="comment-count"><?php echo get_comments_number($post->ID); ?></span>
-                    <!-- <span class="comment-text hide-on-mobile"><?php printf( _n( 'Comment', 'Comments', get_comments_number($post->ID), 'breek'), get_comments_number($post->ID) ); ?></span> -->
-                <?php elseif( $epcl_theme['hosted_comments'] == 3 ): // Facebook commments ?>
-                    <span class="fb-comments-count" data-href="<?php the_permalink(); ?>">0</span>
-                <?php else: ?>
-                    <span class="disqus-comment-count" data-disqus-url="<?php the_permalink(); ?>" data-disqus-identifier="<?php the_ID(); ?>">0</span>
-                <?php endif; ?>
-            </a>   
         <?php endif; ?>
 
         <div class="clear"></div>
