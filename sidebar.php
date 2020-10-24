@@ -32,41 +32,42 @@ if( !empty($epcl_module) && isset($epcl_module['sidebar']) &&  $epcl_module['sid
     <aside id="sidebar" class="grid-30 np-mobile <?php echo esc_attr($sidebar_class); ?>">
         <div class="default-sidebar">
 	        <?php
+		    if(CFM_URL == 'https://vienieseguimi.it') {
+				$learn_text = 'Conoscere Gesù';
+				$learn_url = 'https://vienieseguimi.it/post/8';
+				$contact_text = 'Hai una domanda?';
+				$contact_button_text = 'Contattaci su Facebook';
+				$contact_url = 'https://m.me/vienieseguimi.it';
+				$calls_text = 'Gesù ti chiama';
+				$calls_button = 'Comincia ora';
+				$calls_link = 'https://vienieseguimi.it/post/93';
+				$next_button_text = 'Next';
+				$previous_button_text = 'Previous';
+			} elseif(CFM_URL == 'https://viensetsuismoi.it') {
+				$learn_text = 'En savoir plus sur Jésus';
+				$learn_url = 'https://viensetsuismoi.it/post/6';
+				$contact_text = 'Vous avez une question ?';
+				$contact_button_text = 'Contactez-nous sur Facebook';
+				$contact_url = 'https://m.me/viensetsuismoi.it';
+				$calls_text = 'Jésus vous appelle';
+				$calls_button = 'Commencer maintenant';
+				$calls_link = 'https://viensetsuismoi.it/post/61';
+				$next_button_text = 'Suivant';
+				$previous_button_text = 'Précédent';
+			} else {
+				$learn_text = 'Learn about Jesus';
+				$learn_url = 'https://comefollowme.it/post/438';
+				$contact_text = 'Have a Question?';
+				$contact_button_text = 'Contact us on Facebook';
+				$contact_url = 'https://m.me/comefollowme.it';
+				$calls_text = 'Jesus is calling you';
+				$calls_button = 'Start Now';
+				$calls_link = 'https://comefollowme.it/post/331';
+				$next_button_text = 'Avanti';
+				$previous_button_text = 'Precedente';
+			}
 			if($post_format == 'aside') {
-				if(CFM_URL == 'https://vienieseguimi.it') {
-					$learn_text = 'Conoscere Gesù';
-					$learn_url = 'https://vienieseguimi.it/post/8';
-					$contact_text = 'Hai una domanda?';
-					$contact_button_text = 'Contattaci su Facebook';
-					$contact_url = 'https://m.me/vienieseguimi.it';
-					$calls_text = 'Gesù ti chiama';
-					$calls_button = 'Comincia ora';
-					$calls_link = 'https://vienieseguimi.it/post/93';
-					$next_button_text = 'Next';
-					$previous_button_text = 'Previous';
-				} elseif(CFM_URL == 'https://viensetsuismoi.it') {
-					$learn_text = 'En savoir plus sur Jésus';
-					$learn_url = 'https://viensetsuismoi.it/post/6';
-					$contact_text = 'Vous avez une question ?';
-					$contact_button_text = 'Contactez-nous sur Facebook';
-					$contact_url = 'https://m.me/viensetsuismoi.it';
-					$calls_text = 'Jésus vous appelle';
-					$calls_button = 'Commencer maintenant';
-					$calls_link = 'https://viensetsuismoi.it/post/61';
-					$next_button_text = 'Suivant';
-					$previous_button_text = 'Précédent';
-				} else {
-					$learn_text = 'Learn about Jesus';
-					$learn_url = 'https://comefollowme.it/post/438';
-					$contact_text = 'Have a Question?';
-					$contact_button_text = 'Contact us on Facebook';
-					$contact_url = 'https://m.me/comefollowme.it';
-					$calls_text = 'Jesus is calling you';
-					$calls_button = 'Start Now';
-					$calls_link = 'https://comefollowme.it/post/331';
-					$next_button_text = 'Avanti';
-					$previous_button_text = 'Precedente';
-				}
+				
 				?>
 				
 				<section id="next-post" class="widget_next_post" style="position: relative; z-index: 1; height: 275px; background: #111; overflow: hidden; border-radius: 15px; margin-bottom: 30px;">
@@ -167,7 +168,7 @@ if( !empty($epcl_module) && isset($epcl_module['sidebar']) &&  $epcl_module['sid
 		                    -->
 		                    <h4 class="title white no-margin"><?php echo get_the_title($prev_post->ID); ?></h4>                                
 		                </div>
-		                <span class="epcl-button red" style="left: 20px; right: auto; width: 80px; height: 40px; line-height: 40px; padding: 0; position: absolute; bottom: 20px; z-index: 5; text-align: center; vertical-align: middle;">
+		                <span class="epcl-button red" style="left: 20px; right: auto; width: 150px; height: 40px; line-height: 40px; padding: 0; position: absolute; bottom: 20px; z-index: 5; text-align: center; vertical-align: middle;">
 		                	<img src="<?php echo EPCL_THEMEPATH; ?>/assets/images/left-arrow.svg" width="15" style="vertical-align: middle;" alt="<?php esc_attr_e('Left Arrow', 'breek'); ?>">
 		                	<?php echo $previous_button_text; ?>
 		                </span>
