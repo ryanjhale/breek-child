@@ -41,8 +41,8 @@ if( !empty($epcl_module) && isset($epcl_module['sidebar']) &&  $epcl_module['sid
 				$calls_text = 'Gesù ti chiama';
 				$calls_button = 'Comincia ora';
 				$calls_link = 'https://vienieseguimi.it/post/93';
-				$next_button_text = 'Next';
-				$previous_button_text = 'Previous';
+				$next_button_text = 'Avanti';
+				$previous_button_text = 'Precedente';
 			} elseif(CFM_URL == 'https://viensetsuismoi.it') {
 				$learn_text = 'En savoir plus sur Jésus';
 				$learn_url = 'https://viensetsuismoi.it/post/6';
@@ -63,8 +63,8 @@ if( !empty($epcl_module) && isset($epcl_module['sidebar']) &&  $epcl_module['sid
 				$calls_text = 'Jesus is calling you';
 				$calls_button = 'Start Now';
 				$calls_link = 'https://comefollowme.it/post/331';
-				$next_button_text = 'Avanti';
-				$previous_button_text = 'Precedente';
+				$next_button_text = 'Next';
+				$previous_button_text = 'Previous';
 			}
 			if($post_format == 'aside') {
 				
