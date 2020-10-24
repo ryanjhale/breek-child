@@ -1,17 +1,4 @@
 <?php $epcl_theme = epcl_get_theme_options(); ?>
-<?php
-	if(CFM_URL == 'https://comefollowme.it') {
-		setlocale(LC_TIME, 'en_US');
-	} 
-
-	if(CFM_URL == 'https://vienieseguimi.it') {
-		setlocale(LC_TIME, 'it_IT');
-	}
-
-	if(CFM_URL == 'https://viensetsuismoi.it') {
-		setlocale(LC_TIME, 'fr_FR');
-	}
-?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>

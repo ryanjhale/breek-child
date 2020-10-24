@@ -40,7 +40,25 @@ $author_name = get_the_author();
 
         <?php if( empty($epcl_theme) || $epcl_theme['single_enable_meta_data'] !== '0' ): ?>                       
             
-            <time class="meta-info" datetime="<?php the_time('Y-m-d'); ?>"><i class="remixicon remixicon-calendar-line"></i> <?php the_time( get_option('date_format') ); ?></time>
+            <time class="meta-info" datetime="<?php the_time('Y-m-d'); ?>">
+            	<i class="remixicon remixicon-calendar-line"></i> 
+	            <?php 
+				if(CFM_URL == 'https://comefollowme.it') {
+					setlocale(LC_TIME, 'en_US');
+					the_time('F j, Y');
+				} 
+			
+				if(CFM_URL == 'https://vienieseguimi.it') {
+					setlocale(LC_TIME, 'it_IT');
+					the_time('j F Y');
+				}
+			
+				if(CFM_URL == 'https://viensetsuismoi.it') {
+					setlocale(LC_TIME, 'fr_FR');
+					the_time('j F Y');
+				}
+				?>
+	        </time>
 			
 			<?php if( !empty($english_url) ): ?>
                 <span class="english meta-info" title="English">

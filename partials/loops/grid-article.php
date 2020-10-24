@@ -114,7 +114,25 @@ if( !epcl_is_amp() && !empty($epcl_theme) && function_exists( 'epcl_render_globa
             <?php epcl_display_post_format( get_post_format(), get_the_ID() );  ?>
             <?php if( epcl_get_option('enable_global_date') !== '0' ): ?>
                 <div class="meta">
-                    <time datetime="<?php the_time('Y-m-d'); ?>"><i class="remixicon remixicon-calendar-line"></i> <?php the_time( get_option('date_format') ); ?></time>
+                    <time datetime="<?php the_time('Y-m-d'); ?>">
+                    	<i class="remixicon remixicon-calendar-line"></i>
+                    	<?php 
+						if(CFM_URL == 'https://comefollowme.it') {
+							setlocale(LC_TIME, 'en_US');
+							the_time('F j, Y');
+						} 
+					
+						if(CFM_URL == 'https://vienieseguimi.it') {
+							setlocale(LC_TIME, 'it_IT');
+							the_time('j F Y');
+						}
+					
+						if(CFM_URL == 'https://viensetsuismoi.it') {
+							setlocale(LC_TIME, 'fr_FR');
+							the_time('j F Y');
+						}
+						?>
+                    </time>
                     <div class="clear"></div>
                 </div>
             <?php endif; ?>
