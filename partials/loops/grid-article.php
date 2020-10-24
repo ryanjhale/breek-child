@@ -123,12 +123,12 @@ if( !epcl_is_amp() && !empty($epcl_theme) && function_exists( 'epcl_render_globa
 						} 
 					
 						if(CFM_URL == 'https://vienieseguimi.it') {
-							setlocale(LC_TIME, 'it_IT');
+							setlocale(LC_TIME, 'it_IT.UTF8');
 							the_time('j F Y');
 						}
 					
 						if(CFM_URL == 'https://viensetsuismoi.it') {
-							setlocale(LC_TIME, 'fr_FR');
+							setlocale(LC_TIME, 'fr_FR.UTF8');
 							the_time('j F Y');
 						}
 						?>
