@@ -4,6 +4,7 @@ add_action( 'wp_enqueue_scripts', 'epcl_breek_child_styles', 100 );
 
 function epcl_breek_child_styles() {
     wp_enqueue_style( 'breek-child-css', get_stylesheet_uri() );
+    wp_enqueue_script('manychat-script', 'https://widget.manychat.com/105010561235265.js', array(), null, true);
 }
 
 function epcl_child_theme_slug_setup() {
