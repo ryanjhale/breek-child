@@ -5,6 +5,12 @@ add_action( 'wp_enqueue_scripts', 'epcl_breek_child_styles', 100 );
 function epcl_breek_child_styles() {
     wp_enqueue_style( 'breek-child-css', get_stylesheet_uri() );
     wp_enqueue_script('manychat-script', 'https://widget.manychat.com/105010561235265.js', array(), null, true);
+    wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/assets/js/custom.js', array(), null, true);
+    
+    if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'share') {
+	    wp_enqueue_style('bootstrap-style', get_stylesheet_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css');
+	    wp_enqueue_script('bootstrap-script', get_stylesheet_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array(), null, true);
+    }
 }
 
 function epcl_child_theme_slug_setup() {
