@@ -4,13 +4,9 @@ add_action( 'wp_enqueue_scripts', 'epcl_breek_child_styles', 100 );
 
 function epcl_breek_child_styles() {
     wp_enqueue_style( 'breek-child-css', get_stylesheet_uri() );
-    wp_enqueue_script('manychat-script', 'https://widget.manychat.com/105010561235265.js', array(), null, true);
     wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/assets/js/custom.js', array(), null, true);
-    
-    if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'share') {
-	    wp_enqueue_style('bootstrap-style', get_stylesheet_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css');
-	    wp_enqueue_script('bootstrap-script', get_stylesheet_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array(), null, true);
-    }
+    wp_enqueue_script('micromodal-script', get_stylesheet_directory_uri() . '/assets/js/micromodal.min.js', array(), null, true); // https://micromodal.now.sh/, https://github.com/Ghosh/micromodal
+    wp_enqueue_style('micromodal-style', get_stylesheet_directory_uri() . '/assets/css/modal.css', array(), null, false); // https://micromodal.now.sh/, https://github.com/Ghosh/micromodal
 }
 
 function epcl_child_theme_slug_setup() {
@@ -511,5 +507,49 @@ acf_add_local_field_group( array(
 		),
 	)
 ));
+	
+add_action( 'init', 'cfm_custom_post_types', 30 );
+
+function cfm_custom_post_types() {
+    global $wp_post_types;
+    global $wp_taxonomies;
+	
+	// Register Lessons post type
+	
+	$args = array(
+		'labels'             => array(
+			'name'               => __( 'Lessons', 'cp' ),
+			'singular_name'      => __( 'Lesson', 'cp' ),
+			'add_new'            => __( 'Create New', 'cp' ),
+			'add_new_item'       => __( 'Create New Lesson', 'cp' ),
+			'edit_item'          => __( 'Edit Lesson', 'cp' ),
+			'edit'               => __( 'Edit', 'cp' ),
+			'new_item'           => __( 'New Lesson', 'cp' ),
+			'view_item'          => __( 'View Lesson', 'cp' ),
+			'search_items'       => __( 'Search Lessons', 'cp' ),
+			'not_found'          => __( 'No Lessons Found', 'cp' ),
+			'not_found_in_trash' => __( 'No Lessons found in Trash', 'cp' ),
+			'view'               => __( 'View Lesson', 'cp' )
+		),
+		'public'             	=> true,
+		'hierarchical'		 	=> false,
+		'exclude_from_search'	=> true,
+		'publicly_queryable'	=> true,
+		'show_ui'            	=> true,
+		'show_in_menu'			=> 'edit.php',
+		'show_in_nav_menus'		=> false,
+		'show_in_admin_bar'		=> true,
+		'show_in_rest'       	=> true,
+		'rest_base' 		 	=> 'lessons',
+		'capability_type'    	=> 'post',
+		'map_meta_cap'       	=> true,
+		'supports'			 	=> array('title', 'editor', 'comments', 'revisions', 'trackbacks', 'author', 'excerpt', 'page-attributes', 'thumbnail', 'custom-fields', 'post-formats'),
+		'query_var'          	=> true,
+		'delete_with_user'		=> false,
+	);
+
+	register_post_type( 'lessons', $args );
+	
+}
 
 ?>

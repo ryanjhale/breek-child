@@ -274,12 +274,4 @@ while(have_posts()): the_post();  ?>
 
 <?php endwhile; ?>
 
-<?php
-
-if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'share') {
-	include'partials/single/share-modal.php';
-}
-
-?>
-
 <?php get_footer(); ?>
