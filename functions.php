@@ -1,5 +1,28 @@
 <?php
 
+function cfm_get_environment() {	
+	
+	if(is_multisite()) {
+		$url = network_site_url('/', 'https');
+	} else {
+		$url = get_site_url(null, '/', 'https');
+	}
+	
+	if($url == 'https://comefollowme.it/') {
+		return 'prod-english';
+	} elseif($url == 'https://vienieseguimi.it/') {
+		return 'prod-italian';
+	} elseif($url == 'https://viensetsuismoi.it/') {
+		return 'prod-french';	
+	} else {
+		return 'dev';
+	}
+}
+
+$env = cfm_get_environment();
+
+define('CFM_ENV', $env);
+
 add_action( 'wp_enqueue_scripts', 'epcl_breek_child_styles', 100 );
 
 function epcl_breek_child_styles() {
