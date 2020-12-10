@@ -44,6 +44,11 @@ function getModalContent(post_id) {
 		success: function(data) {
         	jQuery('.modal-title').html(data.title.rendered);
         	jQuery('.modal-body').html(data.content.rendered);
+        	
+        	var videos = jQuery('.modal-body').find('iframe');
+        	console.log(videos);
+        	var images = jQuery('.modal-body').find('img');
+        	console.log(images);
       	}
     });
     
