@@ -46,9 +46,21 @@ function getModalContent(post_id) {
         	jQuery('.modal-body').html(data.content.rendered);
         	
         	var videos = jQuery('.modal-body').find('iframe');
-        	console.log(videos);
+        	
+        	jQuery(videos).each(function() {
+	        	var src = jQuery(this).attr('data-src');
+	        	jQuery(this).attr('src', src);
+	        	jQuery(this).attr('data-lazy', 'false');
+        	})
+        	
         	var images = jQuery('.modal-body').find('img');
-        	console.log(images);
+        	
+        	jQuery(images).each(function() {
+	        	var src = jQuery(this).attr('data-src');
+	        	jQuery(this).attr('src', src);
+	        	jQuery(this).attr('data-lazy', 'false');
+        	})
+        	
       	}
     });
     
