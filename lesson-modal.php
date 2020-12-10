@@ -109,14 +109,14 @@ jQuery(document).ready(function() {
 	}
 	
 	<?php
-	
+	/*
 	if(CFM_ENV == 'prod-english') {
 		$id = '4163';
 	}
-	
+	*/
 	?>
 	
-	getModalContent('<?php echo $id; ?>');
+	// getModalContent('<?php echo $id; ?>');
 });
 	
 
