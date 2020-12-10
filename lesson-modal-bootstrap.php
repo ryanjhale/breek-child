@@ -1,3 +1,16 @@
+<style>
+.modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform 0.3s ease-out !important;
+     -moz-transition: -moz-transform 0.3s ease-out !important;
+       -o-transition: -o-transform 0.3s ease-out !important;
+          transition: transform 0.3s ease-out !important;
+}
+
+.modal.in .modal-dialog {
+
+}
+</style>
+
 <div class="modal fade " id="lesson-modal" tabindex="-1" role="dialog" aria-labelledby="important-msg-label" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content" style="overflow-y: initial !important;">
