@@ -1,4 +1,4 @@
-<div class="modal fade " id="lesson-modal" tabindex="-1" role="dialog" aria-labelledby="important-msg-label" aria-hidden="true" style="display: block !important;">
+<div class="modal fade " id="lesson-modal" tabindex="-1" role="dialog" aria-labelledby="important-msg-label" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content" style="overflow-y: initial !important;">
           	<div class="modal-header">
