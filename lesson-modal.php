@@ -9,7 +9,7 @@
 	  		<div id="modal-content-content" class="modal-content-content">
 	  			<button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
 	  			<div id="modal-content" class="modal__content" style="display:none;">
-	  				<!-- Put content here -->Content
+	  				<!-- Put content here -->
         		</div>
       		</div>
       		<footer id="modal-footer" class="modal__footer">
