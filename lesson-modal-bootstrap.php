@@ -1,13 +1,6 @@
 <style>
-.modal.fade .modal-dialog {
-  -webkit-transition: -webkit-transform 0.3s ease-out !important;
-     -moz-transition: -moz-transform 0.3s ease-out !important;
-       -o-transition: -o-transform 0.3s ease-out !important;
-          transition: transform 0.3s ease-out !important;
-}
-
-.modal.in .modal-dialog {
-
+p {
+	margin-bottom: 24px;
 }
 </style>
 
