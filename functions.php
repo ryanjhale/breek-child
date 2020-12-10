@@ -535,6 +535,153 @@ acf_add_local_field_group( array(
 		),
 	)
 ));
+
+acf_add_local_field_group( array(
+	'key' => 'group_lessons_button1',
+	'title' => esc_html__('Lesson Buttons 1', 'epcl_framework'),
+	'fields' => array (
+		array (
+			'key' => 'field_button1_color',
+			'name' => 'button1_color',
+			'label' => esc_html__('Color', 'epcl_framework'),
+			'instructions' => '',
+            'type' => 'select',
+            'choices' => array('default' 		=> 'White',
+            				   'primary'		=> 'Dark Blue',
+            				   'success'		=> 'Green',
+            				   'info' 			=> 'Light Blue',
+            				   'warning'		=> 'Yellow',
+            				   'danger'			=> 'Red',
+            				   'link'			=> 'Link'
+            				   )
+        ),
+        array (
+			'key' => 'field_button1_text',
+			'name' => 'button1_text',
+			'label' => esc_html__('Text', 'epcl_framework'),
+			'instructions' => '',
+            'type' => 'text',
+        ),
+        array (
+			'key' => 'field_button1_postid',
+			'name' => 'button1_postid',
+			'label' => esc_html__('Post ID', 'epcl_framework'),
+			'instructions' => '',
+            'type' => 'text',
+        ),
+
+	),
+	'menu_order' => 0,
+	'label_placement' => 'left',
+	'instruction_placement' => 'label',
+	'location' => array (
+		array (
+			array (
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'lessons',
+			),
+		),
+	)
+));
+
+acf_add_local_field_group( array(
+	'key' => 'group_lessons_button2',
+	'title' => esc_html__('Lesson Buttons 2', 'epcl_framework'),
+	'fields' => array (
+		array (
+			'key' => 'field_button2_color',
+			'name' => 'button2_color',
+			'label' => esc_html__('Color', 'epcl_framework'),
+			'instructions' => '',
+            'type' => 'select',
+            'choices' => array('default' 		=> 'White',
+            				   'primary'		=> 'Dark Blue',
+            				   'success'		=> 'Green',
+            				   'info' 			=> 'Light Blue',
+            				   'warning'		=> 'Yellow',
+            				   'danger'			=> 'Red',
+            				   'link'			=> 'Link'
+            				   )
+        ),
+        array (
+			'key' => 'field_button2_text',
+			'name' => 'button2_text',
+			'label' => esc_html__('Text', 'epcl_framework'),
+			'instructions' => '',
+            'type' => 'text',
+        ),
+        array (
+			'key' => 'field_button2_postid',
+			'name' => 'button2_postid',
+			'label' => esc_html__('Post ID', 'epcl_framework'),
+			'instructions' => '',
+            'type' => 'text',
+        ),
+
+	),
+	'menu_order' => 0,
+	'label_placement' => 'left',
+	'instruction_placement' => 'label',
+	'location' => array (
+		array (
+			array (
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'lessons',
+			),
+		),
+	)
+));
+
+acf_add_local_field_group( array(
+	'key' => 'group_lessons_button3',
+	'title' => esc_html__('Lesson Buttons 3', 'epcl_framework'),
+	'fields' => array (
+		array (
+			'key' => 'field_button3_color',
+			'name' => 'button3_color',
+			'label' => esc_html__('Color', 'epcl_framework'),
+			'instructions' => '',
+            'type' => 'select',
+            'choices' => array('default' 		=> 'White',
+            				   'primary'		=> 'Dark Blue',
+            				   'success'		=> 'Green',
+            				   'info' 			=> 'Light Blue',
+            				   'warning'		=> 'Yellow',
+            				   'danger'			=> 'Red',
+            				   'link'			=> 'Link'
+            				   )
+        ),
+        array (
+			'key' => 'field_button3_text',
+			'name' => 'button3_text',
+			'label' => esc_html__('Text', 'epcl_framework'),
+			'instructions' => '',
+            'type' => 'text',
+        ),
+        array (
+			'key' => 'field_button3_postid',
+			'name' => 'button3_postid',
+			'label' => esc_html__('Post ID', 'epcl_framework'),
+			'instructions' => '',
+            'type' => 'text',
+        ),
+
+	),
+	'menu_order' => 0,
+	'label_placement' => 'left',
+	'instruction_placement' => 'label',
+	'location' => array (
+		array (
+			array (
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'lessons',
+			),
+		),
+	)
+));
 	
 add_action( 'init', 'cfm_custom_post_types', 30 );
 
