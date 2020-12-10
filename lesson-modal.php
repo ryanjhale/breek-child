@@ -93,7 +93,7 @@ jQuery(document).ready(function() {
 		  
 	}
 	
-	/* Ajax call to get content for modal */
+	/* Ajax call to get content for modal 
 		
 	function getModalContent(post_id) {
 		jQuery.ajax({
@@ -108,16 +108,24 @@ jQuery(document).ready(function() {
 	    return false;
 	}
 	
-	<?php
-	/*
-	if(CFM_ENV == 'prod-english') {
-		$id = '4163';
-	}
 	*/
-	?>
-	
-	// getModalContent('<?php echo $id; ?>');
+
 });
+
+/* Ajax call to get content for modal */
+		
+function getModalContent(post_id) {
+	jQuery.ajax({
+		type:    'GET',
+		url:     '<?php echo get_site_url(get_current_blog_id(), "/wp-json/wp/v2/lessons/"); ?>' + post_id,
+		success: function(data) {
+        	jQuery('.modal__title').html(data.title.rendered);
+        	jQuery('.modal__content').html(data.content.rendered);
+      	}
+    });
+    
+    return false;
+}
 	
 
 </script>
