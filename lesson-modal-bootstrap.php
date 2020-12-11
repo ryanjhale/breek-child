@@ -46,6 +46,10 @@ function getModalContent(post_id) {
         	var button1_text = data.button_meta.button1_text;
         	var button1_postid = data.button_meta.button1_postid;
         	
+        	console.log(button1_color.length);
+        	console.log(button1_text.length);
+        	console.log(button1_postid.length);
+        	
         	var button2_color = data.button_meta.button2_color;
         	var button2_text = data.button_meta.button2_text;
         	var button2_postid = data.button_meta.button2_postid;
