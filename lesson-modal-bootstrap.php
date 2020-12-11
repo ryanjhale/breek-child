@@ -58,24 +58,21 @@ function getModalContent(post_id) {
         	var button3_text = data.button_meta.button3_text;
         	var button3_postid = data.button_meta.button3_postid;
 
-        	if(button1_color.length === 0 || button1_text.length === 0 || button1_postid.length === 0) {
+        	if(button1_color.length == 0 || button1_text.length == 0 || button1_postid.length == 0) {
 	        	var button1 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
         	} else {
 	        	var button1 = '<button type="button" class="btn btn-' + button1_color + '" onclick="getModalContent(' + button1_postid + ')">' + button1_text + '</button>';
         	}
         	
-        	if(button2_color.length === 0 || button2_text.length === 0 || button2_postid.length === 0) {
+        	if(button2_color.length == 0 || button2_text.length == 0 || button2_postid.length == 0) {
 	        	var button2 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
         	} else {
 	        	var button2 = '<button type="button" class="btn btn-' + button2_color + '" onclick="getModalContent(' + button2_postid + ')">' + button2_text + '</button>';
         	}
         	
-        	if(button3_color.length === 0 || button3_text.length === 0 || button3_postid.length === 0) {
+        	if(button3_color.length == 0 || button3_text.length == 0 || button3_postid.length == 0) {
 	        	var button3 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
         	} else {
-	        	var button3_color = obj.button_meta.button3_color;
-	        	var button3_text = obj.button_meta.button3_text;
-	        	var button3_postid = obj.button_meta.button3_postid;
 	        	var button3 = '<button type="button" class="btn btn-' + button3_color + '" onclick="getModalContent(' + button3_postid + ')">' + button3_text + '</button>';
         	}
         	
