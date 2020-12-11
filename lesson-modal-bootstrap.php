@@ -42,32 +42,31 @@ function getModalContent(post_id) {
         	// jQuery('.modal-title').html(data.title.rendered);
         	jQuery('.modal-body').html(data.content.rendered);
         	
-        	// var obj = JSON.parse(data);
+        	var button1_color = data.button_meta.button1_color;
+        	var button1_text = data.button_meta.button1_text;
+        	var button1_postid = data.button_meta.button1_postid;
         	
-        	console.log(data.button_meta.button1_color);
-        	console.log(data.button_meta.button1_color.length);
+        	var button2_color = data.button_meta.button2_color;
+        	var button2_text = data.button_meta.button2_text;
+        	var button2_postid = data.button_meta.button2_postid;
         	
-        	/*
+        	var button3_color = data.button_meta.button3_color;
+        	var button3_text = data.button_meta.button3_text;
+        	var button3_postid = data.button_meta.button3_postid;
 
-        	if(obj.button_meta.button1_color.length === 0 || obj.button_meta.button1_text.length === 0 || obj.button_meta.button1_postid. === 0) {
+        	if(button1_color.length === 0 || button1_text.length === 0 || button1_postid.length === 0) {
 	        	var button1 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
         	} else {
-	        	var button1_color = obj.button_meta.button1_color;
-	        	var button1_text = obj.button_meta.button1_text;
-	        	var button1_postid = obj.button_meta.button1_postid;
 	        	var button1 = '<button type="button" class="btn btn-' + button1_color + '" onclick="getModalContent(' + button1_postid + ')">' + button1_text + '</button>';
         	}
         	
-        	if(obj.button_meta.button2_color.length === 0 || obj.button_meta.button2_text.length === 0 || obj.button_meta.button2_postid. === 0) {
+        	if(button2_color.length === 0 || button2_text.length === 0 || button2_postid.length === 0) {
 	        	var button2 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
         	} else {
-	        	var button2_color = obj.button_meta.button2_color;
-	        	var button2_text = obj.button_meta.button2_text;
-	        	var button2_postid = obj.button_meta.button2_postid;
 	        	var button2 = '<button type="button" class="btn btn-' + button2_color + '" onclick="getModalContent(' + button2_postid + ')">' + button2_text + '</button>';
         	}
         	
-        	if(obj.button_meta.button3_color.length === 0 || obj.button_meta.button3_text.length === 0 || obj.button_meta.button3_postid. === 0) {
+        	if(button3_color.length === 0 || button3_text.length === 0 || button3_postid.length === 0) {
 	        	var button3 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
         	} else {
 	        	var button3_color = obj.button_meta.button3_color;
@@ -79,7 +78,6 @@ function getModalContent(post_id) {
         	jQuery('#lesson-buttons').html(button1);
         	jQuery('#lesson-buttons').html(button2);
         	jQuery('#lesson-buttons').html(button3);
-        	*/
         	
         	
         	var videos = jQuery('.modal-body').find('iframe');
