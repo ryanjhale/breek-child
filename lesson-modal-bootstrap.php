@@ -17,7 +17,7 @@ p {
           	</div>
 		  	<div class="modal-footer">
             	<div class="row">
-	            	<div id="lesson-buttons" class="col-md-9">
+	            	<div class="col-md-9 lesson-buttons">
 	            	</div>
 		            <div class="col-md-3">
 			            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -79,9 +79,9 @@ function getModalContent(post_id) {
 	        	var button3 = '<button type="button" class="btn btn-' + button3_color + '" onclick="getModalContent(' + button3_postid + ')">' + button3_text + '</button>';
         	}
         	
-        	jQuery('#lesson-buttons').html(button1);
-        	jQuery('#lesson-buttons').html(button2);
-        	jQuery('#lesson-buttons').html(button3);
+        	jQuery('.lesson-buttons').html(button1);
+        	jQuery('.lesson-buttons').html(button2);
+        	jQuery('.lesson-buttons').html(button3);
         	
         	
         	var videos = jQuery('.modal-body').find('iframe');
