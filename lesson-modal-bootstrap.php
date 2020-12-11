@@ -16,7 +16,13 @@ p {
 		  	<div class="modal-body" style="height: 65vh; overflow-y: auto;">
           	</div>
 		  	<div class="modal-footer">
-            	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            	<div class="row">
+	            	<div id="lesson-buttons" class="col-md-9">
+	            	</div>
+		            <div class="col-md-3">
+			            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		            </div>
+            	</div>
           	</div>
         </div>
     </div>
