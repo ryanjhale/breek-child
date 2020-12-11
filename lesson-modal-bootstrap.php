@@ -42,10 +42,10 @@ function getModalContent(post_id) {
         	// jQuery('.modal-title').html(data.title.rendered);
         	jQuery('.modal-body').html(data.content.rendered);
         	
-        	var obj = JSON.parse(data);
+        	// var obj = JSON.parse(data);
         	
-        	console.log(obj.button_meta.button1_color);
-        	console.log(obj.button_meta.button1_color.length);
+        	console.log(data.button_meta.button1_color);
+        	console.log(data.button_meta.button1_color.length);
         	
         	/*
 
