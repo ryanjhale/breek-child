@@ -41,7 +41,7 @@ function getModalContent(post_id) {
 		success: function(data) {
         	// jQuery('.modal-title').html(data.title.rendered);
         	jQuery('.modal-body').html(data.content.rendered);
-        	
+        	/*
         	if(data.button_meta.button1_color.length === 0 || data.button_meta.button1_text.length === 0 || data.button_meta.button1_postid. === 0) {
 	        	var button1 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
         	} else {
@@ -72,6 +72,7 @@ function getModalContent(post_id) {
         	jQuery('#lesson-buttons').html(button1);
         	jQuery('#lesson-buttons').html(button2);
         	jQuery('#lesson-buttons').html(button3);
+        	*/
         	
         	var videos = jQuery('.modal-body').find('iframe');
         	
