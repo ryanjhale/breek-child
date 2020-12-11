@@ -40,10 +40,6 @@ function getModalContent(post_id) {
         	var button1_text = data.button_meta.button1_text;
         	var button1_postid = data.button_meta.button1_postid;
         	
-        	console.log(button1_color.length);
-        	console.log(button1_text.length);
-        	console.log(button1_postid.length);
-        	
         	var button2_color = data.button_meta.button2_color;
         	var button2_text = data.button_meta.button2_text;
         	var button2_postid = data.button_meta.button2_postid;
@@ -53,29 +49,26 @@ function getModalContent(post_id) {
         	var button3_postid = data.button_meta.button3_postid;
 
         	if(button1_color.length > 0 && button1_text.length > 0 && button1_postid.length > 0) {
-	        	
 	        	var button1 = '<button type="button" class="btn btn-' + button1_color + '" onclick="getModalContent(' + button1_postid + ')">' + button1_text + '</button>';
         	} else {
 	        	var button1 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
         	}
-        	/*
-        	if(button2_color.length == 0 || button2_text.length == 0 || button2_postid.length == 0) {
-	        	var button2 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
-        	} else {
+        	
+        	if(button2_color.length > 0 && button2_text.length > 0 && button2_postid.length > 0) {
 	        	var button2 = '<button type="button" class="btn btn-' + button2_color + '" onclick="getModalContent(' + button2_postid + ')">' + button2_text + '</button>';
-        	}
-        	
-        	if(button3_color.length == 0 || button3_text.length == 0 || button3_postid.length == 0) {
-	        	var button3 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
         	} else {
-	        	var button3 = '<button type="button" class="btn btn-' + button3_color + '" onclick="getModalContent(' + button3_postid + ')">' + button3_text + '</button>';
+	        	var button2 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
         	}
-        	*/
         	
-        	jQuery('.lesson-buttons').html(button1);
-        	// jQuery('.lesson-buttons').html(button2);
-        	// jQuery('.lesson-buttons').html(button3);
+        	if(button3_color.length > 0 && button3_text.length > 0 && button3_postid.length > 0) {
+	        	var button3 = '<button type="button" class="btn btn-' + button3_color + '" onclick="getModalContent(' + button3_postid + ')">' + button3_text + '</button>';
+        	} else {
+	        	var button3 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
+        	}
         	
+        	jQuery('.lesson-buttons').prepend(button3);
+        	jQuery('.lesson-buttons').prepend(button2);
+        	jQuery('.lesson-buttons').prepend(button1);
         	
         	var videos = jQuery('.modal-body').find('iframe');
         	
