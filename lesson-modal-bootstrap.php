@@ -29,11 +29,17 @@ p {
 /* Ajax call to get content for modal */
 		
 function getModalContent(post_id) {
+	
+	jQuery('.modal-body').empty();
+	jQuery('.button1').remove();
+	jQuery('.button2').remove();
+	jQuery('.button3').remove();
+	
 	jQuery.ajax({
 		type:    'GET',
 		url:     '<?php echo get_site_url(get_current_blog_id(), "/wp-json/wp/v2/lessons/"); ?>' + post_id,
 		success: function(data) {
-        	// jQuery('.modal-title').html(data.title.rendered);
+        	
         	jQuery('.modal-body').html(data.content.rendered);
         	
         	var button1_color = data.button_meta.button1_color;
