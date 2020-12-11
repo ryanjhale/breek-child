@@ -42,31 +42,31 @@ function getModalContent(post_id) {
         	// jQuery('.modal-title').html(data.title.rendered);
         	jQuery('.modal-body').html(data.content.rendered);
         	
-        	if(data.button_meta.button1_color.length > 0 && data.button_meta.button1_text.length > 0 && data.button_meta.button1_postid. > 0) {
+        	if(data.button_meta.button1_color.length === 0 || data.button_meta.button1_text.length === 0 || data.button_meta.button1_postid. === 0) {
+	        	var button1 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
+        	} else {
 	        	var button1_color = data.button_meta.button1_color;
 	        	var button1_text = data.button_meta.button1_text;
-	        	var button1_postid = data.button_meta.button1_postid
+	        	var button1_postid = data.button_meta.button1_postid;
 	        	var button1 = '<button type="button" class="btn btn-' + button1_color + '" onclick="getModalContent(' + button1_postid + ')">' + button1_text + '</button>';
-        	} else {
-	        	var button1 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
         	}
         	
-        	if(data.button_meta.button2_color.length > 0 && data.button_meta.button2_text.length > 0 && data.button_meta.button2_postid. > 0) {
+        	if(data.button_meta.button2_color.length === 0 || data.button_meta.button2_text.length === 0 || data.button_meta.button2_postid. === 0) {
+	        	var button2 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
+        	} else {
 	        	var button2_color = data.button_meta.button2_color;
 	        	var button2_text = data.button_meta.button2_text;
-	        	var button2_postid = data.button_meta.button2_postid
+	        	var button2_postid = data.button_meta.button2_postid;
 	        	var button2 = '<button type="button" class="btn btn-' + button2_color + '" onclick="getModalContent(' + button2_postid + ')">' + button2_text + '</button>';
-        	} else {
-	        	var button2 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
         	}
         	
-        	if(data.button_meta.button3_color.length > 0 && data.button_meta.button3_text.length > 0 && data.button_meta.button3_postid. > 0) {
+        	if(data.button_meta.button3_color.length === 0 || data.button_meta.button3_text.length === 0 || data.button_meta.button3_postid. === 0) {
+	        	var button3 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
+        	} else {
 	        	var button3_color = data.button_meta.button3_color;
 	        	var button3_text = data.button_meta.button3_text;
-	        	var button3_postid = data.button_meta.button3_postid
+	        	var button3_postid = data.button_meta.button3_postid;
 	        	var button3 = '<button type="button" class="btn btn-' + button3_color + '" onclick="getModalContent(' + button3_postid + ')">' + button3_text + '</button>';
-        	} else {
-	        	var button3 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
         	}
         	
         	jQuery('#lesson-buttons').html(button1);
