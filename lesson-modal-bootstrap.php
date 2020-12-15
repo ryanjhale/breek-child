@@ -3,6 +3,10 @@ p {
 	margin-bottom: 24px;
 }
 
+h2 {
+	margin-bottom: 15px;
+}
+
 .modal {
   text-align: center;
   padding: 0!important;
