@@ -57,8 +57,8 @@ function getModalContent(post_id) {
 		url:     '<?php echo get_site_url(get_current_blog_id(), "/wp-json/wp/v2/lessons/"); ?>' + post_id,
 		success: function(data) {
         	
-        	jQuery('.modal-body').html('<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>');
-        	jQuery('.modal-body').html(data.content.rendered);
+        	var close = '<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
+        	jQuery('.modal-body').html(close + data.content.rendered);
         	
         	var button1_color = data.button_meta.button1_color;
         	var button1_text = data.button_meta.button1_text;
