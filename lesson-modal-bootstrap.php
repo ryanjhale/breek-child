@@ -33,7 +33,6 @@ p {
 		  	<div class="modal-body" style="height: 65vh; overflow-y: auto;">
           	</div>
 		  	<div class="modal-footer lesson-buttons">
-            	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           	</div>
         </div>
     </div>
