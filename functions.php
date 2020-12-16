@@ -27,7 +27,7 @@ add_action( 'wp_enqueue_scripts', 'epcl_breek_child_styles', 100 );
 
 function epcl_breek_child_styles() {
     wp_enqueue_style( 'breek-child-css', get_stylesheet_uri() );
-    wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/assets/js/custom.js', array(), null, true);
+    // wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/assets/js/custom.js', array(), null, true);
     
     // Bootstrap 3.2.5 compiled only for modals as described here:  https://stackoverflow.com/a/26286676
     
