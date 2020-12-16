@@ -33,8 +33,6 @@ function epcl_breek_child_styles() {
     
     wp_enqueue_script('bootstrap-script', get_stylesheet_directory_uri() . '/assets/js/bootstrap.min.js', array(), null, true);
     wp_enqueue_style('bootstrap-style', get_stylesheet_directory_uri() . '/assets/css/bootstrap.min.css', array(), null, false);
-    // wp_enqueue_script('micromodal-script', get_stylesheet_directory_uri() . '/assets/js/micromodal.min.js', array(), null, true); // https://micromodal.now.sh/, https://github.com/Ghosh/micromodal
-    // wp_enqueue_style('micromodal-style', get_stylesheet_directory_uri() . '/assets/css/modal.css', array(), null, false); // https://micromodal.now.sh/, https://github.com/Ghosh/micromodal
 }
 
 function epcl_child_theme_slug_setup() {
