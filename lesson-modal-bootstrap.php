@@ -6,7 +6,10 @@ p {
 h2 {
 	margin-bottom: 15px;
 }
-
+ul {
+	list-style: bullet;
+	padding-left: 10px;
+}
 .modal {
   text-align: center;
   padding: 0!important;
