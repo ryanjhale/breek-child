@@ -7,8 +7,8 @@ h2 {
 	margin-bottom: 15px;
 }
 ul {
-	list-style: bullet;
-	padding-left: 10px;
+	list-style-type: circle;
+	padding-left: 20px;
 }
 .modal {
   text-align: center;
