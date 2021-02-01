@@ -102,7 +102,27 @@ function getModalContent(post_id) {
 		success: function(data) {
         	
         	var close = '<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
-            var comments = '<div class="clear"></div><!-- start: facebook comments --><div id="comments" class="section bg-white"><h3 class="title bordered no-margin"><?php esc_html_e('Comments', 'breek'); ?></h3><div class="clear"></div><div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div></div><!-- end: facebook comments --><div id="fb-root"></div>';                        
+            var comments = '<div class="clear"></div><!-- start: facebook comments --><div id="comments" class="section bg-white"><h3 class="title bordered no-margin"><?php esc_html_e('Comments', 'breek'); ?></h3><div class="clear"></div><div class="fb-comments" data-href="' + data.link + '" data-width="100%" data-numposts="5"></div></div><!-- end: facebook comments --><div id="fb-root"></div>';
+            
+            var display_content = close + data.content.rendered;
+            
+            var content = this.text;
+			var term1 = '<h2>Question 1</h2>';
+			var term2 = '<h2>Question 2</h2>';
+			var term3 = '<h2>Question 3</h2>';
+			
+			if( data.content.rendered.indexOf(term1) != -1 ) {
+			    var post_content = post_content + comments;
+			}
+			
+			if( data.content.rendered.indexOf(term2) != -1 ) {
+			    var post_content = post_content + comments;
+			}
+			
+			if( data.content.rendered.indexOf(term3) != -1 ) {
+			    var post_content = post_content + comments;
+			}
+                                  
         	jQuery('.modal-body').html(close + data.content.rendered + comments);
         	
         	var button1_color = data.button_meta.button1_color;
