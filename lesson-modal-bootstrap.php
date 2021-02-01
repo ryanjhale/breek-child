@@ -102,12 +102,10 @@ function getModalContent(post_id) {
 		success: function(data) {
         	
         	var close = '<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
-            var comments = '';
+            var comments = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/themes/wordpress/breek/classic/#respond" style="display:none;">Cancel reply</a></small></h3><form action="http://estudiopatagon.com/themes/wordpress/breek/404" method="post" id="commentform" class="comment-form"><textarea id="comment" name="comment" aria-required="true" rows="10" placeholder="Comment"></textarea><input class="form-author" name="author" type="text" placeholder="Name" value="" size="30" aria-required="true" required=""> <input class="form-email" name="email" type="text" placeholder="Email" value="" size="30" aria-required="true" required=""> <input class="form-website" name="url" type="text" placeholder="Website" value="" size="30"><p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="epcl-button" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="8" id="comment_post_ID"> <input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
             
             var display_content = close + data.content.rendered;
             
-            /*
-            var content = this.text;
 			var term1 = '<h2>Question 1</h2>';
 			var term2 = '<h2>Question 2</h2>';
 			var term3 = '<h2>Question 3</h2>';
@@ -123,7 +121,6 @@ function getModalContent(post_id) {
 			if( data.content.rendered.indexOf(term3) != -1 ) {
 			    var display_content = display_content + comments;
 			}
-			*/
                                   
         	jQuery('.modal-body').html(display_content);
         	
