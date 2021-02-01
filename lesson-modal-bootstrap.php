@@ -106,6 +106,7 @@ function getModalContent(post_id) {
             
             var display_content = close + data.content.rendered;
             
+			/*
 			var term1 = '<h2>Question 1</h2>';
 			var term2 = '<h2>Question 2</h2>';
 			var term3 = '<h2>Question 3</h2>';
@@ -121,6 +122,7 @@ function getModalContent(post_id) {
 			if( data.content.rendered.indexOf(term3) != -1 ) {
 			    var display_content = display_content + comments;
 			}
+			*/
                                   
         	jQuery('.modal-body').html(display_content);
         	
