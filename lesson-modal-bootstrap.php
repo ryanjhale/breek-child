@@ -102,7 +102,8 @@ function getModalContent(post_id) {
 		success: function(data) {
         	
         	var close = '<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
-        	jQuery('.modal-body').html(close + data.content.rendered);
+            var comments = '<div class="clear"></div><!-- start: facebook comments --><div id="comments" class="section bg-white"><h3 class="title bordered no-margin"><?php esc_html_e('Comments', 'breek'); ?></h3><div class="clear"></div><div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div></div><!-- end: facebook comments --><div id="fb-root"></div>';                        
+        	jQuery('.modal-body').html(close + data.content.rendered + comments);
         	
         	var button1_color = data.button_meta.button1_color;
         	var button1_text = data.button_meta.button1_text;
