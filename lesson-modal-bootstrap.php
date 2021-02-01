@@ -102,10 +102,11 @@ function getModalContent(post_id) {
 		success: function(data) {
         	
         	var close = '<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
-            var comments = '<?php comments_template(); ?>';
+            var comments = '';
             
             var display_content = close + data.content.rendered;
             
+            /*
             var content = this.text;
 			var term1 = '<h2>Question 1</h2>';
 			var term2 = '<h2>Question 2</h2>';
@@ -122,6 +123,7 @@ function getModalContent(post_id) {
 			if( data.content.rendered.indexOf(term3) != -1 ) {
 			    var display_content = display_content + comments;
 			}
+			*/
                                   
         	jQuery('.modal-body').html(display_content);
         	
