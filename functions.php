@@ -66,7 +66,7 @@ class epcl_theme_setup {
 
 		require_once(EPCL_ABSPATH.'/functions/import/import-demo.php');
 		require_once(EPCL_ABSPATH.'/functions/post-formats.php');
-		require_once(EPCL_ABSPATH.'/functions/ajax.php');
+		require_once(get_theme_file_path('functions/ajax.php');
         require_once(EPCL_ABSPATH.'/functions/enqueue-scripts.php');
         require_once(EPCL_ABSPATH.'/functions/color-helper.php');
 		require_once(EPCL_ABSPATH.'/functions/custom-styles.php');
