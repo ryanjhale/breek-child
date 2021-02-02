@@ -66,6 +66,7 @@ class epcl_theme_setup {
 
 		require_once(EPCL_ABSPATH.'/functions/import/import-demo.php');
 		require_once(EPCL_ABSPATH.'/functions/post-formats.php');
+		require_once(EPCL_ABSPATH.'/functions/ajax.php');
         require_once(EPCL_ABSPATH.'/functions/enqueue-scripts.php');
         require_once(EPCL_ABSPATH.'/functions/color-helper.php');
 		require_once(EPCL_ABSPATH.'/functions/custom-styles.php');
@@ -738,9 +739,33 @@ function cfm_get_lesson_post_meta($post) {
     return $meta;
 }
 
+function cfm_get_response_cookie($post) {
+    
+    $r = 0;
+    
+    foreach($_COOKIE as $cookie) {
+	    if($cookie == 'response') {
+		    foreach($cookie as $response) {
+			    if(isset($response[$post['id']])) {
+				    $r = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered">Respond</h3><form id="respond" class="comment-form"><textarea id="comment" name="comment" aria-required="true" rows="10" placeholder="Comment"></textarea><input class="form-author" name="name" type="text" placeholder="Name" value="" size="30" aria-required="true" required=""><input class="form-email" name="email" type="text" placeholder="Email" value="" size="30" aria-required="true" required=""><p class="form-submit"><input name="submit" type="submit" id="submit" class="epcl-button" value="Submit"><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
+			    }
+		    }
+	    }
+    }
+    
+    return $r;
+}
+
 function cfm_rest_api_post_meta() {
+    
     register_rest_field('lessons', 'button_meta', array(
         'get_callback'      => 'cfm_get_lesson_post_meta',
+        // 'update_callback'=> null,
+        // 'schema'         => null
+    ));
+    
+    register_rest_field('lessons', 'response', array(
+        'get_callback'      => 'cfm_get_response_cookie',
         // 'update_callback'=> null,
         // 'schema'         => null
     ));
