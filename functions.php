@@ -776,17 +776,23 @@ function cfm_get_lesson_post_meta($post) {
 
 function cfm_get_response_cookie($post) {
     
-    $r = 0;
+    $lesson_type = get_field('lesson_type', $post['id']);
     
-    foreach($_COOKIE as $cookie) {
-	    if($cookie == 'response') {
-		    foreach($cookie as $response) {
-			    if(isset($response[$post['id']])) {
-				    $r = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered">Respond</h3><form id="respond" class="comment-form"><textarea id="comment" name="comment" aria-required="true" rows="10" placeholder="Comment"></textarea><input class="form-author" name="name" type="text" placeholder="Name" value="" size="30" aria-required="true" required=""><input class="form-email" name="email" type="text" placeholder="Email" value="" size="30" aria-required="true" required=""><p class="form-submit"><input name="submit" type="submit" id="submit" class="epcl-button" value="Submit"><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
+    $r = '';
+    
+    if($lesson_type == 'question') {
+	    
+	    foreach($_COOKIE as $cookie) {
+		    if($cookie == 'response') {
+			    foreach($cookie as $response) {
+				    if(!isset($response[$post['id']])) {
+					    $r = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered">Respond</h3><form id="respond" class="comment-form"><textarea id="comment" name="comment" aria-required="true" rows="10" placeholder="Comment"></textarea><input class="form-author" name="name" type="text" placeholder="Name" value="" size="30" aria-required="true" required=""><input class="form-email" name="email" type="text" placeholder="Email" value="" size="30" aria-required="true" required=""><p class="form-submit"><input name="submit" type="submit" id="submit" class="epcl-button" value="Submit"><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
+				    }
 			    }
 		    }
 	    }
-    }
+	    
+	}
     
     return $r;
 }
