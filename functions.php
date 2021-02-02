@@ -681,6 +681,41 @@ acf_add_local_field_group( array(
 		),
 	)
 ));
+
+acf_add_local_field_group( array(
+	'key' => 'lessons_meta',
+	'title' => esc_html__('Lessons Type', 'epcl_framework'),
+	'fields' => array (
+        array (
+			'key' => 'lesson_color',
+			'name' => 'lesson_color',
+			'label' => esc_html__('Type', 'epcl_framework'),
+			'instructions' => '',
+            'type' => 'select',
+            'choices' => array('yellow' => 'Yellow Light', 'green' => 'Green Light'),
+        ),
+        array (
+			'key' => 'lesson_type',
+			'name' => 'lesson_type',
+			'label' => esc_html__('Sub-Type', 'epcl_framework'),
+			'instructions' => '',
+            'type' => 'select',
+            'choices' => array('command' => 'Command', 'story' => 'Story', 'question' => 'Question', 'answer' => 'Answer'),
+        ),
+	),
+	'menu_order' => 0,
+	'label_placement' => 'left',
+	'instruction_placement' => 'label',
+	'location' => array (
+		array (
+			array (
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'lessons',
+			),
+		),
+	)
+));
 	
 add_action( 'init', 'cfm_custom_post_types', 30 );
 
