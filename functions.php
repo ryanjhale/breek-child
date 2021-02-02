@@ -700,7 +700,7 @@ acf_add_local_field_group( array(
 			'label' => esc_html__('Sub-Type', 'epcl_framework'),
 			'instructions' => '',
             'type' => 'select',
-            'choices' => array('command' => 'Command', 'story' => 'Story', 'question' => 'Question', 'answer' => 'Answer'),
+            'choices' => array('command' => 'Command', 'story' => 'Story', 'question' => 'Question', 'answer' => 'Answer', 'navigation' => 'Navigation', 'contact' => 'Contact'),
         ),
 	),
 	'menu_order' => 0,
