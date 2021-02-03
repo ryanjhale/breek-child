@@ -170,13 +170,6 @@ function getModalContent(post_id) {
     return false;
 }
 
-
-jQuery('.respondsubmit').click(function(e) {
-	e.preventDefault();
-	console.log('Inside respondform submit');
-	respondSubmit();
-});
-
 jQuery(".respondsubmit").on("click", function() {
 	e.preventDefault();
 	console.log('Inside respondform submit');
