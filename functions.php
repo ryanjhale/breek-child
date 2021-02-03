@@ -782,19 +782,40 @@ function cfm_get_response_form($post) {
     
     if($lesson_type == 'question') {
 	    
-	    $r = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered">Respond</h3><form id="respond" class="comment-form"><textarea id="comment" name="comment" aria-required="true" rows="10" placeholder="Comment"></textarea><input class="form-author" name="name" type="text" placeholder="Name" value="" size="30" aria-required="true" required=""><input class="form-email" name="email" type="text" placeholder="Email" value="" size="30" aria-required="true" required=""><p class="form-submit"><input name="submit" type="submit" id="submit" class="epcl-button" value="Submit"><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
+	    if(isset($_COOKIE['response']['email'])) {
 	    
-	    /*
-	    foreach($_COOKIE as $cookie) {
-		    if($cookie == 'response') {
-			    foreach($cookie as $response) {
-				    if(!isset($response[$post['id']])) {
-					    $r = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered">Respond</h3><form id="respond" class="comment-form"><textarea id="comment" name="comment" aria-required="true" rows="10" placeholder="Comment"></textarea><input class="form-author" name="name" type="text" placeholder="Name" value="" size="30" aria-required="true" required=""><input class="form-email" name="email" type="text" placeholder="Email" value="" size="30" aria-required="true" required=""><p class="form-submit"><input name="submit" type="submit" id="submit" class="epcl-button" value="Submit"><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
-				    }
-			    }
+		    $email = $_COOKIE['response']['email'];
+		    $name = $_COOKIE['response']['name'];
+		    
+		    
+		    $args = array('post_id' 		=> $post['id'],
+		    			  'author_email' 	=> $_COOKIE['response']['email'],
+		    			  'count'			=> true,
+		    );
+		    
+		    $comment = get_comments();
+		    
+		    if($comment > 0) {
+			    
+			    $args = array('post_id' 		=> $post['id'],
+		    			  	  'author_email' 	=> $_COOKIE['response']['email'],
+						);
+		    
+				$comment = get_comments();
+				
+				$r = $comment;
+				
+		    } else {
+			    
+			    $r = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">Respond</h3><form id="respond" class="comment-form"><textarea id="comment" name="comment" aria-required="true" rows="10" placeholder="Your Response"></textarea><input class="form-author" name="name" type="text" placeholder="' . $name . '" value="" size="30" aria-required="true" required=""><input class="form-email" name="email" type="text" placeholder="' . $email . '" value="" size="30" aria-required="true" required=""><p class="form-submit"><input name="submit" type="submit" id="submit" class="epcl-button" value="Submit"><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
+			    
 		    }
+	    
+	    } else {
+		    
+		    $r = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">Respond</h3><form id="respond" class="comment-form"><textarea id="comment" name="comment" aria-required="true" rows="10" placeholder="Your Response"></textarea><input class="form-author" name="name" type="text" placeholder="Name" value="" size="30" aria-required="true" required=""><input class="form-email" name="email" type="text" placeholder="Email" value="" size="30" aria-required="true" required=""><p class="form-submit"><input name="submit" type="submit" id="submit" class="epcl-button" value="Submit"><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
+		    
 	    }
-	    */
 	    
 	}
     

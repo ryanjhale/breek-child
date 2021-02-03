@@ -45,7 +45,8 @@ function sp_process_donation_verify_ach(){
 	
 	$expiration = time()+(3600 * 1000 * 24 * 365);
 	
-	setcookie('response[' . $_REQUEST['post_id'] . ']', $comment_id, $expiration);
+	setcookie('response["name"]', sanitize_text_field($_REQUEST['respondent']), $expiration);
+	setcookie('response["email"]', sanitize_text_field($_REQUEST['email']), $expiration);
 
 	echo json_encode(array('message' => '<div class="alert alert-success" role="alert">Thank you!  We received your response and our team will follow up with you soon.</div>'));
 	
