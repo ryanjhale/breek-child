@@ -171,17 +171,23 @@ function getModalContent(post_id) {
 }
 
 
-jQuery('#respondform').submit(function(e) {
+jQuery('.respondsubmit').click(function(e) {
 	e.preventDefault();
 	console.log('Inside respondform submit');
-	// respondSubmit();
+	respondSubmit();
+});
+
+jQuery(".respondsubmit").on("click", function() {
+	e.preventDefault();
+	console.log('Inside respondform submit');
+	respondSubmit();
 });
 
 function respondSubmit() {
 	
-	jQuery('.fa-spinner').show();
-	jQuery('.one-moment-message').show();
-	jQuery('.donation-submit').prop('disabled', true);
+	// jQuery('.fa-spinner').show();
+	// jQuery('.one-moment-message').show();
+	jQuery('.respondsubmit').prop('disabled', true);
 			
 			
 	var response = {};
@@ -205,11 +211,13 @@ function respondSubmit() {
         	
         	if(obj.error == '1') {
 	        	
-	        	jQuery('input[type="submit"]').prop('disabled', false);
+	        	jQuery('.respondsubmit').prop('disabled', true);
 	        	jQuery('#respond').before(obj.message);
 	        	
         	} else {
 	        	
+	        	jQuery('input[name=name]').prop('disabled', true);
+	        	jQuery('input[name=email]').prop('disabled', true);
 	        	jQuery('#respond').before(obj.message);
 	        	jQuery('#respond').hide();
 	        		
