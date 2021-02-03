@@ -5,7 +5,7 @@
 add_action('wp_ajax_nopriv_respond', 'cfm_handle_response');
 add_action('wp_ajax_respond', 'cfm_handle_response');
 
-function sp_process_donation_verify_ach(){
+function cfm_handle_response(){
 	
 	// Check the data
 

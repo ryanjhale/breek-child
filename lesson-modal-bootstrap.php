@@ -176,7 +176,6 @@ jQuery(document).ready(function() {
 	
 	
 	jQuery(document).on('click','.respondsubmit',function(e) {
-		console.log('Inside respondform submit');
 		respondSubmit();
 	});
 		
