@@ -798,7 +798,7 @@ function cfm_get_response_form($post) {
 	    
 	}
     
-    return $lesson_type;
+    return $r;
 }
 
 function cfm_rest_api_post_meta() {
