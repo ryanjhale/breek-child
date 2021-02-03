@@ -173,7 +173,8 @@ function getModalContent(post_id) {
 
 jQuery('#respondform').submit(function(e) {
 	e.preventDefault();
-	respondSubmit();
+	console.log('Inside respondform submit');
+	// respondSubmit();
 });
 
 function respondSubmit() {
