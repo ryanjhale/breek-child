@@ -774,7 +774,7 @@ function cfm_get_lesson_post_meta($post) {
     return $meta;
 }
 
-function cfm_get_response_cookie($post) {
+function cfm_get_response_form($post) {
     
     $lesson_type = get_field('lesson_type', $post['id']);
     
@@ -798,7 +798,7 @@ function cfm_get_response_cookie($post) {
 	    
 	}
     
-    return $r;
+    return $lesson_type;
 }
 
 function cfm_rest_api_post_meta() {
@@ -810,7 +810,7 @@ function cfm_rest_api_post_meta() {
     ));
     
     register_rest_field('lessons', 'response', array(
-        'get_callback'      => 'cfm_get_response_cookie',
+        'get_callback'      => 'cfm_get_response_form',
         // 'update_callback'=> null,
         // 'schema'         => null
     ));
