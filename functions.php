@@ -782,10 +782,10 @@ function cfm_get_response_form($post) {
     
     if($lesson_type == 'question') {
 	    
-	    if(isset($_COOKIE['response']['email'])) {
+	    if(isset($_COOKIE['email'])) {
 	    
-		    $email = $_COOKIE['response']['email'];
-		    $name = $_COOKIE['response']['name'];
+		    $email = $_COOKIE['email'];
+		    $name = $_COOKIE['name'];
 		    
 		    
 		    $args = array('post_id' 		=> $post['id'],
