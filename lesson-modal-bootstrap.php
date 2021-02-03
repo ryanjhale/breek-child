@@ -89,6 +89,12 @@ function checkLaunchModal() {
 
 checkLaunchModal();
 
+jQuery('.respondsubmit').on('click', function() {
+	e.preventDefault();
+	console.log('Inside respondform submit');
+	respondSubmit();
+});
+
 function getModalContent(post_id) {
 
 	jQuery('.modal-body').empty();
@@ -169,12 +175,6 @@ function getModalContent(post_id) {
     
     return false;
 }
-
-jQuery(".respondsubmit").on("click", function() {
-	e.preventDefault();
-	console.log('Inside respondform submit');
-	respondSubmit();
-});
 
 function respondSubmit() {
 	

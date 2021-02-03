@@ -813,7 +813,7 @@ function cfm_get_response_form($post) {
 	    
 	    } else {
 		    
-		    $r = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">Respond</h3><form id="respond" class="comment-form"><textarea id="comment" name="comment" aria-required="true" rows="10" placeholder="Your Response"></textarea><input class="form-author" name="name" type="text" placeholder="Name" value="" size="30" aria-required="true" required=""><input class="form-email" name="email" type="text" placeholder="Email" value="" size="30" aria-required="true" required=""><p class="form-submit"><input name="submit" type="submit" id="submit" class="epcl-button" value="Submit"><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
+		    $r = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">Respond</h3><form id="respond" class="respondform"><textarea id="comment" name="comment" aria-required="true" rows="10" placeholder="Your Response"></textarea><input class="form-author" name="name" type="text" placeholder="Name" value="" size="30" aria-required="true" required=""><input class="form-email" name="email" type="text" placeholder="Email" value="" size="30" aria-required="true" required=""><p class="form-submit"><input id="submit" class="epcl-button respondsubmit" value="Submit"><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
 		    
 	    }
 	    
