@@ -171,7 +171,7 @@ function getModalContent(post_id) {
 }
 
 
-jQuery('#respond').submit(function(e) {
+jQuery('#respondform').submit(function(e) {
 	e.preventDefault();
 	respondSubmit();
 });
