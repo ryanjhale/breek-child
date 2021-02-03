@@ -173,7 +173,6 @@ jQuery(document).ready(function() {
 	checkLaunchModal();
 	
 	jQuery('.respondsubmit').on('click', function() {
-		e.preventDefault();
 		console.log('Inside respondform submit');
 		respondSubmit();
 	});
