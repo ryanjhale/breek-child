@@ -47,6 +47,11 @@ ul {
 
 <script>
 	
+jQuery('.respondsubmit').on('click', function() {
+	console.log('Inside respondform submit');
+	respondSubmit();
+});
+	
 function getModalContent(post_id) {
 	
 	jQuery('.modal-body').empty();
@@ -172,10 +177,7 @@ jQuery(document).ready(function() {
 	
 	checkLaunchModal();
 	
-	jQuery('.respondsubmit').on('click', function() {
-		console.log('Inside respondform submit');
-		respondSubmit();
-	});
+	
 	
 		
 	function respondSubmit() {
