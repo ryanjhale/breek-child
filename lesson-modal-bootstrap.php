@@ -248,8 +248,8 @@ jQuery(document).ready(function() {
 		        	
 	        	} else {
 		        	
-		        	createCookie('email', jQuery('input[name=email]').val();, 365);
-		        	createCookie('name', jQuery('input[name=name]').val();, 365);
+		        	createCookie('email', jQuery('input[name=email]').val(), 365);
+		        	createCookie('name', jQuery('input[name=name]').val(), 365);
 		        	jQuery('input[name=name]').prop('disabled', true);
 		        	jQuery('input[name=email]').prop('disabled', true);
 		        	jQuery('#respond').before(obj.message);

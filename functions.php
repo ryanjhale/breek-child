@@ -761,7 +761,9 @@ function cfm_custom_post_types() {
 	
 }
 
-/* Add post metadata to API */
+/*
+
+// Add post metadata to API 
 
 function cfm_get_lesson_post_meta($post) {
     $post_meta = get_post_meta($post['id']);
@@ -810,6 +812,7 @@ function cfm_get_response_form($post) {
     return $r;
 }
 
+
 function cfm_rest_api_post_meta() {
     
     register_rest_field('lessons', 'button_meta', array(
@@ -826,5 +829,6 @@ function cfm_rest_api_post_meta() {
 }
 
 add_action('rest_api_init', 'cfm_rest_api_post_meta');
+*/
 
 ?>
