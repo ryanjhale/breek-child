@@ -43,7 +43,7 @@ function cfm_get_lesson(){
 	}
 	
 	if(!empty($button_meta['button3_postid'][0])) {
-    	$button3 = '<button type="button" class="btn btn-' . $button_meta['button2_color'][0] . ' button3" onclick="getModalContent(' . $button_meta['button2_postid'][0] . ')">' . $button_meta['button2_text'][0] . '</button>';
+    	$button3 = '<button type="button" class="btn btn-' . $button_meta['button3_color'][0] . ' button3" onclick="getModalContent(' . $button_meta['button3_postid'][0] . ')">' . $button_meta['button3_text'][0] . '</button>';
 	}
     
     // Response form for questions
