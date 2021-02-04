@@ -83,10 +83,13 @@ function getModalContent(post_id) {
 	content.post = post_id;
 	content.security = '<?php echo $nonce; ?>';
 	content.action = 'lessons';
+	content.email = email;
 	
+	/*
 	if(email) {
 		content.email = email;
 	}
+	*/
 	
 	jQuery.ajax({
 		type:    'POST',
