@@ -59,11 +59,14 @@ function cfm_get_lesson(){
 		    
 		    $args = array('post_id' 		=> $post_id,
 	    			  	  'author_email' 	=> $email,
+	    			  	  'number'			=> 1,
+	    			  	  'orderby'			=> 'comment_date',
+					  	  'order'			=> 'DESC'
 					);
 	    
 			$comment = get_comments();
 			
-			$response_form = $comment;
+			$response_form = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">Respond</h3><textarea id="comment" name="comment" aria-required="true" rows="10">' . $comment['comment_content'] . '</textarea><input class="form-author" name="name" type="text" value="' . $comment['comment_author'] . '" size="30" aria-required="true" required=""><input class="form-email" name="email" type="text" value="' . $comment['comment_author_email'] . '" size="30" aria-required="true" required=""><p class="form-submit"><button class="btn respondsubmit" style="display:inline-block;color:#fff;border:2px solid transparent;letter-spacing:0.5px;font-weight600;border-radius:25px;background-color:#E84E89;font-size:18px;padding:10px 30px;appearance:none;">Submit</button><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
 		
 		} else {
 			
