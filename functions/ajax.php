@@ -26,19 +26,9 @@ function cfm_get_lesson(){
 	
 	$post = get_post($post_id);
 	
-	// Button meta
+	// Button data
 	
 	$button_meta = get_post_meta($post_id);
-	
-    $meta = array();
-    
-    foreach( $button_meta as $meta_key => $meta_value ) {
-        
-        if(in_array($meta_key, array('button1_color', 'button1_text', 'button1_postid', 'button2_color', 'button2_text', 'button2_postid', 'button3_color', 'button3_text', 'button3_postid'))) {
-        	$meta[$meta_key] = $meta_value[0];
-        }
-        
-    }
     
     $button1 = '';
     $button2 = '';
