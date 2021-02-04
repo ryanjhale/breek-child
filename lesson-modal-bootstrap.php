@@ -94,27 +94,29 @@ function getModalContent(post_id) {
 		data:    content,
 		success: function(data) {
         	
+        	var obj = jQuery.parseJSON(data);
+        	
         	var close = '<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
             
-            var comments = data.response;
+            var comments = obj.response;
             
-            var display_content = close + data.post_content + comments;
+            var display_content = close + obj.post_content + comments;
                                   
         	jQuery('.modal-body').html(display_content);
         	
-        	jQuery('#post_id').attr('value', data.id);
+        	jQuery('#post_id').attr('value', obj.id);
         	
-        	var button1_color = data.button_meta.button1_color;
-        	var button1_text = data.button_meta.button1_text;
-        	var button1_postid = data.button_meta.button1_postid;
+        	var button1_color = obj.button_meta.button1_color;
+        	var button1_text = obj.button_meta.button1_text;
+        	var button1_postid = obj.button_meta.button1_postid;
         	
-        	var button2_color = data.button_meta.button2_color;
-        	var button2_text = data.button_meta.button2_text;
-        	var button2_postid = data.button_meta.button2_postid;
+        	var button2_color = obj.button_meta.button2_color;
+        	var button2_text = obj.button_meta.button2_text;
+        	var button2_postid = obj.button_meta.button2_postid;
         	
-        	var button3_color = data.button_meta.button3_color;
-        	var button3_text = data.button_meta.button3_text;
-        	var button3_postid = data.button_meta.button3_postid;
+        	var button3_color = obj.button_meta.button3_color;
+        	var button3_text = obj.button_meta.button3_text;
+        	var button3_postid = obj.button_meta.button3_postid;
         	
         	jQuery('.button1').remove();
         	jQuery('.button2').remove();
