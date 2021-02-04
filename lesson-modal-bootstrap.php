@@ -45,9 +45,9 @@ ul {
     </div>
 </div>
 
+<?php $nonce = wp_create_nonce( "sp-ajax-nonce" ); ?>
+
 <script>
-
-
 	
 function getModalContent(post_id) {
 	
@@ -60,6 +60,8 @@ function getModalContent(post_id) {
 	
 	var content = {};
 	content.post = post_id;
+	content.security = '<?php echo $nonce; ?>';
+	content.action = 'lessons';
 	
 	if(email) {
 		content.email = email;
@@ -225,7 +227,7 @@ jQuery(document).ready(function() {
 		response.email = jQuery('input[name=email]').val();
 		response.commenttext = jQuery('#comment').val();
 		response.action = 'respond';
-		response.security = '<?php echo wp_create_nonce( "sp-ajax-nonce" ); ?>';
+		response.security = '<?php echo $nonce; ?>';
 		response.post_id = jQuery('input[name=post_id]').val();
 		response.comment_parent = jQuery('input[name=comment_parent]').val();
 		
