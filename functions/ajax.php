@@ -3,7 +3,7 @@
 /* Get lessons */
 
 add_action('wp_ajax_nopriv_lessons', 'cfm_get_lesson');
-add_action('wp_ajax_lessons', 'cfm_handle_lesson');
+add_action('wp_ajax_lessons', 'cfm_get_lesson');
 
 function cfm_get_lesson(){
 	
