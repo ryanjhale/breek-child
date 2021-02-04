@@ -51,20 +51,31 @@ ul {
 	
 function getModalContent(post_id) {
 	
-	jQuery('.modal-body').empty();
+	// jQuery('.modal-body').empty();
 	jQuery('.button1').remove();
 	jQuery('.button2').remove();
 	jQuery('.button3').remove();
 	
+	var email = readCookie('email');
+	
+	var content = {};
+	content.post = post_id;
+	
+	if(email) {
+		content.email = email;
+	}
+	
 	jQuery.ajax({
-		type:    'GET',
-		url:     '<?php echo get_site_url(get_current_blog_id(), "/wp-json/wp/v2/lessons/"); ?>' + post_id,
+		type:    'POST',
+		url:     ajax_var.url,
+		data:    content,
 		success: function(data) {
         	
         	var close = '<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
+            
             var comments = data.response;
             
-            var display_content = close + data.content.rendered + comments;
+            var display_content = close + data.post_content + comments;
                                   
         	jQuery('.modal-body').html(display_content);
         	
@@ -175,6 +186,29 @@ jQuery(document).ready(function() {
 	checkLaunchModal();
 	
 	
+	
+	function readCookie(name) {
+	    var nameEQ = name + "=";
+	    var ca = document.cookie.split(';');
+	    for(var i=0;i < ca.length;i++) {
+	        var c = ca[i];
+	        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+	        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	    }
+	    return null;
+	}
+	
+	function createCookie(name,value,days) {
+	    if (days) {
+	        var date = new Date();
+	        date.setTime(date.getTime()+(days*24*60*60*1000));
+	        var expires = "; expires="+date.toGMTString();
+	    }
+	    else var expires = "";
+	    document.cookie = name+"="+value+expires+"; path=/";
+	}
+	
+	
 	jQuery(document).on('click','.respondsubmit',function(e) {
 		respondSubmit();
 	});
@@ -195,7 +229,7 @@ jQuery(document).ready(function() {
 		response.post_id = jQuery('input[name=post_id]').val();
 		response.comment_parent = jQuery('input[name=comment_parent]').val();
 		
-		jQuery('input[type="submit"]').prop('disabled', true);
+		jQuery('.respondsubmit').prop('disabled', true);
 		
 		jQuery.ajax({
 			action: 'respond',
@@ -207,11 +241,13 @@ jQuery(document).ready(function() {
 	        	
 	        	if(obj.error == '1') {
 		        	
-		        	jQuery('.respondsubmit').prop('disabled', true);
+		        	jQuery('.respondsubmit').prop('disabled', false);
 		        	jQuery('#respond').before(obj.message);
 		        	
 	        	} else {
 		        	
+		        	createCookie('email', jQuery('input[name=email]').val();, 365);
+		        	createCookie('name', jQuery('input[name=name]').val();, 365);
 		        	jQuery('input[name=name]').prop('disabled', true);
 		        	jQuery('input[name=email]').prop('disabled', true);
 		        	jQuery('#respond').before(obj.message);

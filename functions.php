@@ -781,42 +781,30 @@ function cfm_get_response_form($post) {
     $r = '';
     
     if($lesson_type == 'question') {
+
+	    $args = array('post_id' 		=> $post['id'],
+	    			  'author_email' 	=> $_COOKIE['response']['email'],
+	    			  'count'			=> true,
+	    );
 	    
-	    if(isset($_COOKIE['email'])) {
+	    $comment = get_comments();
 	    
-		    $email = $_COOKIE['email'];
-		    $name = $_COOKIE['name'];
-		    
+	    if($comment > 0) {
 		    
 		    $args = array('post_id' 		=> $post['id'],
-		    			  'author_email' 	=> $_COOKIE['response']['email'],
-		    			  'count'			=> true,
-		    );
-		    
-		    $comment = get_comments();
-		    
-		    if($comment > 0) {
-			    
-			    $args = array('post_id' 		=> $post['id'],
-		    			  	  'author_email' 	=> $_COOKIE['response']['email'],
-						);
-		    
-				$comment = get_comments();
-				
-				$r = $comment;
-				
-		    } else {
-			    
-			    $r = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">Respond</h3><textarea id="comment" name="comment" aria-required="true" rows="10" placeholder="Your Response"></textarea><input class="form-author" name="name" type="text" placeholder="' . $name . '" value="" size="30" aria-required="true" required=""><input class="form-email" name="email" type="text" placeholder="' . $email . '" value="" size="30" aria-required="true" required=""><p class="form-submit"><button class="btn respondsubmit" style="display:inline-block;color:#fff;border:2px solid transparent;letter-spacing:0.5px;font-weight600;border-radius:25px;background-color:#E84E89;font-size:18px;padding:10px 30px;appearance:none;">Submit</button><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
-			    
-		    }
+	    			  	  'author_email' 	=> $_COOKIE['response']['email'],
+					);
 	    
-	    } else {
-		    
-		    $r = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">Respond</h3><textarea id="comment" name="comment" aria-required="true" rows="10" placeholder="Your Response"></textarea><input class="form-author" name="name" type="text" placeholder="Name" value="" size="30" aria-required="true" required=""><input class="form-email" name="email" type="text" placeholder="Email" value="" size="30" aria-required="true" required=""><p class="form-submit"><button class="btn respondsubmit" style="display:inline-block;color:#fff;border:2px solid transparent;letter-spacing:0.5px;font-weight600;border-radius:25px;background-color:#E84E89;font-size:18px;padding:10px 30px;appearance:none;">Submit</button><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></div>';
-		    
-	    }
-	    
+			$comment = get_comments();
+			
+			$r = json_encode($comment);
+		
+		} else {
+			
+			$r = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">Respond</h3><textarea id="comment" name="comment" aria-required="true" rows="10" placeholder="Your Response"></textarea><input class="form-author" name="name" type="text" placeholder="Name" value="" size="30" aria-required="true" required=""><input class="form-email" name="email" type="text" placeholder="Email" value="" size="30" aria-required="true" required=""><p class="form-submit"><button class="btn respondsubmit" style="display:inline-block;color:#fff;border:2px solid transparent;letter-spacing:0.5px;font-weight600;border-radius:25px;background-color:#E84E89;font-size:18px;padding:10px 30px;appearance:none;">Submit</button><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
+			
+		}
+		
 	}
     
     return $r;
