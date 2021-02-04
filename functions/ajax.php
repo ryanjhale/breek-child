@@ -18,6 +18,11 @@ function cfm_get_lesson(){
 		$post_id = $_REQUEST['post'];
 	}
 	
+	$button_meta = get_post_meta($post_id);
+	
+	print_r($button_meta);
+	wp_die();
+	
 	if(isset($_REQUEST['email']) && is_email($_REQUEST['email'])) {
 		$email = sanitize_email($_REQUEST['email']);
 	}
