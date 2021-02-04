@@ -106,40 +106,14 @@ function getModalContent(post_id) {
         	
         	jQuery('#post_id').attr('value', obj.id);
         	
-        	var button1_color = obj.button_meta.button1_color;
-        	var button1_text = obj.button_meta.button1_text;
-        	var button1_postid = obj.button_meta.button1_postid;
-        	
-        	var button2_color = obj.button_meta.button2_color;
-        	var button2_text = obj.button_meta.button2_text;
-        	var button2_postid = obj.button_meta.button2_postid;
-        	
-        	var button3_color = obj.button_meta.button3_color;
-        	var button3_text = obj.button_meta.button3_text;
-        	var button3_postid = obj.button_meta.button3_postid;
+        	var button1 = obj.button1;   	
+        	var button2 = obj.button2;
+        	var button3 = obj.button3;
         	
         	jQuery('.button1').remove();
         	jQuery('.button2').remove();
         	jQuery('.button3').remove();
 
-        	if(button1_postid) {
-	        	var button1 = '<button type="button" class="btn btn-' + button1_color + ' button1" onclick="getModalContent(' + button1_postid + ')">' + button1_text + '</button>';
-        	} else {
-	        	var button1 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
-        	}
-        	
-        	if(button2_postid) {
-	        	var button2 = '<button type="button" class="btn btn-' + button2_color + ' button2" onclick="getModalContent(' + button2_postid + ')">' + button2_text + '</button>';
-        	} else {
-	        	var button2 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
-        	}
-        	
-        	if(button3_postid) {
-	        	var button3 = '<button type="button" class="btn btn-' + button3_color + ' button3" onclick="getModalContent(' + button3_postid + ')">' + button3_text + '</button>';
-        	} else {
-	        	var button3 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
-        	}
-        	
         	jQuery('.lesson-buttons').prepend(button3);
         	jQuery('.lesson-buttons').prepend(button2);
         	jQuery('.lesson-buttons').prepend(button1);

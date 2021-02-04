@@ -18,11 +18,6 @@ function cfm_get_lesson(){
 		$post_id = $_REQUEST['post'];
 	}
 	
-	$button_meta = get_post_meta($post_id);
-	
-	print_r($button_meta);
-	wp_die();
-	
 	if(isset($_REQUEST['email']) && is_email($_REQUEST['email'])) {
 		$email = sanitize_email($_REQUEST['email']);
 	}
@@ -44,6 +39,22 @@ function cfm_get_lesson(){
         }
         
     }
+    
+    $button1 = '';
+    $button2 = '';
+    $button3 = '';
+    
+    if(!empty($button_meta['button1_postid'][0])) {
+    	var $button1 = '<button type="button" class="btn btn-' + $button_meta['button1_color'][0] + ' button1" onclick="getModalContent(' + $button_meta['button1_postid'][0] + ')">' + $button_meta['button1_text'][0] + '</button>';
+	}
+	
+	if(!empty($button_meta['button2_postid'][0])) {
+    	var button2 = '<button type="button" class="btn btn-' + $button_meta['button2_color'][0] + ' button2" onclick="getModalContent(' + $button_meta['button2_postid'][0] + ')">' + $button_meta['button2_text'][0] + '</button>';
+	}
+	
+	if(!empty($button_meta['button3_postid'][0])) {
+    	var button3 = '<button type="button" class="btn btn-' + $button_meta['button2_color'][0] + ' button3" onclick="getModalContent(' + $button_meta['button2_postid'][0] + ')">' + $button_meta['button2_text'][0] + '</button>';
+	}
     
     // Response form for questions
     
@@ -85,7 +96,9 @@ function cfm_get_lesson(){
 				  'id'					=> $post_id,
 				  'post_title' 			=> $post->post_title,
 				  'post_content' 		=> post_password_required( $post ) ? '' : apply_filters( 'the_content', $post->post_content ),
-				  'button_meta'			=> $button_meta,
+				  'button1'				=> $button1,
+				  'button2'				=> $button2,
+				  'button3'				=> $button3,
 				  'response'			=> $response_form,
 	);
 	
