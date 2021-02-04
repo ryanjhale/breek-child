@@ -82,7 +82,7 @@ function cfm_get_lesson(){
 	);
 	
 
-	echo json_encode(array('message' => '<div class="alert alert-success" role="alert">Thank you!  We received your response and our team will follow up with you soon.</div>'));
+	echo json_encode($data);
 	
 	wp_die();
 }
