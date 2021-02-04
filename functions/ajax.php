@@ -76,7 +76,7 @@ function cfm_get_lesson(){
 	$data = array(
 				  'id'					=> $post_id,
 				  'post_title' 			=> $post->post_title,
-				  'post_content' 		=> get_the_content(null, null, $post),
+				  'post_content' 		=> post_password_required( $post ) ? '' : apply_filters( 'the_content', $post->post_content ),
 				  'button_meta'			=> $button_meta,
 				  'response'			=> $response_form,
 	);
