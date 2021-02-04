@@ -35,15 +35,15 @@ function cfm_get_lesson(){
     $button3 = '';
     
     if(!empty($button_meta['button1_postid'][0])) {
-    	$button1 = '<button type="button" class="btn btn-' + $button_meta['button1_color'][0] + ' button1" onclick="getModalContent(' + $button_meta['button1_postid'][0] + ')">' + $button_meta['button1_text'][0] + '</button>';
+    	$button1 = '<button type="button" class="btn btn-' . $button_meta['button1_color'][0] . ' button1" onclick="getModalContent(' + $button_meta['button1_postid'][0] + ')">' . $button_meta['button1_text'][0] . '</button>';
 	}
 	
 	if(!empty($button_meta['button2_postid'][0])) {
-    	$button2 = '<button type="button" class="btn btn-' + $button_meta['button2_color'][0] + ' button2" onclick="getModalContent(' + $button_meta['button2_postid'][0] + ')">' + $button_meta['button2_text'][0] + '</button>';
+    	$button2 = '<button type="button" class="btn btn-' . $button_meta['button2_color'][0] . ' button2" onclick="getModalContent(' . $button_meta['button2_postid'][0] . ')">' . $button_meta['button2_text'][0] . '</button>';
 	}
 	
 	if(!empty($button_meta['button3_postid'][0])) {
-    	$button3 = '<button type="button" class="btn btn-' + $button_meta['button2_color'][0] + ' button3" onclick="getModalContent(' + $button_meta['button2_postid'][0] + ')">' + $button_meta['button2_text'][0] + '</button>';
+    	$button3 = '<button type="button" class="btn btn-' . $button_meta['button2_color'][0] . ' button3" onclick="getModalContent(' . $button_meta['button2_postid'][0] . ')">' . $button_meta['button2_text'][0] . '</button>';
 	}
     
     // Response form for questions
