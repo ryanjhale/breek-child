@@ -122,19 +122,19 @@ function getModalContent(post_id) {
         	jQuery('.button2').remove();
         	jQuery('.button3').remove();
 
-        	if(button1_color.length > 0 && button1_text.length > 0 && button1_postid.length > 0) {
+        	if(button1_postid) {
 	        	var button1 = '<button type="button" class="btn btn-' + button1_color + ' button1" onclick="getModalContent(' + button1_postid + ')">' + button1_text + '</button>';
         	} else {
 	        	var button1 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
         	}
         	
-        	if(button2_color.length > 0 && button2_text.length > 0 && button2_postid.length > 0) {
+        	if(button2_postid) {
 	        	var button2 = '<button type="button" class="btn btn-' + button2_color + ' button2" onclick="getModalContent(' + button2_postid + ')">' + button2_text + '</button>';
         	} else {
 	        	var button2 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
         	}
         	
-        	if(button3_color.length > 0 && button3_text.length > 0 && button3_postid.length > 0) {
+        	if(button3_postid) {
 	        	var button3 = '<button type="button" class="btn btn-' + button3_color + ' button3" onclick="getModalContent(' + button3_postid + ')">' + button3_text + '</button>';
         	} else {
 	        	var button3 = '<button type="button" class="btn btn-default" style="display: none;"></button>';
