@@ -19,7 +19,7 @@ function cfm_get_lesson(){
 	}
 	
 	if(isset($_REQUEST['email']) && is_email($_REQUEST['email'])) {
-		$email = sanitize_email($_REQUEST['email']);
+		$email = $_REQUEST['email'];
 	}
 	
 	// Post data
@@ -52,31 +52,43 @@ function cfm_get_lesson(){
     
     $response_form = '';
     
+    $prefilled_form = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">Respond</h3><textarea id="comment" name="comment" aria-required="true" rows="10">' . $comment[0]->comment_content . '</textarea><input class="form-author" name="name" type="text" value="' . $comment[0]->comment_author . '" size="30" aria-required="true" required=""><input class="form-email" name="email" type="text" value="' . $comment[0]->comment_author_email . '" size="30" aria-required="true" required=""><p class="form-submit"><button class="btn respondsubmit" style="display:inline-block;color:#fff;border:2px solid transparent;letter-spacing:0.5px;font-weight600;border-radius:25px;background-color:#E84E89;font-size:18px;padding:10px 30px;appearance:none;">Submit</button><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
+    
+    $empty_form = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">Respond</h3><textarea id="comment" name="comment" aria-required="true" rows="10" placeholder="Your Response"></textarea><input class="form-author" name="name" type="text" placeholder="Name" value="" size="30" aria-required="true" required=""><input class="form-email" name="email" type="text" placeholder="Email" value="" size="30" aria-required="true" required=""><p class="form-submit"><button class="btn respondsubmit" style="display:inline-block;color:#fff;border:2px solid transparent;letter-spacing:0.5px;font-weight600;border-radius:25px;background-color:#E84E89;font-size:18px;padding:10px 30px;appearance:none;">Submit</button><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
+    
     if($lesson_type == 'question') {
-
-	    $args = array('post_id' 		=> $post_id,
-	    			  'author_email' 	=> $email,
-	    			  'count'			=> true,
-	    );
 	    
-	    $comment = get_comments();
+	    if(isset($email)) {
 	    
-	    if($comment > 0) {
-		    
 		    $args = array('post_id' 		=> $post_id,
-	    			  	  'author_email' 	=> $email,
-	    			  	  'number'			=> 1,
-	    			  	  'orderby'			=> 'comment_date',
-					  	  'order'			=> 'DESC'
-					);
-	    
-			$comment = get_comments();
+		    			  'author_email' 	=> $email,
+		    			  'count'			=> true,
+		    );
+		    
+		    $comment = get_comments();
+		    
+		    if($comment > 0) {
+			    
+			    $args = array('post_id' 		=> $post_id,
+		    			  	  'author_email' 	=> $email,
+		    			  	  'number'			=> 1,
+		    			  	  'orderby'			=> 'comment_date',
+						  	  'order'			=> 'DESC'
+						);
+		    
+				$comment = get_comments();
+				
+				$response_form = $prefilled_form;
 			
-			$response_form = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">Respond</h3><textarea id="comment" name="comment" aria-required="true" rows="10">' . $comment[0]->comment_content . '</textarea><input class="form-author" name="name" type="text" value="' . $comment[0]->comment_author . '" size="30" aria-required="true" required=""><input class="form-email" name="email" type="text" value="' . $comment[0]->comment_author_email . '" size="30" aria-required="true" required=""><p class="form-submit"><button class="btn respondsubmit" style="display:inline-block;color:#fff;border:2px solid transparent;letter-spacing:0.5px;font-weight600;border-radius:25px;background-color:#E84E89;font-size:18px;padding:10px 30px;appearance:none;">Submit</button><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
-		
+			} else {
+				
+				$response_form = $empty_form;
+				
+			}
+				
 		} else {
 			
-			$response_form = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">Respond</h3><textarea id="comment" name="comment" aria-required="true" rows="10" placeholder="Your Response"></textarea><input class="form-author" name="name" type="text" placeholder="Name" value="" size="30" aria-required="true" required=""><input class="form-email" name="email" type="text" placeholder="Email" value="" size="30" aria-required="true" required=""><p class="form-submit"><button class="btn respondsubmit" style="display:inline-block;color:#fff;border:2px solid transparent;letter-spacing:0.5px;font-weight600;border-radius:25px;background-color:#E84E89;font-size:18px;padding:10px 30px;appearance:none;">Submit</button><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
+			$response_form = $empty_form;
 			
 		}
 		
