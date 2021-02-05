@@ -48,7 +48,7 @@ function cfm_get_lesson(){
     
     // Response form for questions
     
-    $lesson_type = get_field('lesson_type', $post_id);
+    $lesson_type = get_post_meta($post_id, 'lesson_type', true);
     
     $response_form = '';
     
