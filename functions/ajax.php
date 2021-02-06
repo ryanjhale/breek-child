@@ -60,10 +60,19 @@ function cfm_get_lesson(){
 	    
 	    if(isset($email)) {
 	    
+		    /*
 		    $args = array('post_id' 		=> $post_id,
 		    			  'author_email' 	=> $email,
 		    			  'count'			=> true,
 		    );
+		    */
+		    
+		    $args = array('post_id' 		=> $post_id,
+		    			  	  'author_email' 	=> $email,
+		    			  	  'number'			=> 1,
+		    			  	  'orderby'			=> 'comment_date',
+						  	  'order'			=> 'DESC'
+						);
 		    
 		    $comments_query = new WP_Comment_Query($args); 
 			$comments = $comments_query->comments;
