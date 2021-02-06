@@ -88,9 +88,9 @@ function cfm_get_lesson(){
 			
 			if(!empty($comments[0])) {
 				
-				$comment_content = $comments[0]->comment_content;
-				$comment_author = $comments[0]->comment_author;
-				$comment_author_email = $comments[0]->comment_author_email;
+				$comment_content_value = $comments[0]->comment_content;
+				$comment_author_value = $comments[0]->comment_author;
+				$comment_author_email_value = $comments[0]->comment_author_email;
 				$disabled_comment = 'disabled';
 				
 			}
@@ -110,7 +110,7 @@ function cfm_get_lesson(){
 				  'button1'				=> $button1,
 				  'button2'				=> $button2,
 				  'button3'				=> $button3,
-				  'response'			=> $comments // $response_form,
+				  'response'			=> $response_form,
 	);
 	
 
