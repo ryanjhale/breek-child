@@ -22,6 +22,10 @@ function cfm_get_lesson(){
 		$email = $_REQUEST['email'];
 	}
 	
+	if(isset($_REQUEST['name'])) {
+		$name = $_REQUEST['name'];
+	}
+	
 	// Post data
 	
 	$post = get_post($post_id);

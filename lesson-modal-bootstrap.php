@@ -79,6 +79,7 @@ function getModalContent(post_id) {
 	jQuery('.button3').remove();
 	
 	var email = readCookie('email');
+	var name = readCookie('name');
 	
 	var content = {};
 	content.post = post_id;
