@@ -26,6 +26,9 @@ ul {
   text-align: left;
   vertical-align: middle;
 }
+.wp-block-image {
+    margin-bottom: 0;
+}
 </style>
 
 <div class="modal fade " id="lesson-modal" tabindex="-1" role="dialog" aria-labelledby="important-msg-label" aria-hidden="true">
