@@ -65,9 +65,8 @@ function cfm_get_lesson(){
 		    			  'count'			=> true,
 		    );
 		    
-		    
-		    
-		    $comment = get_comments();
+		    $comments_query = new WP_Comment_Query($args); 
+			$comments = $comments_query->comments;
 		    
 		    /*
 		    
