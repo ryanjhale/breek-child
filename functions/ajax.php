@@ -65,9 +65,11 @@ function cfm_get_lesson(){
 		    			  'count'			=> true,
 		    );
 		    
-		    /*
+		    
 		    
 		    $comment = get_comments();
+		    
+		    /*
 		    
 		    if($comment > 0) {
 			    
@@ -100,7 +102,7 @@ function cfm_get_lesson(){
 				  'button1'				=> $button1,
 				  'button2'				=> $button2,
 				  'button3'				=> $button3,
-				  'response'			=> $args // $response_form,
+				  'response'			=> $comment // $response_form,
 	);
 	
 
