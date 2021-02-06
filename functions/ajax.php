@@ -59,7 +59,7 @@ function cfm_get_lesson(){
     if($lesson_type == 'question') {
 	    
 	    $comment_content_placeholder = 'Your answer';
-	    $comment_content_value = 'Your answer';
+	    $comment_content_value = '';
 	    
 	    $comment_author_placeholder = 'Name';
 	    $comment_author_value = '';
