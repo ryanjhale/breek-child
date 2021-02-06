@@ -86,6 +86,7 @@ function getModalContent(post_id) {
 	content.security = '<?php echo $nonce; ?>';
 	content.action = 'lessons';
 	content.email = email;
+	content.name = name;
 	
 	/*
 	if(email) {
