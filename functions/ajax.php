@@ -59,13 +59,6 @@ function cfm_get_lesson(){
 	    $comment_author_email = '';
 	    
 	    if(isset($email)) {
-	    
-		    /*
-		    $args = array('post_id' 		=> $post_id,
-		    			  'author_email' 	=> $email,
-		    			  'count'			=> true,
-		    );
-		    */
 		    
 		    $args = array('post_id' 		=> $post_id,
 		    			  	  'author_email' 	=> $email,
@@ -76,26 +69,10 @@ function cfm_get_lesson(){
 		    
 		    $comments_query = new WP_Comment_Query($args); 
 			$comments = $comments_query->comments;
-		    
-		    /*
-		    
-		    if($comment > 0) {
-			    
-			    $args = array('post_id' 		=> $post_id,
-		    			  	  'author_email' 	=> $email,
-		    			  	  'number'			=> 1,
-		    			  	  'orderby'			=> 'comment_date',
-						  	  'order'			=> 'DESC'
-						);
-		    
-				$comment = get_comments();
-				
-				$comment_content = $comment[0]->comment_content;
-				$comment_author = $comment[0]->comment_author;
-				$comment_author_email = $comment[0]->comment_author_email;
 			
-			}
-			*/
+			$comment_content = $comments[0]->comment_content;
+			$comment_author = $comments[0]->comment_author;
+			$comment_author_email = $comments[0]->comment_author_email;
 				
 		}
 		
