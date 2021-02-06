@@ -87,7 +87,7 @@ function cfm_get_lesson(){
 				  'button1'				=> $button1,
 				  'button2'				=> $button2,
 				  'button3'				=> $button3,
-				  'response'			=> $comments // $response_form,
+				  'response'			=> $response_form,
 	);
 	
 
