@@ -88,12 +88,6 @@ function getModalContent(post_id) {
 	content.email = email;
 	content.name = name;
 	
-	/*
-	if(email) {
-		content.email = email;
-	}
-	*/
-	
 	jQuery.ajax({
 		type:    'POST',
 		url:     ajax_var.url,
