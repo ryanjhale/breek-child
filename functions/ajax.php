@@ -71,6 +71,12 @@ function cfm_get_lesson(){
 	    
 	    if(isset($email) && isset($name)) {
 		    
+		    $comment_author_value = $name;
+		    $comment_author_placeholder = $name;
+		    
+		    $comment_author_email_value = $email;
+		    $comment_author_email_placeholder = $email;
+		    
 		    $disabled_author = 'disabled';
 		    
 		    $args = array(
