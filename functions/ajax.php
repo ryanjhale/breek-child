@@ -58,6 +58,7 @@ function cfm_get_lesson(){
     
     if($lesson_type == 'question') {
 	    
+	    $comment_content_placeholder = 'Your answer';
 	    $comment_content_value = 'Your answer';
 	    
 	    $comment_author_placeholder = 'Name';
@@ -105,7 +106,7 @@ function cfm_get_lesson(){
 				
 		}
 		
-		$response_form = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">Respond</h3><textarea id="comment" name="comment" aria-required="true" rows="10"' . ' ' . $disabled_comment . '>' . $comment_content_value . '</textarea><input class="form-author" name="name" type="text" value="' . $comment_author_value . '" size="30" aria-required="true" placeholder="' . $comment_author_placeholder . '"' . ' ' . $disabled_author . '><input class="form-email" name="email" type="text" value="' . $comment_author_email_value . '" size="30" aria-required="true" placeholder="' . $comment_author_email_placeholder . '"' . ' ' . $disabled_author . '><p class="form-submit"><button class="btn respondsubmit" style="display:inline-block;color:#fff;border:2px solid transparent;letter-spacing:0.5px;font-weight600;border-radius:25px;background-color:#E84E89;font-size:18px;padding:10px 30px;appearance:none;"' . ' ' . $disabled_comment . '>Submit</button><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
+		$response_form = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">Respond</h3><textarea id="comment" name="comment" aria-required="true" placeholder="' . $comment_content_placeholder . '" rows="10"' . ' ' . $disabled_comment . '>' . $comment_content_value . '</textarea><input class="form-author" name="name" type="text" value="' . $comment_author_value . '" size="30" aria-required="true" placeholder="' . $comment_author_placeholder . '"' . ' ' . $disabled_author . '><input class="form-email" name="email" type="text" value="' . $comment_author_email_value . '" size="30" aria-required="true" placeholder="' . $comment_author_email_placeholder . '"' . ' ' . $disabled_author . '><p class="form-submit"><button class="btn respondsubmit" style="display:inline-block;color:#fff;border:2px solid transparent;letter-spacing:0.5px;font-weight600;border-radius:25px;background-color:#E84E89;font-size:18px;padding:10px 30px;appearance:none;"' . ' ' . $disabled_comment . '>Submit</button><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
 		
 	}
 	
