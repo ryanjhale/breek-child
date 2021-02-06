@@ -107,7 +107,7 @@ function getModalContent(post_id) {
                                   
         	jQuery('.modal-body').html(display_content);
         	
-        	jQuery('#modal').animate({ scrollTop: 0 }, 'slow');
+        	jQuery('.modal').animate({ scrollTop: 0 }, 'slow');
         	
         	jQuery('#post_id').attr('value', obj.id);
         	
