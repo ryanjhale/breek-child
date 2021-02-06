@@ -13,7 +13,7 @@ function cfm_get_lesson(){
 
 	
 	if(!isset($_REQUEST['post'])) {
-		$error = array('error' => 1, 'message' => '<div class="alert alert-danger" role="alert">Please enter a valid email address.</div>');
+		$error = array('error' => 1, 'message' => '<div class="alert alert-danger" role="alert">Sorry, we need the information for this lesson but we did not receive it.</div>');
 	} else {
 		$post_id = $_REQUEST['post'];
 	}
@@ -54,29 +54,48 @@ function cfm_get_lesson(){
     
     if($lesson_type == 'question') {
 	    
-	    $comment_content = '';
-	    $comment_author = '';
-	    $comment_author_email = '';
+	    $comment_content_value = 'Your answer';
 	    
-	    if(isset($email)) {
+	    $comment_author_placeholder = 'Name';
+	    $comment_author_value = '';
+	    
+	    $comment_author_email_placeholder = 'Email';
+	    $comment_author_email_value = '';
+	    
+	    $disabled_comment = '';
+		$disabled_author = '';
+	    
+	    if(isset($email) && isset($name)) {
 		    
-		    $args = array('post_id' 		=> $post_id,
-		    			  	  'author_email' 	=> $email,
-		    			  	  'number'			=> 1,
-		    			  	  'orderby'			=> 'comment_date',
-						  	  'order'			=> 'DESC'
+		    $disabled_author = 'disabled';
+		    
+		    $args = array(
+			    
+		    			  'post_id' 		=> $post_id,
+	    			  	  'author_email' 	=> $email,
+	    			  	  'number'			=> 1,
+	    			  	  'orderby'			=> 'comment_date',
+					  	  'order'			=> 'DESC'
+					  	  
 						);
 		    
 		    $comments_query = new WP_Comment_Query($args); 
 			$comments = $comments_query->comments;
 			
-			$comment_content = $comments[0]->comment_content;
-			$comment_author = $comments[0]->comment_author;
-			$comment_author_email = $comments[0]->comment_author_email;
+			if(!empty($comments[0])) {
+				
+				$comment_content = $comments[0]->comment_content;
+				$comment_author = $comments[0]->comment_author;
+				$comment_author_email = $comments[0]->comment_author_email;
+				$disabled_comment = 'disabled';
+				
+			}
+			
+			
 				
 		}
 		
-		$response_form = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">Respond</h3><textarea id="comment" name="comment" aria-required="true" rows="10">' . $comment_content . '</textarea><input class="form-author" name="name" type="text" value="' . $comment_author . '" size="30" aria-required="true" required=""><input class="form-email" name="email" type="text" value="' . $comment_author_email . '" size="30" aria-required="true" required=""><p class="form-submit"><button class="btn respondsubmit" style="display:inline-block;color:#fff;border:2px solid transparent;letter-spacing:0.5px;font-weight600;border-radius:25px;background-color:#E84E89;font-size:18px;padding:10px 30px;appearance:none;">Submit</button><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
+		$response_form = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">Respond</h3><textarea id="comment" name="comment" aria-required="true" rows="10"' . ' ' . $disabled_comment . '>' . $comment_content_value . '</textarea><input class="form-author" name="name" type="text" value="' . $comment_author_value . '" size="30" aria-required="true" placeholder="' . $comment_author_placeholder . '"' . ' ' . $disabled_author . '><input class="form-email" name="email" type="text" value="' . $comment_author_email_value . '" size="30" aria-required="true" placeholder="' . $comment_author_email_placeholder . '"' . ' ' . $disabled_author . '><p class="form-submit"><button class="btn respondsubmit" style="display:inline-block;color:#fff;border:2px solid transparent;letter-spacing:0.5px;font-weight600;border-radius:25px;background-color:#E84E89;font-size:18px;padding:10px 30px;appearance:none;"' . ' ' . $disabled_comment . '>Submit</button><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
 		
 	}
 	
