@@ -238,6 +238,7 @@ jQuery(document).ready(function() {
 		        	
 		        	createCookie('email', jQuery('input[name=email]').val(), 365);
 		        	createCookie('name', jQuery('input[name=name]').val(), 365);
+		        	jQuery('.fa-spinner').hide();
 		        	jQuery('#comment').prop('disabled', true);
 		        	jQuery('input[name=name]').prop('disabled', true);
 		        	jQuery('input[name=email]').prop('disabled', true);
