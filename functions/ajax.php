@@ -121,21 +121,21 @@ function cfm_get_lesson(){
 				
 				if(CFM_ENV == 'prod-english' || CFM_ENV == 'dev') {
 		    
-				    $change_response_text = '<div id="already-answered" style="margin-bottom:30px;">You previously answered this question.  If you would like, you can ';
+				    $change_response_text = '<div id="already-answered" style="margin-bottom:30px;">You previously answered this question.<br />If you would like, you can ';
 				    $change_response_link = 'change your answer';
-				    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Thank you!  We have received your response.  If you would like, you can ';
+				    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Thank you!  We have received your response.<br />If you would like, you can ';
 				    
 			    } elseif(CFM_ENV == 'prod-italian') {
 				    
-				    $change_response_text = '<div id="already-answered" style="margin-bottom:30px;">Hai già risposto a questa domanda.  Se vuoi, puoi ';
+				    $change_response_text = '<div id="already-answered" style="margin-bottom:30px;">Hai già risposto a questa domanda.<br />Se vuoi, puoi ';
 				    $change_response_link = 'cambiare la tua risposta';
-				    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Grazie!  Abbiamo ricevuto la sua risposta.  Se vuoi, puoi ';
+				    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Grazie!  Abbiamo ricevuto la sua risposta.<br />Se vuoi, puoi ';
 				    
 			    } elseif(CFM_ENV == 'prod-french') {
 				    
-				    $change_response_text = '<div id="already-answered" style="margin-bottom:30px;">Vous avez déjà répondu à cette question.  Si vous le souhaitez, vous pouvez ';
+				    $change_response_text = '<div id="already-answered" style="margin-bottom:30px;">Vous avez déjà répondu à cette question.<br />Si vous le souhaitez, vous pouvez ';
 				    $change_response = 'modifier votre réponse';
-				    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Merci !  Nous avons reçu votre réponse.  Si vous le souhaitez, vous pouvez ';
+				    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Merci !  Nous avons reçu votre réponse.<br />Si vous le souhaitez, vous pouvez ';
 				    
 			    }
 			    
