@@ -102,8 +102,6 @@ function cfm_get_lesson(){
 		    $comment_author_email_value = $email;
 		    $comment_author_email_placeholder = $email;
 		    
-		    $disabled_author = 'disabled';
-		    
 		    $args = array(
 			    
 		    			  'post_id' 		=> $post_id,
@@ -145,7 +143,7 @@ function cfm_get_lesson(){
 				$comment_content_value = $comments[0]->comment_content;
 				$comment_author_value = $comments[0]->comment_author;
 				$comment_author_email_value = $comments[0]->comment_author_email;
-				$disabled_comment = 'disabled';
+				$disabled = 'disabled';
 				
 			}
 			
@@ -153,7 +151,7 @@ function cfm_get_lesson(){
 				
 		}
 		
-		$response_form = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">' . $respond_header . '</h3>' . $change_response_span . '<textarea id="comment" name="comment" aria-required="true" placeholder="' . $comment_content_placeholder . '" rows="10"' . ' ' . $disabled_comment . ' style="margin-bottom:0px;">' . $comment_content_value . '</textarea><input class="form-author" name="name" type="text" value="' . $comment_author_value . '" size="30" aria-required="true" placeholder="' . $comment_author_placeholder . '"' . ' ' . $disabled_author . ' style="margin-bottom:0px; margin-top:15px;"><input class="form-email" name="email" type="text" value="' . $comment_author_email_value . '" size="30" aria-required="true" placeholder="' . $comment_author_email_placeholder . '"' . ' ' . $disabled_author . ' style="margin-bottom:15px; margin-top:15px;">' . $confirm_response_span . '<p class="form-submit"><button class="btn respondsubmit" style="display:inline-block;color:#fff;border:2px solid transparent;letter-spacing:0.5px;font-weight600;border-radius:25px;background-color:#E84E89;font-size:18px;padding:10px 30px;appearance:none;"' . ' ' . $disabled_comment . '>' . $submit_button_text . '<i class="fa fa-spinner fa-pulse fa-fw" style="display: none;"></i></button><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
+		$response_form = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">' . $respond_header . '</h3>' . $change_response_span . '<textarea id="comment" name="comment" aria-required="true" placeholder="' . $comment_content_placeholder . '" rows="10"' . ' ' . $disabled . ' style="margin-bottom:0px;">' . $comment_content_value . '</textarea><input class="form-author" name="name" type="text" value="' . $comment_author_value . '" size="30" aria-required="true" placeholder="' . $comment_author_placeholder . '"' . ' ' . $disabled . ' style="margin-bottom:0px; margin-top:15px;"><input class="form-email" name="email" type="text" value="' . $comment_author_email_value . '" size="30" aria-required="true" placeholder="' . $comment_author_email_placeholder . '"' . ' ' . $disabled . ' style="margin-bottom:15px; margin-top:15px;">' . $confirm_response_span . '<p class="form-submit"><button class="btn respondsubmit" style="display:inline-block;color:#fff;border:2px solid transparent;letter-spacing:0.5px;font-weight600;border-radius:25px;background-color:#E84E89;font-size:18px;padding:10px 30px;appearance:none;"' . ' ' . $disabled . '>' . $submit_button_text . '<i class="fa fa-spinner fa-pulse fa-fw" style="display: none;"></i></button><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
 		
 	}
 	
