@@ -200,7 +200,7 @@ jQuery(document).ready(function() {
 	});
 	
 	jQuery(document).on('click','#change-email',function(e) {
-		jQuery('input[name=name]').prop('disabled', false);
+		jQuery('input[name=email]').prop('disabled', false);
 		jQuery('.respondsubmit').prop('disabled', false);
 	});
 	
