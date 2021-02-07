@@ -91,32 +91,9 @@ function cfm_get_lesson(){
 	    $disabled_comment = '';
 		$disabled_author = '';
 		
-		$change_name_span = '';
-		$change_email_span = '';
 		$change_response_span = '';
 	    
 	    if(isset($email) && isset($name)) {
-		    
-		    if(CFM_ENV == 'prod-english' || CFM_ENV == 'dev') {
-		    
-			    $change_name = 'Change name';
-			    $change_email = 'Change email';
-			    
-		    } elseif(CFM_ENV == 'prod-italian') {
-			    
-			    $change_name = 'Cambia nome';
-			    $change_email = 'Cambia email';
-			    
-		    } elseif(CFM_ENV == 'prod-french') {
-			    
-			    $change_name = 'Changement de nom';
-			    $change_email = 'Changer de courriel';
-			    
-		    }
-		    
-		    $change_name_span = '<span id="change-name" style="font-size:12px; cursor:pointer; color:#E84E89; text-decoration:underline;">' . $change_name . '</span>';
-		    $change_email_span = '<span id="change-email" style="font-size:12px; cursor:pointer; color:#E84E89; text-decoration:underline;">' . $change_email . '</span>';
-		    
 		    
 		    $comment_author_value = $name;
 		    $comment_author_placeholder = $name;
@@ -143,19 +120,22 @@ function cfm_get_lesson(){
 				
 				if(CFM_ENV == 'prod-english' || CFM_ENV == 'dev') {
 		    
-				    $change_response = 'Change your response';
+				    $change_response_text = 'You previously answered this question.  If you would like, you can ';
+				    $change_response_link = 'change your answer';
 				    
 			    } elseif(CFM_ENV == 'prod-italian') {
 				    
-				    $change_response = 'Cambia la tua risposta';
+				    $change_response_text = 'Hai già risposto a questa domanda.  Se vuoi, puoi ';
+				    $change_response_link = 'cambiare la tua risposta';
 				    
 			    } elseif(CFM_ENV == 'prod-french') {
 				    
-				    $change_response = 'Modifier votre réponse';
+				    $change_response_text = 'Vous avez déjà répondu à cette question.  Si vous le souhaitez, vous pouvez ';
+				    $change_response = 'modifier votre réponse';
 				    
 			    }
 			    
-			    $change_response_span = '<span id="change-response" style="font-size:12px; cursor:pointer; color:#E84E89; text-decoration:underline;">' . $change_response . '</span>';
+			    $change_response_span = $change_response_text . '<span id="change-response" style="font-size:12px; cursor:pointer; color:#E84E89; text-decoration:underline;">' . $change_response_link . '.</span>';
 				
 				$comment_content_value = $comments[0]->comment_content;
 				$comment_author_value = $comments[0]->comment_author;
@@ -168,7 +148,7 @@ function cfm_get_lesson(){
 				
 		}
 		
-		$response_form = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">' . $respond_header . '</h3><textarea id="comment" name="comment" aria-required="true" placeholder="' . $comment_content_placeholder . '" rows="10"' . ' ' . $disabled_comment . ' style="margin-bottom:0px;">' . $comment_content_value . '</textarea>' . $change_response_span . '<input class="form-author" name="name" type="text" value="' . $comment_author_value . '" size="30" aria-required="true" placeholder="' . $comment_author_placeholder . '"' . ' ' . $disabled_author . ' style="margin-bottom:0px; margin-top:15px;">' . $change_name_span . '<input class="form-email" name="email" type="text" value="' . $comment_author_email_value . '" size="30" aria-required="true" placeholder="' . $comment_author_email_placeholder . '"' . ' ' . $disabled_author . ' style="margin-bottom:0px; margin-top:15px;">' . $change_email_span . '<p class="form-submit"><button class="btn respondsubmit" style="display:inline-block;color:#fff;border:2px solid transparent;letter-spacing:0.5px;font-weight600;border-radius:25px;background-color:#E84E89;font-size:18px;padding:10px 30px;appearance:none;"' . ' ' . $disabled_comment . '>' . $submit_button_text . '</button><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
+		$response_form = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">' . $respond_header . '</h3>' . $change_response_span . '<textarea id="comment" name="comment" aria-required="true" placeholder="' . $comment_content_placeholder . '" rows="10"' . ' ' . $disabled_comment . ' style="margin-bottom:0px;">' . $comment_content_value . '</textarea><input class="form-author" name="name" type="text" value="' . $comment_author_value . '" size="30" aria-required="true" placeholder="' . $comment_author_placeholder . '"' . ' ' . $disabled_author . ' style="margin-bottom:0px; margin-top:15px;"><input class="form-email" name="email" type="text" value="' . $comment_author_email_value . '" size="30" aria-required="true" placeholder="' . $comment_author_email_placeholder . '"' . ' ' . $disabled_author . ' style="margin-bottom:0px; margin-top:15px;"><p class="form-submit"><button class="btn respondsubmit" style="display:inline-block;color:#fff;border:2px solid transparent;letter-spacing:0.5px;font-weight600;border-radius:25px;background-color:#E84E89;font-size:18px;padding:10px 30px;appearance:none;"' . ' ' . $disabled_comment . '>' . $submit_button_text . '</button><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
 		
 	}
 	
