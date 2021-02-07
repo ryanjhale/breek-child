@@ -194,24 +194,18 @@ jQuery(document).ready(function() {
 		respondSubmit();
 	});
 	
-	jQuery(document).on('click','#change-name',function(e) {
+	jQuery(document).on('click','.change-response',function(e) {
+		jQuery('#comment').prop('disabled', false);
+		jQuery('input[name=email]').prop('disabled', false);
 		jQuery('input[name=name]').prop('disabled', false);
 		jQuery('.respondsubmit').prop('disabled', false);
-	});
-	
-	jQuery(document).on('click','#change-email',function(e) {
-		jQuery('input[name=email]').prop('disabled', false);
-		jQuery('.respondsubmit').prop('disabled', false);
-	});
-	
-	jQuery(document).on('click','#change-response',function(e) {
-		jQuery('#comment').prop('disabled', false);
-		jQuery('.respondsubmit').prop('disabled', false);
+		jQuery('#confirmation').hide();
+		jQuery('#already-answered').hide();
 	});
 		
 	function respondSubmit() {
 		
-		// jQuery('.fa-spinner').show();
+		jQuery('.fa-spinner').show();
 		// jQuery('.one-moment-message').show();
 		jQuery('.respondsubmit').prop('disabled', true);
 				
@@ -244,10 +238,10 @@ jQuery(document).ready(function() {
 		        	
 		        	createCookie('email', jQuery('input[name=email]').val(), 365);
 		        	createCookie('name', jQuery('input[name=name]').val(), 365);
+		        	jQuery('#comment').prop('disabled', true);
 		        	jQuery('input[name=name]').prop('disabled', true);
 		        	jQuery('input[name=email]').prop('disabled', true);
-		        	jQuery('#respond').before(obj.message);
-		        	jQuery('#respond').hide();
+		        	jQuery('#confirmation').show();
 		        		
 	        	}
 	
