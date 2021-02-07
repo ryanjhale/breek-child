@@ -31,7 +31,7 @@ ul {
 }
 </style>
 
-<div class="modal fade " id="lesson-modal" tabindex="-1" role="dialog" aria-labelledby="important-msg-label" aria-hidden="true">
+<div class="modal fade" id="lesson-modal" tabindex="-1" role="dialog" aria-labelledby="important-msg-label" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content" style="overflow-y: initial !important;">
           	<!--
@@ -107,7 +107,7 @@ function getModalContent(post_id) {
                                   
         	jQuery('.modal-body').html(display_content);
         	
-        	jQuery('.modal').animate({ scrollTop: 0 }, 'slow');
+        	jQuery('.modal-body').animate({ scrollTop: 0 }, 'slow');
         	
         	jQuery('#post_id').attr('value', obj.id);
         	
