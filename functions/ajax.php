@@ -65,6 +65,9 @@ function cfm_get_lesson(){
 		    $comment_author_placeholder = 'Name';
 		    $comment_author_email_placeholder = 'Email';
 		    $submit_button_text = 'Submit';
+		    $change_response_text = '<div id="already-answered" style="margin-bottom:30px;">You previously answered this question.<br />If you would like, you can ';
+		    $change_response_link = 'change your answer';
+		    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Thank you!  We have received your response.<br />If you would like, you can ';
 		    
 	    } elseif(CFM_ENV == 'prod-italian') {
 		    
@@ -73,6 +76,9 @@ function cfm_get_lesson(){
 		    $comment_author_placeholder = 'Nome';
 		    $comment_author_email_placeholder = 'Email';
 		    $submit_button_text = 'Invia';
+		    $change_response_text = '<div id="already-answered" style="margin-bottom:30px;">Hai già risposto a questa domanda.<br />Se vuoi, puoi ';
+		    $change_response_link = 'cambiare la tua risposta';
+		    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Grazie!  Abbiamo ricevuto la sua risposta.<br />Se vuoi, puoi ';
 		    
 	    } elseif(CFM_ENV == 'prod-french') {
 		    
@@ -81,18 +87,20 @@ function cfm_get_lesson(){
 		    $comment_author_placeholder = 'Nom';
 		    $comment_author_email_placeholder = 'Courriel';
 		    $submit_button_text = 'Soumettre';
+		    $change_response_text = '<div id="already-answered" style="margin-bottom:30px;">Vous avez déjà répondu à cette question.<br />Si vous le souhaitez, vous pouvez ';
+		    $change_response = 'modifier votre réponse';
+		    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Merci !  Nous avons reçu votre réponse.<br />Si vous le souhaitez, vous pouvez ';
 		    
 	    }
+	    
+	    $change_response_span = $change_response_text . '<span class="change-response" style="cursor:pointer; color:#E84E89; text-decoration:underline;">' . $change_response_link . '</span>.</div>';
+		$confirm_response_span = $confirmation_text . '<span class="change-response" style="cursor:pointer; color:#E84E89; text-decoration:underline;">' . $change_response_link . '</span>.</div>';
 	    
 	    $comment_content_value = '';
 	    $comment_author_value = '';
 	    $comment_author_email_value = '';
 	    
-	    $disabled_comment = '';
-		$disabled_author = '';
-		
-		$change_response_span = '';
-		$confirm_response_span = '';
+	    $disabled = '';
 	    
 	    if(isset($email) && isset($name)) {
 		    
@@ -116,29 +124,6 @@ function cfm_get_lesson(){
 			$comments = $comments_query->comments;
 			
 			if(!empty($comments[0])) {
-				
-				if(CFM_ENV == 'prod-english' || CFM_ENV == 'dev') {
-		    
-				    $change_response_text = '<div id="already-answered" style="margin-bottom:30px;">You previously answered this question.<br />If you would like, you can ';
-				    $change_response_link = 'change your answer';
-				    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Thank you!  We have received your response.<br />If you would like, you can ';
-				    
-			    } elseif(CFM_ENV == 'prod-italian') {
-				    
-				    $change_response_text = '<div id="already-answered" style="margin-bottom:30px;">Hai già risposto a questa domanda.<br />Se vuoi, puoi ';
-				    $change_response_link = 'cambiare la tua risposta';
-				    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Grazie!  Abbiamo ricevuto la sua risposta.<br />Se vuoi, puoi ';
-				    
-			    } elseif(CFM_ENV == 'prod-french') {
-				    
-				    $change_response_text = '<div id="already-answered" style="margin-bottom:30px;">Vous avez déjà répondu à cette question.<br />Si vous le souhaitez, vous pouvez ';
-				    $change_response = 'modifier votre réponse';
-				    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Merci !  Nous avons reçu votre réponse.<br />Si vous le souhaitez, vous pouvez ';
-				    
-			    }
-			    
-			    $change_response_span = $change_response_text . '<span class="change-response" style="cursor:pointer; color:#E84E89; text-decoration:underline;">' . $change_response_link . '</span>.</div>';
-			    $confirm_response_span = $confirmation_text . '<span class="change-response" style="cursor:pointer; color:#E84E89; text-decoration:underline;">' . $change_response_link . '</span>.</div>';
 				
 				$comment_content_value = $comments[0]->comment_content;
 				$comment_author_value = $comments[0]->comment_author;
