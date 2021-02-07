@@ -190,12 +190,20 @@ jQuery(document).ready(function() {
 	checkLaunchModal();
 	
 	
-	
-	
-	
-	
 	jQuery(document).on('click','.respondsubmit',function(e) {
 		respondSubmit();
+	});
+	
+	jQuery(document).on('click','#change-name',function(e) {
+		jQuery('input[name=name]').prop('disabled', false);
+	});
+	
+	jQuery(document).on('click','#change-email',function(e) {
+		jQuery('input[name=name]').prop('disabled', false);
+	});
+	
+	jQuery(document).on('click','#change-response',function(e) {
+		jQuery('#comment').prop('disabled', false);
 	});
 		
 	function respondSubmit() {
