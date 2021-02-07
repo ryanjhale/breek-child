@@ -139,8 +139,8 @@ function cfm_get_lesson(){
 				    
 			    }
 			    
-			    $change_response_span = $change_response_text . '<span class="change-response" style="cursor:pointer; color:#E84E89; text-decoration:underline;">' . $change_response_link . '</span></div>.';
-			    $confirm_response_span = $confirmation_text . '<span class="change-response" style="cursor:pointer; color:#E84E89; text-decoration:underline;">' . $change_response_link . '</span></div>.';
+			    $change_response_span = $change_response_text . '<span class="change-response" style="cursor:pointer; color:#E84E89; text-decoration:underline;">' . $change_response_link . '</span>.</div>';
+			    $confirm_response_span = $confirmation_text . '<span class="change-response" style="cursor:pointer; color:#E84E89; text-decoration:underline;">' . $change_response_link . '</span>.</div>';
 				
 				$comment_content_value = $comments[0]->comment_content;
 				$comment_author_value = $comments[0]->comment_author;
