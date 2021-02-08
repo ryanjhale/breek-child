@@ -194,6 +194,10 @@ jQuery(document).ready(function() {
 		respondSubmit();
 	});
 	
+	jQuery(document).on('click','.contactmesubmit',function(e) {
+		contactmeSubmit();
+	});
+	
 	jQuery(document).on('click','.change-response',function(e) {
 		jQuery('#comment').prop('disabled', false);
 		jQuery('input[name=email]').prop('disabled', false);
@@ -242,6 +246,55 @@ jQuery(document).ready(function() {
 		        	jQuery('#comment').prop('disabled', true);
 		        	jQuery('input[name=name]').prop('disabled', true);
 		        	jQuery('input[name=email]').prop('disabled', true);
+		        	jQuery('#confirmation').show();
+		        		
+	        	}
+	
+	      	}
+	    });
+	    
+	    return false;
+	}
+	
+	function contactmeSubmit() {
+		
+		jQuery('.fa-spinner').show();
+		// jQuery('.one-moment-message').show();
+		jQuery('.contactmesubmit').prop('disabled', true);
+				
+				
+		var response = {};
+		response.respondent = jQuery('input[name=name]').val();
+		response.email = jQuery('input[name=email]').val();
+		response.phone = jQuery('input[name=phone]').val();
+		response.commenttext = jQuery('#comment').val();
+		response.action = 'contactme';
+		response.security = '<?php echo $nonce; ?>';
+		response.post_id = jQuery('input[name=post_id]').val();
+		response.comment_parent = jQuery('input[name=comment_parent]').val();
+		
+		jQuery('.contactmesubmit').prop('disabled', true);
+		
+		jQuery.ajax({
+			action: 'respond',
+			type:    'POST',
+			url:     ajax_var.url,
+			data:    response,
+			success: function(data) {
+	        	var obj = jQuery.parseJSON(data);
+	        	
+	        	if(obj.error == '1') {
+		        	
+		        	jQuery('.contactsubmit').prop('disabled', false);
+		        	jQuery('#respond').before(obj.message);
+		        	
+	        	} else {
+
+		        	jQuery('.fa-spinner').hide();
+		        	jQuery('#comment').prop('disabled', true);
+		        	jQuery('input[name=name]').prop('disabled', true);
+		        	jQuery('input[name=email]').prop('disabled', true);
+		        	jQuery('input[name=phone]').prop('disabled', true);
 		        	jQuery('#confirmation').show();
 		        		
 	        	}

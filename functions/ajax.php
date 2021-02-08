@@ -22,6 +22,10 @@ function cfm_get_lesson(){
 		$email = $_REQUEST['email'];
 	}
 	
+	if(isset($_REQUEST['phone'])) {
+		$phone = $_REQUEST['phone'];
+	}
+	
 	if(isset($_REQUEST['name'])) {
 		$name = $_REQUEST['name'];
 	}
@@ -160,6 +164,44 @@ function cfm_get_lesson(){
 		
 	}
 	
+	if($lesson_type == 'contact') {
+	    
+	    if(CFM_ENV == 'prod-english' || CFM_ENV == 'dev') {
+		    
+		    $respond_header = 'Contact Me';
+		    $comment_content_placeholder = 'Comment';
+		    $comment_author_placeholder = 'Name';
+		    $comment_author_email_placeholder = 'Email';
+		    $comment_author_phone_placeholder = 'Phone';
+		    $submit_button_text = 'Submit';
+		    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Thank you!  We have received your message and our team will contact you soon.<div>';
+		    
+	    } elseif(CFM_ENV == 'prod-italian') {
+		    
+		    $respond_header = 'Rispondi';
+		    $comment_content_placeholder = 'La tua risposta';
+		    $comment_author_placeholder = 'Nome';
+		    $comment_author_email_placeholder = 'Email';
+		    $comment_author_phone_placeholder = 'Telefono';
+		    $submit_button_text = 'Invia';
+		    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Grazie!  Abbiamo ricevuto il tuo messaggio e la nostra squadra ti contatterà presto.<div>';
+		    
+	    } elseif(CFM_ENV == 'prod-french') {
+		    
+		    $respond_header = 'Répondre';
+		    $comment_content_placeholder = 'Votre réponse';
+		    $comment_author_placeholder = 'Nom';
+		    $comment_author_email_placeholder = 'Courriel';
+		    $comment_author_phone_placeholder = 'Téléphone';
+		    $submit_button_text = 'Soumettre';
+		    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Merci !  Nous avons reçu votre message et notre équipe vous contactera bientôt.<div>';
+		    
+	    }
+		
+		$response_form = '<div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title title bordered" style="margin-top:40px;">' . $respond_header . '</h3><div>Please enter your name, the contact information that you would like to provide, and any comments that you would like to make.  Our team will use this information to contact you.</div><textarea id="comment" name="comment" aria-required="true" placeholder="' . $comment_content_placeholder . '" rows="10" style="margin-bottom:0px;"></textarea><input class="form-author" name="name" type="text" value="" size="30" aria-required="true" placeholder="' . $comment_author_placeholder . '" style="margin-bottom:0px; margin-top:15px;"><input class="form-email" name="email" type="text" value="" size="30" aria-required="true" placeholder="' . $comment_author_email_placeholder . '" style="margin-bottom:15px; margin-top:15px;"><input class="form-phone" name="phone" type="text" value="" size="30" aria-required="true" placeholder="' . $comment_author_phone_placeholder . '" style="margin-bottom:15px; margin-top:15px;">' . $confirmation_text . '<p class="form-submit"><button class="btn contactmesubmit" style="display:inline-block;color:#fff;border:2px solid transparent;letter-spacing:0.5px;font-weight600;border-radius:25px;background-color:#E84E89;font-size:18px;padding:10px 30px;appearance:none;"><i class="fa fa-spinner fa-pulse fa-fw" style="display: none;"></i></button><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
+		
+	}
+	
 	$data = array(
 				  'id'					=> $post_id,
 				  'post_title' 			=> $post->post_title,
@@ -223,6 +265,43 @@ function cfm_handle_response(){
 	
 	// setcookie('name', sanitize_text_field($_REQUEST['respondent']), $expiration);
 	// setcookie('email', sanitize_text_field($_REQUEST['email']), $expiration);
+
+	echo json_encode(array('message' => 'Success!'));
+	
+	wp_die();
+}
+
+/* Handle responses through yellow light and green light forms */
+
+add_action('wp_ajax_nopriv_contactme', 'cfm_contact_me');
+add_action('wp_ajax_contactme', 'cfm_contact_me');
+
+function cfm_contact_me(){
+	
+	// Check the data
+
+	check_ajax_referer('sp-ajax-nonce', 'security');
+	
+	$comment_author       = ! isset( $_REQUEST['respondent'] ) ? '' : sanitize_text_field($_REQUEST['respondent']);
+    $comment_author_email = ! isset( $_REQUEST['email'] ) ? '' : sanitize_text_field($_REQUEST['email']);
+    $comment_author_phone   = ! isset( $_REQUEST['phone'] ) ? '' : sanitize_text_field($_REQUEST['phone']);
+    $comment_content    = ! isset( $_REQUEST['commenttext'] ) ? '' : sanitize_text_field($_REQUEST['commenttext']);
+    $comment_post_id    = ! isset( $_REQUEST['post_id'] ) ? '' : sanitize_text_field($_REQUEST['post_id']);
+	
+	$response_data = array(
+		'comment_author'			=> sanitize_text_field($_REQUEST['respondent']),
+		'comment_author_email'		=> sanitize_text_field($_REQUEST['email']),
+		'comment_content'			=> sanitize_text_field($_REQUEST['commenttext']),
+		'comment_post_ID'			=> sanitize_text_field($_REQUEST['post_id']),
+		'comment_author_url'		=> sanitize_text_field($_REQUEST['phone'])
+	);
+	
+	$comment_id = wp_insert_comment($response_data);
+	
+	if(!$comment_id) {
+		$error = array('error' => 1, 'message' => '<div class="alert alert-danger" role="alert">We are sorry.  There was an error in recording your response.</div>');
+		wp_die();
+	}
 
 	echo json_encode(array('message' => 'Success!'));
 	
