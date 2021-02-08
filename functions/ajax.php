@@ -174,7 +174,7 @@ function cfm_get_lesson(){
 		    $comment_author_email_placeholder = 'Email';
 		    $comment_author_phone_placeholder = 'Phone';
 		    $submit_button_text = 'Submit';
-		    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Thank you!  We have received your message and our team will contact you soon.<div>';
+		    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Thank you!  We have received your message and our team will contact you soon.</div>';
 		    
 	    } elseif(CFM_ENV == 'prod-italian') {
 		    
@@ -184,7 +184,7 @@ function cfm_get_lesson(){
 		    $comment_author_email_placeholder = 'Email';
 		    $comment_author_phone_placeholder = 'Telefono';
 		    $submit_button_text = 'Invia';
-		    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Grazie!  Abbiamo ricevuto il tuo messaggio e la nostra squadra ti contatterà presto.<div>';
+		    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Grazie!  Abbiamo ricevuto il tuo messaggio e la nostra squadra ti contatterà presto.</div>';
 		    
 	    } elseif(CFM_ENV == 'prod-french') {
 		    
@@ -194,11 +194,11 @@ function cfm_get_lesson(){
 		    $comment_author_email_placeholder = 'Courriel';
 		    $comment_author_phone_placeholder = 'Téléphone';
 		    $submit_button_text = 'Soumettre';
-		    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Merci !  Nous avons reçu votre message et notre équipe vous contactera bientôt.<div>';
+		    $confirmation_text = '<div id="confirmation" style="margin-top:15px;margin-bottom:15px;display:none;">Merci !  Nous avons reçu votre message et notre équipe vous contactera bientôt.</div>';
 		    
 	    }
 		
-		$response_form = '<div id="respond" class="comment-respond"><textarea id="comment" name="comment" aria-required="true" placeholder="' . $comment_content_placeholder . '" rows="10" style="margin-bottom:0px;"></textarea><input class="form-author" name="name" type="text" value="" size="30" aria-required="true" placeholder="' . $comment_author_placeholder . '" style="margin-bottom:0px; margin-top:15px;"><input class="form-email" name="email" type="text" value="" size="30" aria-required="true" placeholder="' . $comment_author_email_placeholder . '" style="margin-bottom:15px; margin-top:15px;"><input class="form-phone" name="phone" type="text" value="" size="30" aria-required="true" placeholder="' . $comment_author_phone_placeholder . '" style="margin-bottom:15px; margin-top:15px;">' . $confirmation_text . '</div><p class="form-submit"><button class="btn contactmesubmit" style="display:inline-block;color:#fff;border:2px solid transparent;letter-spacing:0.5px;font-weight600;border-radius:25px;background-color:#E84E89;font-size:18px;padding:10px 30px;appearance:none;"><i class="fa fa-spinner fa-pulse fa-fw" style="display: none;"></i></button><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
+		$response_form = '<div id="respond" class="comment-respond"><textarea id="comment" name="comment" aria-required="true" placeholder="' . $comment_content_placeholder . '" rows="10" style="margin-bottom:0px;"></textarea><input class="form-author" name="name" type="text" value="" size="30" aria-required="true" placeholder="' . $comment_author_placeholder . '" style="margin-bottom:0px; margin-top:15px;"><input class="form-email" name="email" type="text" value="" size="30" aria-required="true" placeholder="' . $comment_author_email_placeholder . '" style="margin-bottom:15px; margin-top:15px;"><input class="form-phone" name="phone" type="text" value="" size="30" aria-required="true" placeholder="' . $comment_author_phone_placeholder . '" style="margin-bottom:15px; margin-top:15px;">' . $confirmation_text . '<p class="form-submit"><button class="btn contactmesubmit" style="display:inline-block;color:#fff;border:2px solid transparent;letter-spacing:0.5px;font-weight600;border-radius:25px;background-color:#E84E89;font-size:18px;padding:10px 30px;appearance:none;"><i class="fa fa-spinner fa-pulse fa-fw" style="display: none;"></i></button><input type="hidden" name="post_id" value="" id="post_id"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></p></form></div>';
 		
 	}
 	
