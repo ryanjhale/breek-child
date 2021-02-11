@@ -182,7 +182,7 @@ if( !empty($epcl_module) && isset($epcl_module['sidebar']) &&  $epcl_module['sid
 	        <?php dynamic_sidebar($sidebar_name); ?>
 	    </div>
         <?php if( epcl_get_option('enable_mobile_sidebar') == true && epcl_get_option('mobile_sidebar') ): ?>
-            <div class="mobile-sidebar hide-on-desktop"><?php dynamic_sidebar( $epcl_theme['mobile_sidebar'] ); ?></div>
+            <!--<div class="mobile-sidebar hide-on-desktop"><?php dynamic_sidebar( $epcl_theme['mobile_sidebar'] ); ?></div>-->
         <?php endif; ?>
     </aside>
     <!-- end: #sidebar -->
