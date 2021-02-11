@@ -195,11 +195,13 @@ jQuery(document).ready(function() {
 		
 		jQuery(document).on('click','a[href^="#yellow-light"]',function(e) {
 			e.preventDefault();
+			jQuery('#lesson-modal').modal('show');
 			getModalContent('4163');
 		});
 		
 		jQuery(document).on('click','a[href^="#green-light"]',function(e) {
 			e.preventDefault();
+			jQuery('#lesson-modal').modal('show');
 			getModalContent('4526');
 		});
 	
@@ -207,13 +209,15 @@ jQuery(document).ready(function() {
 	} elseif(CFM_ENV == 'prod-italian') {
 	?>
 		
-		jQuery(document).on('click','.yellow-light [href]',function(e) {
+		jQuery(document).on('click','a[href^="#yellow-light"]',function(e) {
 			e.preventDefault();
+			jQuery('#lesson-modal').modal('show');
 			getModalContent('4163');
 		});
 		
-		jQuery(document).on('click','.green-light [href]',function(e) {
+		jQuery(document).on('click','a[href^="#green-light"]',function(e) {
 			e.preventDefault();
+			jQuery('#lesson-modal').modal('show');
 			getModalContent('4526');
 		});
 		
@@ -221,13 +225,15 @@ jQuery(document).ready(function() {
 	} elseif(CFM_ENV == 'prod-french') {
 	?>
 	
-		jQuery(document).on('click','.yellow-light [href]',function(e) {
+		jQuery(document).on('click','a[href^="#yellow-light"]',function(e) {
 			e.preventDefault();
+			jQuery('#lesson-modal').modal('show');
 			getModalContent('4163');
 		});
 		
-		jQuery(document).on('click','.green-light [href]',function(e) {
+		jQuery(document).on('click','a[href^="#green-light"]',function(e) {
 			e.preventDefault();
+			jQuery('#lesson-modal').modal('show');
 			getModalContent('4526');
 		});
 	
