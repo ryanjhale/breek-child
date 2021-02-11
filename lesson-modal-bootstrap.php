@@ -192,12 +192,12 @@ jQuery(document).ready(function() {
 	<?php
 	if(CFM_ENV == 'prod-english' || CFM_ENV == 'dev') {
 	?>
-	
-		jQuery('.yellow-light [href]').on('click', function() {
+
+		jQuery('a[href^="#yellow-light"]').click(function() {
 			getModalContent('4163');
 		});
 		
-		jQuery(document).on('click','.green-light [href]',function(e) {
+		jQuery('a[href^="#green-light"]').click(function() {
 			e.preventDefault();
 			getModalContent('4526');
 		});
