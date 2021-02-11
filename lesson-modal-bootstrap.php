@@ -189,6 +189,51 @@ jQuery(document).ready(function() {
 	
 	checkLaunchModal();
 	
+	<?php
+	if(CFM_ENV == 'prod-english' || CFM_ENV == 'dev')) {
+	?>
+	
+		jQuery(document).on('click','.yellow-light [href]',function(e) {
+			e.preventDefault();
+			getModalContent('4163');
+		});
+		
+		jQuery(document).on('click','.green-light [href]',function(e) {
+			e.preventDefault();
+			getModalContent('4526');
+		});
+	
+	<?php
+	} elseif(CFM_ENV == 'prod-italian') {
+	?>
+		
+		jQuery(document).on('click','.yellow-light [href]',function(e) {
+			e.preventDefault();
+			getModalContent('4163');
+		});
+		
+		jQuery(document).on('click','.green-light [href]',function(e) {
+			e.preventDefault();
+			getModalContent('4526');
+		});
+		
+	<?php
+	} elseif(CFM_ENV == 'prod-french') {
+	?>
+	
+		jQuery(document).on('click','.yellow-light [href]',function(e) {
+			e.preventDefault();
+			getModalContent('4163');
+		});
+		
+		jQuery(document).on('click','.green-light [href]',function(e) {
+			e.preventDefault();
+			getModalContent('4526');
+		});
+	
+	<?php
+	}
+	?>
 	
 	jQuery(document).on('click','.respondsubmit',function(e) {
 		respondSubmit();
