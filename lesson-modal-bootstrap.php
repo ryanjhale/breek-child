@@ -190,7 +190,7 @@ jQuery(document).ready(function() {
 	checkLaunchModal();
 	
 	<?php
-	if(CFM_ENV == 'prod-english' || CFM_ENV == 'dev')) {
+	if(CFM_ENV == 'prod-english' || CFM_ENV == 'dev') {
 	?>
 	
 		jQuery(document).on('click','.yellow-light [href]',function(e) {
