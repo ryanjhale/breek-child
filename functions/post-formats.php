@@ -201,7 +201,7 @@ function epcl_get_video_format($post_id, $type = 'youtube', $url, $height = 225)
                 <?php endif; ?>
                 <?php if( isset($epcl_theme['enable_lazyload_embed']) && $epcl_theme['enable_lazyload_embed'] === '1' ): ?>
                     <?php the_post_thumbnail(); ?>
-                    <?php echo '<img class="play-button" src="/wp-content/themes/breek-child/assets/images/video-player.png"'; ?>
+                    <?php echo '<img class="play-button" src="/wp-content/themes/breek-child/assets/images/video-player.png">'; ?>
                 <?php else: ?>
                     <iframe title="<?php the_title(); ?>" src="<?php echo esc_url($video_url); ?>" allowfullscreen height="<?php echo esc_attr($height); ?>" style="width: <?php echo esc_attr($width); ?>"></iframe>
                 <?php endif; ?>
