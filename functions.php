@@ -786,7 +786,7 @@ function cfm_custom_youtube_querystring( $html, $url, $args ) {
 	return $result;
 }
 
-add_filter('oembed_result', 'cfm_custom_youtube_querystring', 10, 3);
+add_filter('embed_oembed_html', 'cfm_custom_youtube_querystring', 10, 3);
 
 /*
 

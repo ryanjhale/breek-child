@@ -168,7 +168,7 @@ function epcl_get_video_format($post_id, $type = 'youtube', $url, $height = 225)
         preg_match("#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+(?=\?)|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#", $url, $matches);
         if( !$url ) return;
         $video_id = $matches[0];
-		$video_url ='https://www.youtube.com/embed/'.$matches[0].'?rel=0&showinfo=0';
+		$video_url ='https://www.youtube.com/embed/'.$matches[0].'?rel=0&controls=0&showinfo=0&modestbranding=1';
 	} elseif ($type == 'vimeo') {
         $result = preg_match('/(\d+)/', $url, $matches);
         if( !$url ) return;
