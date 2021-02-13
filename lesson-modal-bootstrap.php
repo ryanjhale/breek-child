@@ -190,19 +190,46 @@ jQuery(document).ready(function() {
 	checkLaunchModal();
 	
 	<?php
+	
+	global $post;
+	$url = get_permalink($post);
+	
 	if(CFM_ENV == 'prod-english' || CFM_ENV == 'dev') {
+
 	?>
 		
 		jQuery(document).on('click','a[href^="#yellow-light"]',function(e) {
+			
 			e.preventDefault();
-			jQuery('#lesson-modal').modal('show');
-			getModalContent('4163');
+			
+			<?php
+			
+			$url_with_args = add_query_arg(
+					array(
+						'action'	=> 'lesson',
+						'id'		=> '4163'
+					)
+			);
+			?>
+			
+			window.location.href="<?php echo $url_with_args; ?>"
+			
 		});
 		
 		jQuery(document).on('click','a[href^="#green-light"]',function(e) {
 			e.preventDefault();
-			jQuery('#lesson-modal').modal('show');
-			getModalContent('4526');
+			
+			<?php
+			
+			$url_with_args = add_query_arg(
+					array(
+						'action'	=> 'lesson',
+						'id'		=> '4526'
+					)
+			);
+			?>
+			
+			window.location.href="<?php echo $url_with_args; ?>"
 		});
 	
 	<?php
@@ -210,15 +237,37 @@ jQuery(document).ready(function() {
 	?>
 		
 		jQuery(document).on('click','a[href^="#yellow-light"]',function(e) {
+			
 			e.preventDefault();
-			jQuery('#lesson-modal').modal('show');
-			getModalContent('4163');
+			
+			<?php
+			
+			$url_with_args = add_query_arg(
+					array(
+						'action'	=> 'lesson',
+						'id'		=> '4163'
+					)
+			);
+			?>
+			
+			window.location.href="<?php echo $url_with_args; ?>"
+			
 		});
 		
 		jQuery(document).on('click','a[href^="#green-light"]',function(e) {
 			e.preventDefault();
-			jQuery('#lesson-modal').modal('show');
-			getModalContent('4526');
+			
+			<?php
+			
+			$url_with_args = add_query_arg(
+					array(
+						'action'	=> 'lesson',
+						'id'		=> '4526'
+					)
+			);
+			?>
+			
+			window.location.href="<?php echo $url_with_args; ?>"
 		});
 		
 	<?php
@@ -226,15 +275,37 @@ jQuery(document).ready(function() {
 	?>
 	
 		jQuery(document).on('click','a[href^="#yellow-light"]',function(e) {
+			
 			e.preventDefault();
-			jQuery('#lesson-modal').modal('show');
-			getModalContent('4163');
+			
+			<?php
+			
+			$url_with_args = add_query_arg(
+					array(
+						'action'	=> 'lesson',
+						'id'		=> '4163'
+					)
+			);
+			?>
+			
+			window.location.href="<?php echo $url_with_args; ?>"
+			
 		});
 		
 		jQuery(document).on('click','a[href^="#green-light"]',function(e) {
 			e.preventDefault();
-			jQuery('#lesson-modal').modal('show');
-			getModalContent('4526');
+			
+			<?php
+			
+			$url_with_args = add_query_arg(
+					array(
+						'action'	=> 'lesson',
+						'id'		=> '4526'
+					)
+			);
+			?>
+			
+			window.location.href="<?php echo $url_with_args; ?>"
 		});
 	
 	<?php
