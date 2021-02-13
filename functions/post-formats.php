@@ -200,7 +200,7 @@ function epcl_get_video_format($post_id, $type = 'youtube', $url, $height = 225)
                     <a class="video-overlay full-link lightbox mfp-iframe" href="<?php echo esc_url($url); ?>"></a>
                 <?php endif; ?>
                 <?php if( isset($epcl_theme['enable_lazyload_embed']) && $epcl_theme['enable_lazyload_embed'] === '1' ): ?>
-                    <iframe title="<?php the_title(); ?>" src="<?php echo esc_url(EPCL_THEMEPATH); ?>/assets/images/transparent.gif" data-lazy="true" data-src="<?php echo esc_url($video_url); ?>" allowfullscreen height="<?php echo esc_attr($height); ?>" style="width: <?php echo esc_attr($width); ?>"></iframe>
+                    <?php the_post_thumbnail(); ?>
                 <?php else: ?>
                     <iframe title="<?php the_title(); ?>" src="<?php echo esc_url($video_url); ?>" allowfullscreen height="<?php echo esc_attr($height); ?>" style="width: <?php echo esc_attr($width); ?>"></iframe>
                 <?php endif; ?>
