@@ -200,7 +200,7 @@ function epcl_get_video_format($post_id, $type = 'youtube', $url, $height = 225)
                     <a class="video-overlay full-link lightbox mfp-iframe" href="<?php echo esc_url($url); ?>"></a>
                 <?php endif; ?>
                 <?php if( isset($epcl_theme['enable_lazyload_embed']) && $epcl_theme['enable_lazyload_embed'] === '1' ): ?>
-                    <iframe title="<?php the_title(); ?>" src="<?php echo esc_url(EPCL_THEMEPATH); ?>/assets/images/transparent.gif" data-lazy="true" data-src="<?php echo esc_url($video_url); ?>" allowfullscreen height="<?php echo esc_attr($height); ?>" style="width: <?php echo esc_attr($width); ?>"></iframe>
+                    <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src="<?php echo esc_url(EPCL_THEMEPATH); ?>/assets/images/transparent.gif" data-lazy="true" data-src="<?php echo esc_url($video_url); ?>" frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
                 <?php else: ?>
                     <iframe title="<?php the_title(); ?>" src="<?php echo esc_url($video_url); ?>" allowfullscreen height="<?php echo esc_attr($height); ?>" style="width: <?php echo esc_attr($width); ?>"></iframe>
                 <?php endif; ?>
