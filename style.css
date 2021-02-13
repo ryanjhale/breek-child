@@ -9,3 +9,15 @@ Template: breek
 */
 
 /* Add your custom code just below */
+
+.post-format-video {
+	display: inline-block;
+	position: relative;
+}
+.play-button {
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%,-50%);
+	width: 96px;
+	height: 96px;
+}
