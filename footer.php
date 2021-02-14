@@ -35,6 +35,6 @@
         </div>
     <?php endif; ?>
     
-	<?php include 'lesson-modal-bootstrap.php'; ?>
+	<?php // include 'lesson-modal-bootstrap.php'; ?>
     </body>
 </html>
