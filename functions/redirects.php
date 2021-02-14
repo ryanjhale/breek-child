@@ -4,6 +4,12 @@ add_filter('template_redirect', 'cfm_redirects');
 
 function cfm_redirects() {
 
+    if(is_404()) {
+	    wp_safe_redirect(home_url('/the-parable-of-the-tenants/'));
+	    exit;
+    }
+    /*
+    
     global $wp_query;
     $url = strtok($_SERVER["REQUEST_URI"],'?');
 	$parts = explode('/', $url);
@@ -28,5 +34,6 @@ function cfm_redirects() {
 		    }
 		}
 	}
+	*/
     
 }
