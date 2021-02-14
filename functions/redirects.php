@@ -10,6 +10,9 @@ function cfm_redirects() {
 	    
 	    $url = strtok($_SERVER["REQUEST_URI"],'?');
 		$parts = explode('/', $url);
+		
+		print_r($parts);
+		/*
 	    
 	    if(isset($parts[3]) && $parts[3] == 'post') {
 		
@@ -31,5 +34,6 @@ function cfm_redirects() {
 			    }
 			}
 		}
+		*/
     }
 }
