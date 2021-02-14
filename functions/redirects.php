@@ -23,10 +23,8 @@ function cfm_redirects() {
 				
 				if ($wp_query->is_404) {
 			        $wp_query->is_404 = false;
-			        
-			        // 301 Moved Permanently
-					header("Location: " . $permalink, TRUE, 301);
-					wp_safe_redirect($permalink);
+
+					wp_redirect($permalink, 301);
 					exit;
 			    }
 			}
