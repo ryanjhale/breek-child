@@ -38,6 +38,7 @@ function epcl_breek_child_styles() {
 function epcl_child_theme_slug_setup() {
     load_child_theme_textdomain( 'breek', get_stylesheet_directory() . '/languages' );
 }
+
 add_action( 'after_setup_theme', 'epcl_child_theme_slug_setup' );
 
 /* You can add your custom functions just below */
@@ -67,6 +68,7 @@ class epcl_theme_setup {
 		require_once(EPCL_ABSPATH.'/functions/import/import-demo.php');
 		require_once(get_theme_file_path('functions/post-formats.php'));
 		require_once(get_theme_file_path('functions/ajax.php'));
+		require_once(get_theme_file_path('functions/redirects.php'));
         require_once(EPCL_ABSPATH.'/functions/enqueue-scripts.php');
         require_once(EPCL_ABSPATH.'/functions/color-helper.php');
 		require_once(EPCL_ABSPATH.'/functions/custom-styles.php');
