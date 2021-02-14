@@ -26,7 +26,7 @@ function cfm_redirects() {
 			        
 			        // 301 Moved Permanently
 					header("Location: " . $permalink, TRUE, 301);
-					wp_safe_redirect(home_url('/the-parable-of-the-tenants/'));
+					wp_safe_redirect($permalink);
 					exit;
 			    }
 			}
