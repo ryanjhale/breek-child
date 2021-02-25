@@ -764,33 +764,6 @@ function cfm_custom_post_types() {
 	
 }
 
-function cfm_custom_youtube_querystring( $html, $url, $args ) {
-	if(strpos($html, 'youtube')!= FALSE) {
-		
-		$args = [
-			'rel' 				=> 0,
-			'controls' 			=> 0,
-			'showinfo' 			=> 0,
-			'modestbranding' 	=> 1,
-		];
-		
-		$params = '?feature=oembed&';
-		
-		foreach($args as $arg => $value){
-			$params .= $arg;
-			$params .= '=';
-			$params .= $value;
-			$params .= '&';
-		}
-		
-		$result = str_replace( '?feature=oembed', $params, $html );
-	}
-	
-	return $result;
-}
-
-// add_filter('embed_oembed_html', 'cfm_custom_youtube_querystring', 10, 3);
-
 /*
 
 // Add post metadata to API 
