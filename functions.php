@@ -2,11 +2,7 @@
 
 function cfm_get_environment() {	
 	
-	if(is_multisite()) {
-		$url = network_site_url('/', 'https');
-	} else {
-		$url = get_site_url(null, '/', 'https');
-	}
+	$url = get_site_url(null, '/', 'https');
 	
 	if($url == 'https://comefollowme.it/') {
 		return 'prod-english';
