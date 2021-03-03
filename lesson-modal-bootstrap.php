@@ -283,7 +283,7 @@ jQuery(document).ready(function() {
 			$url_with_args = add_query_arg(
 					array(
 						'action'	=> 'lesson',
-						'id'		=> '4163'
+						'id'		=> '1055'
 					)
 			);
 			?>
@@ -300,7 +300,7 @@ jQuery(document).ready(function() {
 			$url_with_args = add_query_arg(
 					array(
 						'action'	=> 'lesson',
-						'id'		=> '4526'
+						'id'		=> '869'
 					)
 			);
 			?>
