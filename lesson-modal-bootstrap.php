@@ -231,6 +231,22 @@ jQuery(document).ready(function() {
 			
 			window.location.href="<?php echo $url_with_args; ?>"
 		});
+		
+		jQuery(document).on('click','a[href^="#contact"]',function(e) {
+			e.preventDefault();
+			
+			<?php
+			
+			$url_with_args = add_query_arg(
+					array(
+						'action'	=> 'lesson',
+						'id'		=> '4175'
+					)
+			);
+			?>
+			
+			window.location.href="<?php echo $url_with_args; ?>"
+		});
 	
 	<?php
 	} elseif(CFM_ENV == 'prod-italian') {
@@ -270,6 +286,22 @@ jQuery(document).ready(function() {
 			window.location.href="<?php echo $url_with_args; ?>"
 		});
 		
+		jQuery(document).on('click','a[href^="#contact"]',function(e) {
+			e.preventDefault();
+			
+			<?php
+			
+			$url_with_args = add_query_arg(
+					array(
+						'action'	=> 'lesson',
+						'id'		=> '2977'
+					)
+			);
+			?>
+			
+			window.location.href="<?php echo $url_with_args; ?>"
+		});
+		
 	<?php
 	} elseif(CFM_ENV == 'prod-french') {
 	?>
@@ -301,6 +333,22 @@ jQuery(document).ready(function() {
 					array(
 						'action'	=> 'lesson',
 						'id'		=> '869'
+					)
+			);
+			?>
+			
+			window.location.href="<?php echo $url_with_args; ?>"
+		});
+		
+		jQuery(document).on('click','a[href^="#contact"]',function(e) {
+			e.preventDefault();
+			
+			<?php
+			
+			$url_with_args = add_query_arg(
+					array(
+						'action'	=> 'lesson',
+						'id'		=> '1489'
 					)
 			);
 			?>
