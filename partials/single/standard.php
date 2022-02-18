@@ -43,12 +43,12 @@ $author_name = get_the_author();
             <time class="meta-info" datetime="<?php the_time('Y-m-d'); ?>">
             	<i class="remixicon remixicon-calendar-line"></i> 
 	            <?php 
-				if(CFM_URL == 'https://comefollowme.it') {
+				if(CFM_URL == 'https://searchparty.org/comefollowme') {
 					setlocale(LC_TIME, 'en_US.utf8');
 					the_time('F j, Y');
 				} 
 			
-				if(CFM_URL == 'https://vienieseguimi.it') {
+				if(CFM_URL == 'https://searchparty.org/vienieseguimi') {
 					setlocale(LC_TIME, 'it_IT.utf8');
 					the_time('j F Y');
 				}
