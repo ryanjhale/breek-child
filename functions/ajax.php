@@ -261,7 +261,7 @@ function cfm_handle_response(){
 		wp_die();
 	}
 	
-	$expiration = time()+(3600 * 1000 * 24 * 365);
+	// $expiration = time()+(3600 * 1000 * 24 * 365);
 	
 	// setcookie('name', sanitize_text_field($_REQUEST['respondent']), $expiration);
 	// setcookie('email', sanitize_text_field($_REQUEST['email']), $expiration);
@@ -271,7 +271,7 @@ function cfm_handle_response(){
 	wp_die();
 }
 
-/* Handle responses through yellow light and green light forms */
+/* Handle Contact Us responses through yellow light and green light forms */
 
 add_action('wp_ajax_nopriv_contactme', 'cfm_contact_me');
 add_action('wp_ajax_contactme', 'cfm_contact_me');
