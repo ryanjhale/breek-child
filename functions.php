@@ -17,6 +17,30 @@ function cfm_get_environment() {
 
 $env = cfm_get_environment();
 
+if($env == 'prod-english') {
+	$args = array('numberposts' => -1);
+	$posts = get_posts($args);
+	foreach($posts as $post) {
+		$data = array(
+			'ID' => $post->ID,
+			'post_author' => 750
+		);
+		wp_update_post($data);
+	}
+}
+
+if($env == 'prod-italian') {
+	$args = array('numberposts' => -1);
+	$posts = get_posts($args);
+	foreach($posts as $post) {
+		$data = array(
+			'ID' => $post->ID,
+			'post_author' => 749
+		);
+		wp_update_post($data);
+	}
+}
+
 define('CFM_ENV', $env);
 
 add_action( 'wp_enqueue_scripts', 'epcl_breek_child_styles', 100 );
