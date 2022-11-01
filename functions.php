@@ -16,7 +16,7 @@ function cfm_get_environment() {
 }
 
 $env = cfm_get_environment();
-
+/*
 if($env == 'prod-english') {
 	$args = array('numberposts' => -1);
 	$posts = get_posts($args);
@@ -40,6 +40,7 @@ if($env == 'prod-italian') {
 		wp_update_post($data);
 	}
 }
+*/
 
 define('CFM_ENV', $env);
 
