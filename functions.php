@@ -17,7 +17,7 @@ function cfm_get_environment() {
 
 $env = cfm_get_environment();
 
-function cfm_update_author($author_id){
+function cfm_update_author($author_id) {
 
 	$args = array('numberposts' => -1);
 	$posts = get_posts($args);
@@ -28,6 +28,7 @@ function cfm_update_author($author_id){
 		);
 		wp_update_post($data);
 	}
+}
 
 define('CFM_ENV', $env);
 
