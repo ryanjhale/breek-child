@@ -16,31 +16,18 @@ function cfm_get_environment() {
 }
 
 $env = cfm_get_environment();
-/*
-if($env == 'prod-english') {
-	$args = array('numberposts' => -1);
-	$posts = get_posts($args);
-	foreach($posts as $post) {
-		$data = array(
-			'ID' => $post->ID,
-			'post_author' => 750
-		);
-		wp_update_post($data);
-	}
-}
 
-if($env == 'prod-italian') {
+function cfm_update_author($author_id){
+
 	$args = array('numberposts' => -1);
 	$posts = get_posts($args);
 	foreach($posts as $post) {
 		$data = array(
 			'ID' => $post->ID,
-			'post_author' => 749
+			'post_author' => $author_id
 		);
 		wp_update_post($data);
 	}
-}
-*/
 
 define('CFM_ENV', $env);
 
