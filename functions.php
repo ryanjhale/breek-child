@@ -4,9 +4,9 @@ function cfm_get_environment() {
 	
 	$url = get_site_url(null, '/', 'https');
 	
-	if($url == 'https://searchparty.org/comefollowme/') {
+	if($url == 'https://comefollowme.it') {
 		return 'prod-english';
-	} elseif($url == 'https://searchparty.org/vienieseguimi/') {
+	} elseif($url == 'https://vienieseguimi.it') {
 		return 'prod-italian';
 	} elseif($url == 'https://viensetsuismoi.it/') {
 		return 'prod-french';	
