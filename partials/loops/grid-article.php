@@ -117,17 +117,17 @@ if( !epcl_is_amp() && !empty($epcl_theme) && function_exists( 'epcl_render_globa
                     <time datetime="<?php the_time('Y-m-d'); ?>">
                     	<i class="remixicon remixicon-calendar-line"></i>
                     	<?php 
-						if(CFM_URL == 'https://searchparty.org/comefollowme/') {
+						if(CFM_ENV == 'prod-english') {
 							setlocale(LC_TIME, 'en_US.utf8');
 							the_time('F j, Y');
 						} 
 					
-						if(CFM_URL == 'https://searchparty.org/vienieseguimi/') {
+						if(CFM_ENV == 'prod-italian') {
 							setlocale(LC_TIME, 'it_IT.utf8');
 							the_time('j F Y');
 						}
 					
-						if(CFM_URL == 'https://viensetsuismoi.it') {
+						if(CFM_ENV == 'prod-french') {
 							setlocale(LC_TIME, 'fr_FR.utf8');
 							the_time('j F Y');
 						}

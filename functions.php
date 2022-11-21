@@ -74,7 +74,7 @@ class epcl_theme_setup {
 
 		/* Main Includes */
 
-		require_once(EPCL_ABSPATH.'/functions/import/import-demo.php');
+		// require_once(EPCL_ABSPATH.'/functions/import/import-demo.php');
 		// require_once(EPCL_ABSPATH.'/functions/post-formats.php');
 		require_once(get_theme_file_path('functions/post-formats.php'));
 		require_once(get_theme_file_path('functions/ajax.php'));
