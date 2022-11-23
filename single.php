@@ -5,6 +5,11 @@ $post_format = get_post_format($post_id);
 
 get_header();
 
+$url = strtok($_SERVER["REQUEST_URI"],'?');
+$parts = explode('/', $url);
+
+print_r($parts);
+
 while(have_posts()): the_post();  ?>
     <?php
 	$post_thumbnail = get_the_post_thumbnail_url();
