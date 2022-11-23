@@ -12,12 +12,6 @@
     <?php endif; ?>
     <?php wp_head(); ?>
 </head>
-<?php
-$url = strtok($_SERVER["REQUEST_URI"],'?');
-$parts = explode('/', $url);
-
-print_r($parts);
-?>
 <body <?php body_class(); ?>>
     <?php get_template_part('partials/svg-icons'); ?>
     <!-- start: #wrapper -->

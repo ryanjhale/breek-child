@@ -11,9 +11,9 @@ function cfm_redirects() {
 	    $url = strtok($_SERVER["REQUEST_URI"],'?');
 		$parts = explode('/', $url);
 	    
-	    if(isset($parts[2]) && $parts[2] == 'post') {
+	    if(isset($parts[1]) && $parts[1] == 'post') {
 		
-			$post_id = intval($parts[3]);
+			$post_id = intval($parts[2]);
 			
 			$post = get_post($post_id);
 			
