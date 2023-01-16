@@ -209,12 +209,14 @@ jQuery(document).ready(function() {
 			
 			e.preventDefault();
 			
+			/*
 			ga('send', {
 			  hitType: 'event',
 			  eventCategory: 'Yellow Light',
 			  eventAction: 'launch',
 			  eventLabel: 'Who is Jesus'
 			});
+			*/
 			
 			<?php
 			
@@ -233,12 +235,14 @@ jQuery(document).ready(function() {
 		jQuery(document).on('click','a[href^="#green-light"]',function(e) {
 			e.preventDefault();
 			
+			/*
 			ga('send', {
 			  hitType: 'event',
 			  eventCategory: 'Green Light',
 			  eventAction: 'launch',
 			  eventLabel: 'Follow Jesus'
 			});
+			*/
 			
 			<?php
 			
@@ -256,12 +260,14 @@ jQuery(document).ready(function() {
 		jQuery(document).on('click','a[href^="#contact"]',function(e) {
 			e.preventDefault();
 			
+			/*
 			ga('send', {
 			  hitType: 'event',
 			  eventCategory: 'Contact',
 			  eventAction: 'launch',
 			  eventLabel: 'Contact Us'
 			});
+			*/
 			
 			<?php
 			
@@ -284,12 +290,14 @@ jQuery(document).ready(function() {
 			
 			e.preventDefault();
 			
+			/*
 			ga('send', {
 			  hitType: 'event',
 			  eventCategory: 'Yellow Light',
 			  eventAction: 'launch',
 			  eventLabel: 'Who is Jesus'
 			});
+			*/
 			
 			<?php
 			
@@ -308,12 +316,14 @@ jQuery(document).ready(function() {
 		jQuery(document).on('click','a[href^="#green-light"]',function(e) {
 			e.preventDefault();
 			
+			/*
 			ga('send', {
 			  hitType: 'event',
 			  eventCategory: 'Green Light',
 			  eventAction: 'launch',
 			  eventLabel: 'Follow Jesus'
 			});
+			*/
 			
 			<?php
 			
@@ -331,12 +341,14 @@ jQuery(document).ready(function() {
 		jQuery(document).on('click','a[href^="#contact"]',function(e) {
 			e.preventDefault();
 			
+			/*
 			ga('send', {
 			  hitType: 'event',
 			  eventCategory: 'Contact',
 			  eventAction: 'launch',
 			  eventLabel: 'Contact Us'
 			});
+			*/
 			
 			<?php
 			
@@ -359,12 +371,14 @@ jQuery(document).ready(function() {
 			
 			e.preventDefault();
 			
+			/*
 			ga('send', {
 			  hitType: 'event',
 			  eventCategory: 'Yellow Light',
 			  eventAction: 'launch',
 			  eventLabel: 'Who is Jesus'
 			});
+			*/
 			
 			<?php
 			
@@ -383,12 +397,14 @@ jQuery(document).ready(function() {
 		jQuery(document).on('click','a[href^="#green-light"]',function(e) {
 			e.preventDefault();
 			
+			/*
 			ga('send', {
 			  hitType: 'event',
 			  eventCategory: 'Green Light',
 			  eventAction: 'launch',
 			  eventLabel: 'Follow Jesus'
 			});
+			*/
 			
 			<?php
 			
@@ -406,12 +422,14 @@ jQuery(document).ready(function() {
 		jQuery(document).on('click','a[href^="#contact"]',function(e) {
 			e.preventDefault();
 			
+			/*
 			ga('send', {
 			  hitType: 'event',
 			  eventCategory: 'Contact',
 			  eventAction: 'launch',
 			  eventLabel: 'Contact Us'
 			});
+			*/
 			
 			<?php
 			
