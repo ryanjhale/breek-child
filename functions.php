@@ -19,8 +19,11 @@ $env = cfm_get_environment();
 
 define('CFM_ENV', $env);
 
-$url = strtok($_SERVER["REQUEST_URI"],'?');
+$url = get_bloginfo('url');
 define('CFM_URL', $url);
+
+$path = strtok($_SERVER["REQUEST_URI"],'?');
+define('CFM_PATH', $path);
 
 add_action( 'wp_enqueue_scripts', 'epcl_breek_child_styles', 100 );
 
@@ -337,14 +340,6 @@ function cfm_get_aside_format($post_id){
 	</div>
 <?php
 }
-
-
-
-$url = get_bloginfo('url');
-define('CFM_URL', $url);
-
-$path = strtok($_SERVER["REQUEST_URI"],'?');
-define('CFM_PATH', $path);
 
 /*
 add_filter('template_redirect', 'cfm_redirect');

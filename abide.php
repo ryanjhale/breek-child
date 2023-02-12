@@ -3,13 +3,52 @@ global $post;
 $post_id = $post->ID;
 $post_format = get_post_format($post_id);
 
-$sunday = date( 'Y-m-d', strtotime( 'sunday this week' ) );
-$monday = date( 'Y-m-d', strtotime( 'monday this week' ) );
-$tuesday = date( 'Y-m-d', strtotime( 'tuesday this week' ) );
-$wednesday = date( 'Y-m-d', strtotime( 'wednesday this week' ) );
-$thursday = date( 'Y-m-d', strtotime( 'thursday this week' ) );
-$friday = date( 'Y-m-d', strtotime( 'friday this week' ) );
-$saturday = date( 'Y-m-d', strtotime( 'saturday this week' ) );
+if(CFM_ENV == 'prod-english') {
+	$sheet_name = 'Banding Together - EN';
+}
+
+if(CFM_ENV == 'prod-italian') {
+	$sheet_name = 'Banding Together - IT';
+}
+
+$scriptures = google_spreadsheet_get_data('1-LBAc4y6veOL8iXDbejgVUNusxBVC-fffLCgysDntJc', $sheet_name, $cell_range = '');
+
+function cfm_get_week_dates($week, $year) {
+  	
+  	if(CFM_ENV == 'prod-english') {
+	  	
+	  	setlocale(LC_ALL, 'en_US');
+	  	
+	  	$monday = date( 'l F j', strtotime( 'monday this week' ) );
+	  	$tuesday = date( 'l F j', strtotime( 'tuesday this week' ) );
+		$wednesday = date( 'l F j', strtotime( 'wednesday this week' ) );
+		$thursday = date( 'l F j', strtotime( 'thursday this week' ) );
+		$friday = date( 'l F j', strtotime( 'friday this week' ) );
+		$saturday = date( 'l F j', strtotime( 'saturday this week' ) );
+		$sunday = date( 'l F j', strtotime( 'sunday this week' ) );
+		
+	}
+	
+	if(CFM_ENV == 'prod-italian') {
+	  	
+	  	setlocale(LC_ALL, 'it_IT');
+	  	
+	  	$monday = date( 'l j F', strtotime( 'monday this week' ) );
+	  	$tuesday = date( 'l j F', strtotime( 'tuesday this week' ) );
+		$wednesday = date( 'l J F', strtotime( 'wednesday this week' ) );
+		$thursday = date( 'l j F', strtotime( 'thursday this week' ) );
+		$friday = date( 'l j F', strtotime( 'friday this week' ) );
+		$saturday = date( 'l j F', strtotime( 'saturday this week' ) );
+		$sunday = date( 'l j F', strtotime( 'sunday this week' ) );
+		
+	}
+
+  	$week = array($monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday);
+  
+	return $week;
+}
+
+$week_array = cfm_get_week_dates($week, $year);
 
 get_header();
 
@@ -114,13 +153,11 @@ while(have_posts()): the_post();  ?>
 
                             <div class="text">
                                 <?php the_content(); ?>
-                                <?php echo $sunday . '<br />'; ?>
-                                <?php echo $monday . '<br />'; ?>
-                                <?php echo $tuesday . '<br />'; ?>
-                                <?php echo $wednesday . '<br />'; ?>
-                                <?php echo $thursday . '<br />'; ?>
-                                <?php echo $friday . '<br />'; ?>
-                                <?php echo $saturday . '<br />'; ?>
+                                <pre>
+                                <?php print_r($week); ?>
+                                <br />
+                                <?php print_r($scriptures); ?>
+                                </pre>
                                 <?php
                                     if ( is_singular( 'attachment' ) ) {
                                         echo '<h2 class="title usmall">'.esc_html__('Published in:', 'breek').'</h2>';
