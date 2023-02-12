@@ -30,4 +30,16 @@ function cfm_redirects() {
 			}
 		}
     }
+    
+    if (in_array(CFM_URL, array('/abide', '/abide/', '/dimorare', '/dimorare/'))) {
+        
+        if ($wp_query->is_404) {
+	        $wp_query->is_404 = false;
+	        header("HTTP/1.1 200 OK");
+	    }
+        
+        include( get_stylesheet_directory().'/abide.php' );
+        exit;
+    }
+    
 }

@@ -17,20 +17,10 @@ function cfm_get_environment() {
 
 $env = cfm_get_environment();
 
-function cfm_update_author($author_id) {
-
-	$args = array('numberposts' => -1);
-	$posts = get_posts($args);
-	foreach($posts as $post) {
-		$data = array(
-			'ID' => $post->ID,
-			'post_author' => $author_id
-		);
-		wp_update_post($data);
-	}
-}
-
 define('CFM_ENV', $env);
+
+$url = strtok($_SERVER["REQUEST_URI"],'?');
+define('CFM_URL', $url);
 
 add_action( 'wp_enqueue_scripts', 'epcl_breek_child_styles', 100 );
 
