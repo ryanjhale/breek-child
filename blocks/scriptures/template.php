@@ -1,12 +1,12 @@
 <?php
-	
-$env = cfm_get_environment();
 
-if($env == 'prod-english') {
+$url = get_site_url(null, '/', 'https');	
+
+if($url == 'https://comefollowme.it/') {
 	$sheet_name = 'Banding Together - EN';
 }
 
-if($env == 'prod-italian') {
+if($url == 'https://vienieseguimi.it/') {
 	$sheet_name = 'Banding Together - IT';
 }
 
