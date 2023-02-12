@@ -30,7 +30,7 @@ function cfm_redirects() {
 			}
 		}
     }
-    
+    /*
     if (in_array(CFM_PATH, array('/abide', '/abide/', '/dimorare', '/dimorare/'))) {
         
         if ($wp_query->is_404) {
@@ -41,5 +41,6 @@ function cfm_redirects() {
         include( get_stylesheet_directory().'/abide.php' );
         exit;
     }
+    */
     
 }
