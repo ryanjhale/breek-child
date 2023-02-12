@@ -1,10 +1,12 @@
 <?php
+	
+$env = cfm_get_environment();
 
-if(CFM_ENV == 'prod-english') {
+if($env == 'prod-english') {
 	$sheet_name = 'Banding Together - EN';
 }
 
-if(CFM_ENV == 'prod-italian') {
+if($env == 'prod-italian') {
 	$sheet_name = 'Banding Together - IT';
 }
 
