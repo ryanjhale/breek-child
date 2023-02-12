@@ -205,7 +205,7 @@ while(have_posts()): the_post();  ?>
 	                            foreach($week as $day) {
 		                            $m = $day['month'];
 		                            $d = $day['day'];
-		                            echo $day['display'] . ' : ' . $scriptures[$m][$d] . '<br />';
+		                            echo $day['display'] . ' : ' . $scriptures[$d][$m] . '<br />';
 	                            }
 	                            ?>
                                 <?php
