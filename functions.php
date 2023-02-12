@@ -6,7 +6,7 @@ function cfm_get_environment() {
 	
 	if($url == 'https://comefollowme.it/') {
 		return 'prod-english';
-	} elseif($url == 'https://vienieseguimi.it/') {
+	} elseif($url == 'https://vienieseguimi.it') {
 		return 'prod-italian';
 	} elseif($url == 'https://viensetsuismoi.it/') {
 		return 'prod-french';	
