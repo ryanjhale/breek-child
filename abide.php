@@ -197,9 +197,6 @@ while(have_posts()): the_post();  ?>
 
                             <div class="text">
                                 <?php the_content(); ?>
-                                <pre>
-	                                <?php print_r($week);?>
-                                </pre>
                                 <?php
 	                            
 	                            foreach($week as $day) {
