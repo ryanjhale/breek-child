@@ -8,6 +8,8 @@ if( function_exists('get_field') ){
     $enable_sidebar = get_field('enable_sidebar');
     $fields = get_fields();
     if( $enable_sidebar === false ) $page_class .= ' no-sidebar';
+    $english_url = get_field('english_url');
+    $italian_url = get_field('italian_url');
 }
 if( !is_active_sidebar('epcl_sidebar_default') ){
     $enable_sidebar = false;
@@ -68,6 +70,21 @@ set_query_var('epcl_share_bottom', false);
                             <?php endif; ?>
                             <div class="text">
                                 <?php the_content(); ?>
+                                <?php if( !empty($english_url) ): ?>
+					                <span class="english meta-info" title="English">
+					                    <a href="<?php echo esc_url($english_url); ?>">
+					                    	<img style="vertical-align: middle; margin-right: 5px;" src="/wp-content/themes/breek-child/assets/images/uk.png">&nbsp;English
+					                    </a>
+					                </span>
+					            <?php endif; ?>
+					            
+					            <?php if( !empty($italian_url) ): ?>
+					                <span class="italian meta-info" title="Italiano">
+					                    <a href="<?php echo esc_url($italian_url); ?>">
+					                    	<img style="vertical-align: middle; margin-right: 5px;" src="/wp-content/themes/breek-child/assets/images/italy.png">&nbsp;Italiano
+					                    </a>
+					                </span>
+					            <?php endif; ?>
                             </div>
                             <div class="clear"></div>
                             <?php if( !empty($epcl_theme) && isset( $epcl_theme['enable_share_buttons_page'] ) && $epcl_theme['enable_share_buttons_page'] == '1' ): ?>
