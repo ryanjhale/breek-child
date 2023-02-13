@@ -96,11 +96,6 @@ $week = array('monday' =>
 
 
 ?>
-<style>
-	.scripture-td-left, .scripture-td-right {
-		text-align:left;
-	}
-</style>
 <table cellpadding="0" cellspacing="0" width="100%">
 
 <?php                            
@@ -110,8 +105,8 @@ foreach($week as $day) {
     
     ?>
     <tr>
-	    <td class="scripture-td-left"><?php echo $day['display']; ?></td>
-	    <td class="scripture-td-right"><?php echo '<strong>' . $scriptures[$d][$m] . '</strong>'; ?> </td>
+	    <td style="text-align:left;"><?php echo $day['display']; ?></td>
+	    <td style="text-align:left;"><?php echo '<strong>' . $scriptures[$d][$m] . '</strong>'; ?> </td>
     </tr>
 <?php
 }
