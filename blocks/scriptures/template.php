@@ -53,7 +53,7 @@ if(CFM_ENV == 'prod-italian') {
 	
 	$wednesday = date( 'l J F', strtotime( 'wednesday this week' ) );
 	str_replace('Wednesday', 'mercoledì', $wednesday);
-	$wednesday = = cfm_replace_month_names($wednesday);
+	$wednesday = cfm_replace_month_names($wednesday);
 	
 	$thursday = date( 'l j F', strtotime( 'thursday this week' ) );
 	str_replace('Thursday', 'giovedì', $thursday);
@@ -61,15 +61,15 @@ if(CFM_ENV == 'prod-italian') {
 	
 	$friday = date( 'l j F', strtotime( 'friday this week' ) );
 	str_replace('Friday', 'venerdì', $friday);
-	$friday = = cfm_replace_month_names($friday);
+	$friday = cfm_replace_month_names($friday);
 	
 	$saturday = date( 'l j F', strtotime( 'saturday this week' ) );
 	str_replace('Saturday', 'sabato', $saturday);
-	$saturday = = cfm_replace_month_names($saturday);
+	$saturday = cfm_replace_month_names($saturday);
 	
 	$sunday = date( 'l j F', strtotime( 'sunday this week' ) );
 	str_replace('Sunday', 'domenica', $sunday);
-	$sunday = = cfm_replace_month_names($sunday);
+	$sunday = cfm_replace_month_names($sunday);
 	
 }
 	
