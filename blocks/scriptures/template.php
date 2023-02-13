@@ -1,18 +1,18 @@
 <?php
 	
 function cfm_replace_month_names($date) {
-	str_replace('January', 'gennaio', $date);
-	str_replace('February', 'febbraio', $date);
-	str_replace('March', 'marzo', $date);
-	str_replace('April', 'aprile', $date);
-	str_replace('May', 'maggio', $date);
-	str_replace('June', 'giunio', $date);
-	str_replace('July', 'luglio', $date);
-	str_replace('August', 'agosto', $date);
-	str_replace('September', 'settembre', $date);
-	str_replace('October', 'ottobre', $date);
-	str_replace('November', 'novembre', $date);
-	str_replace('December', 'dicembre', $date);
+	$date = str_replace('January', 'gennaio', $date);
+	$date = str_replace('February', 'febbraio', $date);
+	$date = str_replace('March', 'marzo', $date);
+	$date = str_replace('April', 'aprile', $date);
+	$date = str_replace('May', 'maggio', $date);
+	$date = str_replace('June', 'giunio', $date);
+	$date = str_replace('July', 'luglio', $date);
+	$date = str_replace('August', 'agosto', $date);
+	$date = str_replace('September', 'settembre', $date);
+	$date = str_replace('October', 'ottobre', $date);
+	$date = str_replace('November', 'novembre', $date);
+	$date = str_replace('December', 'dicembre', $date);
 	
 	return $date;
 } 
@@ -38,31 +38,31 @@ if($url == 'https://vienieseguimi.it/') {
 	$sheet_name = 'Banding Together - IT';
 	
 	$monday = date( 'l j F', strtotime( 'monday this week' ) );
-  	str_replace('Monday', 'lunedì', $monday);
+  	$monday = str_replace('Monday', 'lunedì', $monday);
   	$monday = cfm_replace_month_names($monday);
   	
   	$tuesday = date( 'l j F', strtotime( 'tuesday this week' ) );
-  	str_replace('Tuesday', 'martedì', $tuesday);
+  	$tuesday = str_replace('Tuesday', 'martedì', $tuesday);
   	$tuesday = cfm_replace_month_names($tuesday);
 	
 	$wednesday = date( 'l j F', strtotime( 'wednesday this week' ) );
-	str_replace('Wednesday', 'mercoledì', $wednesday);
+	$wednesday = str_replace('Wednesday', 'mercoledì', $wednesday);
 	$wednesday = cfm_replace_month_names($wednesday);
 	
 	$thursday = date( 'l j F', strtotime( 'thursday this week' ) );
-	str_replace('Thursday', 'giovedì', $thursday);
+	$thursday = str_replace('Thursday', 'giovedì', $thursday);
 	$thursday = cfm_replace_month_names($thursday);
 	
 	$friday = date( 'l j F', strtotime( 'friday this week' ) );
-	str_replace('Friday', 'venerdì', $friday);
+	$friday = str_replace('Friday', 'venerdì', $friday);
 	$friday = cfm_replace_month_names($friday);
 	
 	$saturday = date( 'l j F', strtotime( 'saturday this week' ) );
-	str_replace('Saturday', 'sabato', $saturday);
+	$saturday = str_replace('Saturday', 'sabato', $saturday);
 	$saturday = cfm_replace_month_names($saturday);
 	
 	$sunday = date( 'l j F', strtotime( 'sunday this week' ) );
-	str_replace('Sunday', 'domenica', $sunday);
+	$sunday = str_replace('Sunday', 'domenica', $sunday);
 	$sunday = cfm_replace_month_names($sunday);
 
 }
