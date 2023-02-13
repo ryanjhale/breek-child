@@ -70,7 +70,9 @@ set_query_var('epcl_share_bottom', false);
                             <?php endif; ?>
                             <div class="text">
                                 <?php the_content(); ?>
-                                <?php if( !empty($english_url) ): ?>
+                            </div>
+                            <div class="meta">
+	                            <?php if( !empty($english_url) ): ?>
 					                <span class="english meta-info" title="English">
 					                    <a href="<?php echo esc_url($english_url); ?>">
 					                    	<img style="vertical-align: middle; margin-right: 5px;" src="/wp-content/themes/breek-child/assets/images/uk.png">&nbsp;English
