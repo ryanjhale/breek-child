@@ -20,30 +20,24 @@ function cfm_replace_month_names($date) {
 $url = get_site_url(null, '/', 'https');	
 
 if($url == 'https://comefollowme.it/') {
+	
 	$sheet_name = 'Banding Together - EN';
+	
+	$monday = date( 'l F j', strtotime( 'monday this week' ) );
+	$tuesday = date( 'l F j', strtotime( 'tuesday this week' ) );
+	$wednesday = date( 'l F j', strtotime( 'wednesday this week' ) );
+	$thursday = date( 'l F j', strtotime( 'thursday this week' ) );
+	$friday = date( 'l F j', strtotime( 'friday this week' ) );
+	$saturday = date( 'l F j', strtotime( 'saturday this week' ) );
+	$sunday = date( 'l F j', strtotime( 'sunday this week' ) );
+	
 }
 
 if($url == 'https://vienieseguimi.it/') {
-	$sheet_name = 'Banding Together - IT';
-}
-
-$scriptures = google_spreadsheet_get_data('1-LBAc4y6veOL8iXDbejgVUNusxBVC-fffLCgysDntJc', $sheet_name, $cell_range = '');
-  	
-if(CFM_ENV == 'prod-english') {
-
-$monday = date( 'l F j', strtotime( 'monday this week' ) );
-$tuesday = date( 'l F j', strtotime( 'tuesday this week' ) );
-$wednesday = date( 'l F j', strtotime( 'wednesday this week' ) );
-$thursday = date( 'l F j', strtotime( 'thursday this week' ) );
-$friday = date( 'l F j', strtotime( 'friday this week' ) );
-$saturday = date( 'l F j', strtotime( 'saturday this week' ) );
-$sunday = date( 'l F j', strtotime( 'sunday this week' ) );
-
-}
 	
-if(CFM_ENV == 'prod-italian') {
-  	
-  	$monday = date( 'l j F', strtotime( 'monday this week' ) );
+	$sheet_name = 'Banding Together - IT';
+	
+	$monday = date( 'l j F', strtotime( 'monday this week' ) );
   	str_replace('Monday', 'lunedì', $monday);
   	$monday = cfm_replace_month_names($monday);
   	
@@ -51,7 +45,7 @@ if(CFM_ENV == 'prod-italian') {
   	str_replace('Tuesday', 'martedì', $tuesday);
   	$tuesday = cfm_replace_month_names($tuesday);
 	
-	$wednesday = date( 'l J F', strtotime( 'wednesday this week' ) );
+	$wednesday = date( 'l j F', strtotime( 'wednesday this week' ) );
 	str_replace('Wednesday', 'mercoledì', $wednesday);
 	$wednesday = cfm_replace_month_names($wednesday);
 	
@@ -70,10 +64,8 @@ if(CFM_ENV == 'prod-italian') {
 	$sunday = date( 'l j F', strtotime( 'sunday this week' ) );
 	str_replace('Sunday', 'domenica', $sunday);
 	$sunday = cfm_replace_month_names($sunday);
-	
-}
-	
 
+}
 
 $monday_month = date( 'n', strtotime( 'monday this week' ) );
 $tuesday_month = date( 'n', strtotime( 'tuesday this week' ) );
@@ -127,6 +119,10 @@ $week = array('monday' =>
 		               'day'		=> $sunday_day
 		               ),
 		);
+
+$scriptures = google_spreadsheet_get_data('1-LBAc4y6veOL8iXDbejgVUNusxBVC-fffLCgysDntJc', $sheet_name, $cell_range = '');
+
+
 
 
 
