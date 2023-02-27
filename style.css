@@ -21,3 +21,6 @@ Template: breek
 	width: 96px;
 	height: 96px;
 }
+.gb-block-cta .has-background-dim {
+    opacity: .5 !important;
+}
