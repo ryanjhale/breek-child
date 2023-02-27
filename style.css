@@ -27,3 +27,6 @@ Template: breek
 .gb-cta-image-wrap {
 	background: #000;
 }
+.wp-block-genesis-blocks-gb-accordion .gb-block-accordion {
+	cursor: pointer;
+}
