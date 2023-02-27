@@ -24,3 +24,6 @@ Template: breek
 .gb-block-cta .has-background-dim {
     opacity: .5 !important;
 }
+.gb-cta-image-wrap {
+	background: #000;
+}
